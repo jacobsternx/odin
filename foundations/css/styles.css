@@ -1,0 +1,263 @@
+ /* Universal selector, syntax is an asterisk */
+ * {
+   color: purple;
+ }
+
+ /* Type selector, syntax is name of the element */
+ div {
+   color: white;
+ }
+
+ /* Class selector 
+Syntax is a period followed by value of the class attribute. 
+Not required to be unique, may be used on many elements.
+Can add many classes to one element in space-separated list: class="alert-text severe-alert". 
+Since whitespace separates class names, use hyphens in multi-word names.
+*/
+ .alert-text {
+   color: red;
+ }
+
+ /*  ID selector is similar to class selector, note # followed by value name
+A common pitfall is overusing ID attribute when classes will work. 
+Valid uses include leveraging specificity or having links redirect to current page section.
+The difference between classes and IDs is that an element can only have one ID. 
+An ID cannot be repeated on a page, and the ID attribute should not contain whitespace.
+*/
+ #title {
+   background-color: red;
+ }
+
+ /* Grouping Selectors as a comma-separated list. */
+ .read,
+ .unread {
+   color: white;
+   background-color: black;
+ }
+
+ .read {
+   /* several unique declarations */
+ }
+
+ .unread {
+   /* several unique declarations */
+ }
+
+
+ /* Chaining Selectors in a list without separation. 
+There cannot be space between the .subsection and .header class selectors. 
+subsection.header selects any element with both subsection and header classes.
+This works for chaining any combination of selectors, except for more than one type selector.
+This can also be used to chain a class and an ID,
+*/
+ .subsection.header {
+   color: red;
+ }
+
+ .subsection#preview {
+   color: blue;
+ }
+
+ /* Descendant Combinator
+Combinators allow combining multiple selectors differently than grouping or chaining.
+They show a relationship between selectors and there are four types. The descendant combinator is represented by a single space between selectors. 
+A descendant combinator will only cause elements that match the last selector to be selected
+if they also have an ancestor that matches the previous selector, no matter how deep.
+*/
+
+ /* Properties to Get Started With */
+
+ /* Color and Background-Color */
+ p {
+   /* keyword like darksalmon or transparent */
+   color: darksalmon;
+   /* hex example: */
+   color: #1100ff;
+   /* rgb example: */
+   color: rgb(100, 0, 127);
+   /* hsl example: */
+   color: hsl(15, 82%, 56%);
+ }
+
+ /* Typography Basics and Text-Align*/
+ font-family: "DejaVu Sans", sans-serif;
+ /* font-family can be a single value or a comma-separated list of values that determine what font an element uses. Each font will fall into one of two categories,
+ either a “font family name” like "DejaVu Sans"(we use quotes due to the whitespace between words) or a generic family name like sans-serif that never use quotes).
+ */
+ font-size: 22px;
+ /*A value to this property should not contain any whitespace,*/
+ font-weight: bold;
+ /*font-weight affects the boldness of text, assuming supported by font, this value can be a keyword or a number between 1 and 1000, */
+ font-weight: 700; 
+ /*(the equivalent of bold). Numeric values will be in increments of 100 up to 900 */
+ text-align: center; 
+ /* text-align will align text horizontally within an element. */
+
+ /* Image Height and Width
+ If you wanted to adjust the size of the image element without causing it to lose proportions,
+ you would use a value of “auto” for the height property and adjust the width value: 
+ */
+ img {
+   height: auto;
+   width: 500px;
+ }
+/*It’s best to include both of these properties for <img> elements, even if you don’t plan on adjusting the values from the image file.
+*/
+
+/* The Cascade of CSS
+The cascade is what determines which rules actually get applied to our HTML. There are different factors that the cascade uses to determine this.
+
+Specificity
+A CSS declaration that is more specific will take precedence over less specific ones. Inline styles, which we will go over more in the Adding CSS to HTML section towards the end of the lesson, have the highest specificity compared to selectors, while each type of selector has its own specificity level that contributes to how specific a declaration is. Other selectors contribute to specificity, but we’re focusing only on the ones mentioned in this lesson:
+
+ID selectors (most specific selector)
+Class selectors
+Type selectors
+
+Specificity will only be taken into account when an element has multiple, conflicting declarations targeting it, sort of like a tie-breaker. An ID selector will always beat any number of class selectors, a class selector will always beat any number of type selectors, and a type selector will always beat any number of anything less specific than it. When no declaration has a selector with a higher specificity, a larger amount of a single selector will beat a smaller amount of that same selector.
+
+Let’s take a look at a few quick examples to visualize how specificity works. Consider the following HTML and CSS code:
+
+<!-- index.html -->
+<div class="main">
+  <div class="list subsection"></div>
+</div>
+
+/* rule 1 */
+.subsection {
+  color: blue;
+}
+
+/* rule 2 */
+.main .list {
+  color: red;
+}
+
+/* In the example above, both rules are using only class selectors, but rule 2 is more specific because it is using more class selectors, so the color: red; declaration would take precedence.
+
+Now, let’s change things a little bit:
+
+<!-- index.html -->
+<div class="main">
+  <div class="list" id="subsection"></div>
+</div>
+
+/* rule 1 */
+#subsection {
+  color: blue;
+}
+
+/* rule 2 */
+.main .list {
+  color: red;
+}
+
+/*In the example above, despite rule 2 having more class selectors than ID selectors, rule 1 is more specific because ID beats class. In this case, the color: blue; declaration would take precedence.
+
+Let’s consider one final example:
+
+<!-- index.html -->
+<div class="main">
+  <div class="list">
+    <div id="subsection"></div>
+  </div>
+</div>
+
+/* rule 1 */
+.list #subsection {
+  background-color: yellow;
+  color: blue;
+}
+
+/* rule 2 */
+.main .list #subsection {
+  color: red;
+}
+
+/*In this example, both rules are using ID and class selectors, so neither rule is using a more specific selector than the other. The cascade then checks the amounts of each selector type. Both rules only have one ID selector, but rule 2 has more class selectors, so rule 2 has a higher specificity!
+
+While the color: red declaration would take precedence, the background-color: yellow declaration would still be applied since there’s no conflicting declaration for it.
+
+Note: When comparing selectors, you may come across special symbols for the universal selector (*) as well as combinators (+, ~, >, and an empty space). These symbols do not add any specificity in and of themselves.
+*/
+
+/* rule 1 */
+.class.second-class {
+  font-size: 12px;
+}
+
+/* rule 2 */
+.class .second-class {
+  font-size: 24px;
+}
+
+/*Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining selector (no space) and rule 2 uses a descendant combinator (the empty space). But both rules have two classes and the combinator symbol itself does not add to the specificity.
+*/
+
+/* rule 1 */
+.class.second-class {
+  font-size: 12px;
+}
+
+/* rule 2 */
+.class > .second-class {
+  font-size: 24px;
+}
+
+/*This example shows the same thing. Even though rule 2 is using a child combinator (>), this does not change the specificity value. Both rules still have two classes so they have the same specificity values.
+*/
+
+/* rule 1 */
+* {
+  color: black;
+}
+
+/* rule 2 */
+h1 {
+  color: orange;
+}
+
+/*In this example, rule 2 would have higher specificity and the orange value would take precedence for this element. Rule 2 uses a type selector, which has the lowest specificity value. But rule 1 uses the universal selector (*) which has no specificity value. 
+
+In the case of multiple declarations having the same specificity, the last CSS rule declaration is evaluated and applied.
+
+Inheritance
+Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants. Typography based properties (color, font-size, font-family, etc.) are usually inherited, while most other properties aren’t.
+
+The exception to this is when directly targeting an element, as this always beats inheritance:
+
+<!-- index.html -->
+<div id="parent">
+  <div class="child"></div>
+</div>
+/* styles.css */
+
+#parent {
+  color: red;
+}
+
+.child {
+  color: blue;
+}
+
+/*Despite the parent element having a higher specificity with an ID, the child element would have the color: blue style applied since that declaration directly targets it, while color: red from the parent is only inherited.
+
+Rule Order
+The final factor, the end of the line, the tie-breaker of the tie-breaker. Let’s say that after every other factor has been taken into account, there are still multiple conflicting rules targeting an element. How does the cascade determine which rule to apply?
+
+Really simply, actually. Whichever rule was the last defined is the winner.
+/*
+
+/* styles.css */
+
+.alert {
+  color: red;
+}
+
+.warning {
+  color: yellow;
+}
+
+/* For an element that has both the alert and warning classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the .warning rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
+/*
+
