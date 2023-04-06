@@ -6,6 +6,10 @@
  /* Type selector, syntax is name of the element */
  div {
    color: white;
+   background-color: red;
+   text-align: center;
+   font-size: 28px;
+   font-family: 'Courier New', Courier, monospace;
  }
 
  /* Class selector 

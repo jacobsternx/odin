@@ -246,7 +246,8 @@ By default, an <img> element’s height and width values will be the same as the
 
 img {
   height: auto;
-  width: 500px; }
+  width: 500px; 
+}
 For example, if an image’s original size was 500px height and 1000px width, using the above CSS would result in a height of 250px. It’s best to include both of these properties for <img> elements, even if you don’t plan on adjusting the values from the image file’s original ones. When these values aren’t included, if an image takes longer to load than the rest of the page contents, the image won’t take up any space on the page at first, but will suddenly cause a drastic shift of the other page contents once it does load in. Explicitly stating a height and width prevents this from happening, as space will be “reserved” on the page and will just appear as a blank space until the image loads.
 
 ### The Cascade of CSS
@@ -255,10 +256,126 @@ Sometimes we may have rules that conflict with one another, and we end up with s
 Specificity
 
 A CSS declaration that is more specific will take precedence over less specific ones. Inline styles, which we will go over more in the Adding CSS to HTML section towards the end of the lesson, have the highest specificity compared to selectors, while each type of selector has its own specificity level that contributes to how specific a declaration is. Other selectors contribute to specificity, but we’re focusing only on the ones mentioned: 
+
 id (most specific)
 class 
 type (lease specific)
+
 Specificity will only be taken into account when an element has multiple, conflicting declarations targeting it. When no declaration has a selector with a higher specificity, a larger amount of a single selector will beat a smaller amount of that same selector.
+
+
+
+
+
+
+
+
+
+Adding CSS to HTML
+
+Okay, we went over quite a bit so far. The only thing left for now is to go over how to add all this CSS to our HTML. There are three methods to do so.
+External CSS
+
+External CSS is the most common method you will come across, and it involves creating a separate file for the CSS and linking it inside of an HTML’s opening and closing <head> tags with a self-closing <link> element:
+
+<!-- index.html -->
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+/* styles.css */
+div {
+  color: white;
+  background-color: black;
+}
+
+p {
+  color: red;
+}
+
+First, we add a self-closing <link> element inside of the opening and closing <head> tags of the HTML file. The href attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. In our example above, we are assuming both files are located in the same directory. The rel attribute is required, and it specifies the relationship between the HTML file and the linked file.
+
+Then inside of the newly created styles.css file, we have the selector (the div and p), followed by a pair of opening and closing curly braces, which create a “declaration block”. Finally, we place any declarations inside of the declaration block. color: white; is one declaration, with color being the property and white being the value, and background-color: black; is another declaration.
+
+A note on file names: styles.css is just what we went with as the file name here. You can name the file whatever you want as long as the file type is .css, though “style” or “styles” is most commonly used.
+
+A couple of the pros to this method are:
+
+    It keeps our HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
+    We only need to edit the CSS in one place, which is especially handy for websites with many pages that all share similar styles.
+
+Internal CSS
+
+Internal CSS (or embedded CSS) involves adding the CSS within the HTML file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing <style> tags, which are then placed inside of the opening and closing <head> tags of your HTML file. Since the styles are being placed directly inside of the <head> tags, we no longer need a <link> element that the external method requires.
+
+Besides these differences, the syntax is exactly the same as the external method (selector, curly braces, declarations):
+
+<head>
+  <style>
+    div {
+      color: white;
+      background-color: black;
+    }
+
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>...</body>
+
+This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the HTML file to get pretty big.
+Inline CSS
+
+Inline CSS makes it possible to add styles directly to HTML elements, though this method isn’t as recommended:
+
+<body>
+  <div style="color: white; background-color: black;">...</div>
+</body>
+
+The first thing to note is that we don’t actually use any selectors here, since the styles are being added directly to the opening <div> tag itself. Next, we have the style= attribute, with its value within the pair of quotation marks being the declarations.
+
+If you need to add a unique style for a single element, this method can work just fine. Generally, though, this isn’t exactly a recommended way for adding CSS to HTML for a few reasons:
+
+    It can quickly become pretty messy once you start adding a lot of declarations to a single element, causing your HTML file to become unnecessarily bloated.
+    If you want many elements to have the same style, you would have to copy + paste the same style to each individual element, causing lots of unnecessary repetition and more bloat.
+    Any inline CSS will override the other two methods, which can cause unexpected results. (While we won’t dive into it here, this can actually be taken advantage of).
+
+Assignment
+
+    Go to our CSS exercises repository, read the README, and only do the exercises in the foundations directory in the order they’re listed, starting with 01-css-methods and ending with 06-cascade-fix.
+
+    Remember the Recipe page you created as practice from the previous lesson? Well, it’s rather plain looking, isn’t it? Let’s fix that by adding some CSS to it!
+
+    How you actually style it is completely open, but you should use the external CSS method (for this practice and moving forward). You should also try to use several of the properties mentioned in the section above (color, background color, typography properties, etc). Take some time to play around with the various properties to get a feel for what they do. For now, don’t worry at all about making it look good. This is just to practice and get used to writing CSS, not to make something to show off on your resume, so feel free to go a little crazy for now.
+
+    We haven’t covered how to use a custom font for the font-family property yet, so for now take a look at CSS Fonts for a list of generic font families to use, and CSS Web Safe Fonts for a list of fonts that are web safe. Web safe means that these are fonts that are installed on basically every computer or device (but be sure to still include a generic font family as a fallback).
+
+Knowledge Check
+
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+    What are the main differences between external, internal, and inline CSS?
+    What is the syntax for class and ID selectors?
+    How would you apply a single rule to two different selectors?
+    Given an element that has an id of title and a class of primary, how would you use both attributes for a single rule?
+    What does the descendant combinator do?
+    Between a rule that uses one class selector and a rule that uses three type selectors, which rule has the higher specificity?
+
+Additional Resources
+
+This section contains helpful links to related content. It isn’t required, so consider it supplemental.
+
+    The CSS Cascade is a great, interactive read that goes a little more in detail about other factors that affect what CSS rules actually end up being applied.
+    Changing the Font Family describes a few different approaches to using custom fonts.
+    CSS Specificity from W3Schools goes over how you can calculate the specificity of rules. This page mentions some selectors that we will go over in a later lesson, so don’t worry about what they are or how to use them right now.
+    Mozilla CSS Properties Reference can be used to learn if a particular CSS property is inherited or not; simply look for the Inherited field inside the Formal Definition section. Here’s an example for the CSS color property.
+    Mozilla CSS values and units can be used to learn the various types of values possible in absolute or relative terms.
+
+
+
+
+
 
 
 ## Inspecting HTML and CSS
