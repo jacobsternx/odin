@@ -12,4 +12,3 @@
 ## Odin
 
 Odin is tha folder for all Odin courses and projects
-
