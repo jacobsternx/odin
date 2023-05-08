@@ -1,14 +1,37 @@
-
-<!--
-**jacobsternx/jacobsternx** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
--->
-
-<picture>
- <source media="(prefers-color-scheme: dark)" srcset="YOUR-DARKMODE-IMAGE">
- <source media="(prefers-color-scheme: light)" srcset="YOUR-LIGHTMODE-IMAGE">
- <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
-</picture>
-
 ## Odin
 
-Odin is tha folder for all Odin courses and projects
+<<<<<<< HEAD
+#### By Jacob Stern
+
+## Description
+
+Odin is the folder for all Odin courses and projects
+
+### Technologies Used
+
+* HTML + CSS
+* VS Code
+* Git
+* Flexbox
+* js
+* Stackoverflow (lol)
+
+## Setup/Installation Requirements
+
+* create readme.md
+* create index.html
+* create folder for content
+* flesh out basic files and folders above
+* git create, add, commit, and push origin master
+
+This is basic enough to be self-explanatory.
+
+## Known Bugs
+
+* N.A.
+
+## License
+
+Yes.
+
+Copyright (c) Jacob Stern, 2023
