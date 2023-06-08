@@ -38,7 +38,7 @@ If your question is not on-topic for Stack Overflow, it may be on topic for anot
 
 Identifying Help Vampires can be tricky, because they look like any ordinary person. But by closely observing an individual’s behavior using this handy checklist, you too can identify Help Vampires in the field:
 
-    Does he ask the same, tired questions others ask?
+    Does he (repeatedly) ask the same, tired questions others ask?
     Does he clearly lack the ability or inclination to ask the almighty Google?
     Does he refuse to take the time to ask coherent, specific questions?
     Does he think helping him must be the high point of your day?
@@ -403,10 +403,71 @@ Knowledge Check
 
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
-    What are the main differences between external, internal, and inline CSS?
-    What is the syntax for class and ID selectors?
-    How would you apply a single rule to two different selectors?
-    Given an element that has an id of title and a class of primary, how would you use both attributes for a single rule?
+ **   What are the main differences between external, internal, and inline CSS?
+
+**  What is the syntax for class and ID selectors?
+
+<!-- index.html -->
+<div class="class-name">Text here.</div>
+<div id="unique-id">Text here</div>
+
+/* styles.css */
+.class-name {
+  key: value;
+}
+#unique-id {
+  key: value;
+}
+
+** How would you apply a single rule to two different selectors?
+
+Grouping selectors (of same type)
+
+.class1 {
+  key1: value;
+  key2: value;
+  /* several unique declarations */
+}
+
+.class2 {
+  key1: value;
+  key2: value;
+  /* several unique declarations */
+}
+
+Group these two selectors as a comma-separated list:
+
+.class1,
+.class2 {
+  key1: value;
+  key2: value;
+}
+
+.read {
+  /* several unique declarations */
+}
+
+.unread {
+  /* several unique declarations */
+}
+
+**  Given an element with an id of title and a class of primary, how would you use both attributes for a single rule?
+
+If they weren't different types, chaining selectors could be used
+
+<div>
+  <div class="subsection header">Latest Posts</div>
+  <p class="subsection preview">Post Preview.</p>
+</div>
+
+We have two elements with the subsection class that have some sort of unique styles, but what if we only want to apply a separate rule to the element that also has header as a second class? We could chain both the class selectors together in our CSS like so:
+
+.subsection.header {
+  color: red;
+}
+
+What .subsection.header does is it selects any element that has both the subsection and header classes. Notice how there isn’t any space between the .subsection and .header class selectors. 
+
     What does the descendant combinator do?
     Between a rule that uses one class selector and a rule that uses three type selectors, which rule has the higher specificity?
 
