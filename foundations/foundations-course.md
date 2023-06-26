@@ -505,7 +505,8 @@ Really simply, actually. Whichever rule was the last defined is the winner.
 }
 
 For an element that has both the alert and warning classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the .warning rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
-Assignment
+
+**Assignment
 
     Go back to our CSS exercises repository and finish the last exercise 06-cascade-fix.
 
@@ -515,7 +516,7 @@ Assignment
 
     We haven’t covered how to use a custom font for the font-family property yet, so for now take a look at CSS Fonts for a list of generic font families to use, and CSS Web Safe Fonts for a list of fonts that are web safe. Web safe means that these are fonts that are installed on basically every computer or device (but be sure to still include a generic font family as a fallback).
 
-Knowledge Check
+**Knowledge Check
 
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
@@ -600,7 +601,7 @@ If you need to add a unique style for a single element, this method can work jus
     If you want many elements to have the same style, you would have to copy + paste the same style to each individual element, causing lots of unnecessary repetition and more bloat.
     Any inline CSS will override the other two methods, which can cause unexpected results. (While we won’t dive into it here, this can actually be taken advantage of).
 
-Assignment
+###Assignment
 
     Go to our CSS exercises repository, read the README, and only do the exercises in the foundations directory in the order they’re listed, starting with 01-css-methods and ending with 06-cascade-fix.
 
@@ -610,87 +611,72 @@ Assignment
 
     We haven’t covered how to use a custom font for the font-family property yet, so for now take a look at CSS Fonts for a list of generic font families to use, and CSS Web Safe Fonts for a list of fonts that are web safe. Web safe means that these are fonts that are installed on basically every computer or device (but be sure to still include a generic font family as a fallback).
 
-Knowledge Check
+###Knowledge Check
 
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
- **   What are the main differences between external, internal, and inline CSS?
+**  What are the main differences between external, internal, and inline CSS?
+
+inline: least maintainable, ugliest, highest selectability precedence.
+internal: css in html header, so does not separate style from content.
+external: most maintainable, separates style from content, best.
 
 **  What is the syntax for class and ID selectors?
 
-<!-- index.html -->
-<div class="class-name">Text here.</div>
-<div id="unique-id">Text here</div>
+<!-- styles.css -->
+#top {
+    background-color: #ccc;
+}
+.intro {
+    color: red;
+}
+/* index.html */
+<div id="top">
+<p class="intro">This is my recipe for chocolate</p>
 
-/* styles.css */
-.class-name {
-  key: value;
-}
-#unique-id {
-  key: value;
-}
 
 ** How would you apply a single rule to two different selectors?
 
-Grouping selectors (of same type)
+div, p { color: #f00; }
 
-.class1 {
-  key1: value;
-  key2: value;
-  /* several unique declarations */
-}
+In this context, a comma means "and," so this selector applies to all paragraph elements and all division elements. If the comma were missing, the selector would instead apply to all paragraph elements that are a child of a division. That is a different kind of selector, so the comma is important.
 
-.class2 {
-  key1: value;
-  key2: value;
-  /* several unique declarations */
-}
+You can group any form of selector with any other selector. This example groups a class selector with an ID selector:
 
-Group these two selectors as a comma-separated list:
+p.red, #sub { color: #f00; }
 
-.class1,
-.class2 {
-  key1: value;
-  key2: value;
-}
+This style applies to any paragraph with the class attribute of red and any element (because the kind is not specified) with an ID attribute of sub.
 
-.read {
-  /* several unique declarations */
-}
-
-.unread {
-  /* several unique declarations */
-}
+You can group any number of selectors.
 
 **  Given an element with an id of title and a class of primary, how would you use both attributes for a single rule?
 
-If they weren't different types, chaining selectors could be used
+#title, .primary { key:value }
 
-<div>
-  <div class="subsection header">Latest Posts</div>
-  <p class="subsection preview">Post Preview.</p>
-</div>
-
-We have two elements with the subsection class that have some sort of unique styles, but what if we only want to apply a separate rule to the element that also has header as a second class? We could chain both the class selectors together in our CSS like so:
-
-.subsection.header {
-  color: red;
-}
-
-What .subsection.header does is it selects any element that has both the subsection and header classes. Notice how there isn’t any space between the .subsection and .header class selectors. 
-
-    What does the descendant combinator do?
-    Between a rule that uses one class selector and a rule that uses three type selectors, which rule has the higher specificity?
 
 Additional Resources
 
 This section contains helpful links to related content. It isn’t required, so consider it supplemental.
 
-    The CSS Cascade is a great, interactive read that goes a little more in detail about other factors that affect what CSS rules actually end up being applied.
-    Changing the Font Family describes a few different approaches to using custom fonts.
-    CSS Specificity from W3Schools goes over how you can calculate the specificity of rules. This page mentions some selectors that we will go over in a later lesson, so don’t worry about what they are or how to use them right now.
-    Mozilla CSS Properties Reference can be used to learn if a particular CSS property is inherited or not; simply look for the Inherited field inside the Formal Definition section. Here’s an example for the CSS color property.
-    Mozilla CSS values and units can be used to learn the various types of values possible in absolute or relative terms.
+    The CSS Cascade
+    https://wattenberger.com/blog/css-cascade
+    is a great, interactive read that goes a little more in detail about other factors that affect what CSS rules actually end up being applied.
+    
+    Changing the Font Family 
+    https://www.digitalocean.com/community/tutorials/how-to-load-and-use-custom-fonts-with-css#finding-and-loading-a-font-file-from-a-hosted-service
+    describes a few different approaches to using custom fonts.
+    
+    CSS Specificity from W3Schools 
+    https://www.digitalocean.com/community/tutorials/how-to-load-and-use-custom-fonts-with-css#finding-and-loading-a-font-file-from-a-hosted-service
+    goes over how you can calculate the specificity of rules. This page mentions some selectors that we will go over in a later lesson, so don’t worry about what they are or how to use them right now.
+    
+    Mozilla CSS Properties Reference 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
+    Learn about inheritance and the various types of keys, values, units possible in absolute or relative terms.
+    [Typography based properties (color, font-size, font-family, etc.) are usually inherited, while most other properties aren’t.]
+        
+    Chromium’s default set of styles
+    https://source.chromium.org/chromium/chromium/src/+/main:third_party/blink/renderer/core/html/resources/html.css
 
 
 
