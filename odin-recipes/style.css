@@ -1,25 +1,22 @@
-.header  {
+h1  {
   font-family: monospace;
-  background: papayawhipli;
-}
-
-.logo {
-  font-size: 48px;
-  font-weight: 900;
-  color: tomato;
-  background: white;
-  padding: 4px 32px;
+  background: black;
+  color: silver;
 }
 
 ul {
-  /* this removes the dots on the list items*/
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  background: aqua;
+  padding: 48px 0px;
   list-style-type: none;
 }
 
 a {
-  font-size: 22px;
-  background: white;
-  padding: 8px;
-  /* this removes the line under the links */
-  text-decoration: none;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 300;
+  color: crimson;
+  background: lime;
 }
