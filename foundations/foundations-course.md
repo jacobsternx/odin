@@ -678,11 +678,183 @@ This section contains helpful links to related content. It isn’t required, so 
     Chromium’s default set of styles
     https://source.chromium.org/chromium/chromium/src/+/main:third_party/blink/renderer/core/html/resources/html.css
 
-
-
 ## Inspecting HTML and CSS
 
+Being able to inspect and debug your HTML and CSS is critical to frontend development. This lesson will take us through the Chrome Dev Tools, which allow you to see detailed information about your elements and CSS rules, as well as assist you in finding and fixing problems in your code.
+
+Lesson Overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+You will know how to access the element inspector.
+You will know how to select and inspect specific elements.
+You will know how to test out HTML and CSS in the inspector.
+The Inspector
+To open up the inspector, you can right-click on any element of a webpage and click “Inspect” or press F12. Go ahead and do that right now to see the HTML and CSS used on this page.
+
+Don’t get overwhelmed with all the tools you’re now seeing! For this lesson, we want to focus on the Elements and Styles panes.
+
+Inspecting Elements
+In the Elements pane, you can see the entire HTML structure of your page. You can click on any of the elements in this pane to select that specific element. Alternatively, you can click the blue-highlighted icon shown below on the left, and hover over any element on the page.
+
+Inspector Icon
+
+When an element is selected, the Styles tab will show all the currently applied styles, as well as any styles that are being overwritten (indicated by a strikethrough of the text). For example, if you use the inspector to click on the “Your Career in Web Development Starts Here” header on the TOP homepage, on the right-hand side you’ll see all the styles that are currently affecting the element, as seen below:
+
+Overwritten style
+
+Testing Styles in the Inspector
+The Styles pane also allows you to edit styles directly in the browser. You can click inside of any individual selector to add a new rule or click on an existing attribute or value to alter it. When doing so, the webpage responds with the changes in real-time. This won’t affect the source code in your text editor, but it is extremely useful for quickly testing out various attributes and values without needing to reload the page over and over again.
+
+Assignment
+Go through the following sections of the official Chrome DevTools docs:
+https://developers.google.com/web/tools/chrome-devtools
+
+Overview: don’t navigate to any other pages linked here; just get familiar with what tools are available in the DevTools, rather than how to use all of them right now.
+Open Chrome DevTools: similar to what we went over above, but with some nice extras.
+https://developer.chrome.com/docs/devtools/open/
+Get Started With Viewing And Changing The DOM: skip through any part that uses the JavaScript console.
+https://developer.chrome.com/docs/devtools/dom/
+View and change CSS: be sure to follow along with any interactive instructions!
+Knowledge Check
+This section contains questions for you to check your understanding of this lesson on your own.
+
+How do you select a specific element on your page with your browser’s developer tools?
+right click > inspect
+
+What does a strikethrough in a CSS declaration mean in your browser’s developer tools?
+value is being overridden
+
+How do you change CSS in real time on specific elements of a web page with your browser’s developer tools?
+Inspece > Elements > Style, then modify as desired
+
+Additional Resources
+This section contains helpful links to related content. It isn’t required, so consider it supplemental.
+
+This article about how we can utilize css overview in the developer tools to check the colors, font styles, media-queries, etc. used on a particular webpage.
+https://www.freecodecamp.org/news/how-to-use-css-overview-in-chrome-developer-tools/
+
 ## The Box Model
+
+The most important skills you need to master with CSS are positioning and layout. Changing fonts and colors is a crucial skill, but being able to put things exactly where you want them on a webpage is even more crucial. After all, how many webpages can you find where absolutely every element is just stacked one on top of another?
+
+Learning to position elements on a webpage is not that difficult once you understand just a few key concepts. Unfortunately, many learners race through learning HTML and CSS to get to JavaScript and end up missing these fundamental concepts. This leads to frustration, pain, (and funny gifs) because all the JavaScript skills in the world are meaningless if you can’t stick your elements on the page where you need them to be.
+
+Lesson Overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+You’ll learn all about the box model.
+You’ll learn how to make sure elements are just the right size with margin, padding, and borders
+For a more interactive explanation and example, try the following Scrim (let us know what you think of these):
+
+
+The Box Model
+The first important concept that you need to understand to be successful in CSS is the box model. It isn’t complicated, but skipping over it now will cause you much frustration down the line.
+
+Every single thing on a webpage is a rectangular box. These boxes can have other boxes in them and can sit alongside one another. You can get a rough idea of how this works by sticking a border on every item on the page like this:
+Notice how on border there are 3 different key-values.
+* {
+  border: 2px solid red;
+}
+boxes
+
+You can use the browser’s inspector to add the CSS above to this web page if you want. Boxes in boxes!
+
+lines
+
+OK, so there might be some circles in the above image… but when it comes to layout, they fit together like rectangular boxes and not circles. In the end, laying out a webpage and positioning all its elements is deciding how you are going to nest and stack these boxes.
+
+The only real complication here is that there are many ways to manipulate the size of these boxes, and the space between them, using padding, margin, and border. The assigned articles go into more depth on this concept, but to sum it up briefly:
+
+padding increases the space between the border of a box and the content of the box.
+margin increases the space between the borders of a box and the borders of adjacent boxes.
+border adds space (even if it’s only a pixel or two) between the margin and the padding.
+Be sure to study the diagrams carefully.
+
+the box model
+
+Assignment
+This video is a straightforward overview of the box model, padding and margin. Go ahead and watch this now; it informs everything else.
+https://www.youtube.com/watch?v=rIO5326FgPE
+Because the box model concept is so incredibly fundamental, let’s dig a bit deeper with this lesson from MDN. It covers the same material as the video above and will introduce you to inline boxes that we will explore in the next lesson. Pay close attention to the examples and take the time to experiment with their in-browser editor!
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
+This CSS Tricks page has some further information about the margin property that you’ll find useful. Specifically, the sections about auto and margin collapsing contain things you’ll want to know.
+https://css-tricks.com/almanac/properties/m/margin/
+Knowledge Check
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+From inside to outside, what is the order of box-model properties?
+content, padding, border, margin
+
+What does the box-sizing CSS property do?
+sets how the total width and height of an element is calculated. 
+
+What is the difference between the standard and alternative box model?
+Standard box model, default, the size of the border and padding is added to the width and height of the box. 
+But it is inconvenient to calculate the box size after adding the border and padding to the content box. 
+That’s why the alternative box model, the height and width are applied to the box, including the border and padding. 
+Note that the margin is outside the box.
+
+.box { <!-- standard box model, content-box -->
+    height: 500px;
+    width: 800px;
+    border: 1px solid red;
+    padding: 15px;
+    margin: 25px;
+}
+The height and width of the above box as calculated by the standard model is:
+Height = 500 + 15 + 15 + 1 + 1 = 532px
+Width  = 800 + 15 + 15 + 1 + 1 = 832px
+
+The height and width of the above content box as calculated by the alternative model is:
+Height = 500 - 15 - 15 - 1 - 1 = 468px
+Width  = 800 - 15 - 15 - 1 - 1 = 768p
+
+To convert same box size from box-sizing: content-box to border box,
+add 2x padding + 2x border to border-box:
+content-box width: 240px
+content-box height: 100px
+content-box padding: 20px
+content-box border: 2 px
+border-box width: 240 + 2x20 + 2x2 = 284px
+border-box height 100 + 2x20 + 2x2 = 144px
+
+Regarding margins, if only one value is defined, this sets all four margins to the same value. 
+If two values are declared, it is [top-and-bottom] [left-and-right];.
+If three values are declared, it is: [top] [left-and-right] [bottom];.
+If four values are declared, it is [top]] [right] [bottom] [left];.
+
+Any of the individual margins can be declared using longhand, in which case you would define only one value per property:
+.box {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+Would you use margin or padding to create more space between 2 elements?
+Margin
+
+Would you use margin or padding to create more space between the contents of an element and its border?
+Padding
+
+Would you use margin or padding if you wanted two elements to overlap each other?
+Margin
+
+How do you set the alternative box model for all of your elements?
+* {
+    box-sizing: border-box;
+}
+
+How do you center an element horizontally?
+p { 
+  text-align: center;
+}
+
+Margin Collapse
+In the box model margins between two different elements will collapse. This means that if two elements that are siblings in the HTML both have a margin they will collapse so that only the largest of the two margins is used between the elements. 
+
+Remember comments in html: <!-- comment -->
+Remember comments in css: /* comment */
 
 ## Block and Inline
 
