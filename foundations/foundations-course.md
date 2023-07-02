@@ -856,7 +856,141 @@ In the box model margins between two different elements will collapse. This mean
 Remember comments in html: <!-- comment -->
 Remember comments in css: /* comment */
 
+Absolute Units
+Pixels (px)
+
+Relative Units:
+Percentages (%)
+Viewport-based units (vw, wh)
+Rems (rem) vs ems (em)
+Character units (ch)
+
+Rarely used Absolute:
+Centimeters (cm)
+Millimeter (mm)
+Inches (in)
+Point (pt)
+Pica (pc)
+
+Rarely used Relative:
+Relative to x-height of current font
+Relative to width of the "0" (zero) character ((ex))
+Relative to 1% of viewport smaller dimension (vmin)
+Relative to 1% of viewport larger dimension (vmax)
+
 ## Block and Inline
+
+
+In the previous lesson, we discovered that different display types have unique box models, and we can modify the box calculation by changing the display property. CSS has two box types: block and inline boxes, which determine element behavior and interaction. The display property controls how HTML elements appear on the webpage. We will explore its various options further in this lesson.
+
+Lesson Overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+You’ll learn about “Normal flow”.
+You’ll learn the difference between block and inline elements.
+You’ll learn which elements default to block and which elements default to inline.
+You’ll learn what divs and spans are.
+For a more interactive explanation and example, try the following Scrim (let us know what you think of these):
+
+
+Block vs Inline
+Most of the elements that you have learned about so far are block elements. In other words, their default style is display: block. By default, block elements will appear on the page stacked atop each other, each new element starting on a new line.
+
+Inline elements, however, do not start on a new line. They appear in line with whatever elements they are placed beside. A clear example of an inline element is a link, or <a> tag. If you stick one of these in the middle of a paragraph of text, it will behave like a part of the paragraph. (Like this…) The link’s text will sit alongside other words in that paragraph. Additionally, padding and margin behave differently on inline elements. In general, you do not want to try to put extra padding or margin on inline elements.
+
+The middle ground inline-block
+Inline-block elements behave like inline elements, but with block-style padding and margin. display: inline-block is a useful tool to know about, but in practice, you’ll probably end up reaching for flexbox more often if you’re trying to line up a bunch of boxes. Flexbox will be covered in-depth in the next lesson.
+
+Divs and Spans
+We can’t talk about block and inline elements without discussing divs and spans. All the other HTML elements we have encountered so far give meaning to their content. For example, paragraph elements tell the browser to display the text it contains as a paragraph. Strong elements tell the browser which texts within are important and so on. Yet, divs and spans give no particular meaning to their content. They are just generic boxes that can contain anything.
+
+Having elements like this available to us is a lot more useful than it may first appear. We will often need elements that serve no other purpose than to be “hook” elements. We can give an id or class to target them for styling with CSS. Another use case we will face regularly is grouping related elements under one parent element to correctly position them on the page. Divs and spans provide us with the ability to do this.
+
+Div is a block-level element by default. It is commonly used as a container element to group other elements. Divs allow us to divide the page into different blocks and apply styling to those blocks.
+
+
+Span is an inline-level element by default. It can be used to group text content and inline HTML elements for styling and should only be used when no other semantic HTML element is appropriate.
+
+
+Assignment
+The concept of “Normal flow” is implied in the box-model resources, but isn’t laid out very specifically. Read “Normal Flow” from MDN to make sure you understand how elements lay themselves out by default.
+
+In the previous lesson, we discovered that different display types have unique box models, and we can modify the box calculation by changing the display property. CSS has two box types: block and inline boxes, which determine element behavior and interaction. The display property controls how HTML elements appear on the webpage. We will explore its various options further in this lesson.
+
+Lesson Overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+You’ll learn about “Normal flow”.
+You’ll learn the difference between block and inline elements.
+You’ll learn which elements default to block and which elements default to inline.
+You’ll learn what divs and spans are.
+For a more interactive explanation and example, try the following Scrim (let us know what you think of these):
+
+Block vs Inline
+Most of the elements that you have learned about so far are block elements. In other words, their default style is display: block. By default, block elements will appear on the page stacked atop each other, each new element starting on a new line.
+
+Inline elements, however, do not start on a new line. They appear in line with whatever elements they are placed beside. A clear example of an inline element is a link, or <a> tag. If you stick one of these in the middle of a paragraph of text, it will behave like a part of the paragraph. (Like this…) The link’s text will sit alongside other words in that paragraph. Additionally, padding and margin behave differently on inline elements. In general, you do not want to try to put extra padding or margin on inline elements.
+
+The middle ground inline-block
+Inline-block elements behave like inline elements, but with block-style padding and margin. display: inline-block is a useful tool to know about, but in practice, you’ll probably end up reaching for flexbox more often if you’re trying to line up a bunch of boxes. Flexbox will be covered in-depth in the next lesson.
+
+Divs and Spans
+We can’t talk about block and inline elements without discussing divs and spans. All the other HTML elements we have encountered so far give meaning to their content. For example, paragraph elements tell the browser to display the text it contains as a paragraph. Strong elements tell the browser which texts within are important and so on. Yet, divs and spans give no particular meaning to their content. They are just generic boxes that can contain anything.
+
+Having elements like this available to us is a lot more useful than it may first appear. We will often need elements that serve no other purpose than to be “hook” elements. We can give an id or class to target them for styling with CSS. Another use case we will face regularly is grouping related elements under one parent element to correctly position them on the page. Divs and spans provide us with the ability to do this.
+
+Div is a block-level element by default. It is commonly used as a container element to group other elements. Divs allow us to divide the page into different blocks and apply styling to those blocks.
+
+
+Span is an inline-level element by default. It can be used to group text content and inline HTML elements for styling and should only be used when no other semantic HTML element is appropriate.
+
+Assignment
+The concept of “Normal flow” is implied in the box-model resources, but isn’t laid out very specifically. Read “Normal Flow” from MDN to make sure you understand how elements lay themselves out by default.
+
+W3 schools’ “HTML Block and Inline Elements” has a description and a list of all the default block and inline elements.
+https://www.w3schools.com/html/html_blocks.asp
+
+The Digital Ocean tutorial “Inline vs Inline-block Display in CSS” has a couple of great examples that clarify the difference between inline and inline-block.
+https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
+
+Go to our CSS exercises repository and do “01-margin-and-padding-1” and “02-margin-and-padding-2” in the margin-and-padding directory.
+https://github.com/TheOdinProject/css-exercises
+
+Apply what you learned about the box model to improve the look of your Recipe page’s index.html homepage. Currently, it’s just a plain list, so get creative with layouts, colors, and styles to make your page uniquely captivating.
+Knowledge Check
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+What is the difference between a block element and an inline element?
+What is the difference between an inline element and an inline-block element?
+Is an h1 block or inline?
+Is button block or inline?
+Is div block or inline?
+Is span block or inline?
+Additional Resources
+This section contains helpful links to related content. It isn’t required, so consider it supplemental.
+
+This tutorial is a little dated at this point, but its examples are clear. The first 6 slides cover the material we’ve seen so far.
+Watch “this” simple short video on What does the term “Normal Flow” Mean In CSS
+W3 schools’ “HTML Block and Inline Elements” has a description and a list of all the default block and inline elements.
+The Digital Ocean tutorial “Inline vs Inline-block Display in CSS” has a couple of great examples that clarify the difference between inline and inline-block.
+Go to our CSS exercises repository and do “01-margin-and-padding-1” and “02-margin-and-padding-2” in the margin-and-padding directory.
+Apply what you learned about the box model to improve the look of your Recipe page’s index.html homepage. Currently, it’s just a plain list, so get creative with layouts, colors, and styles to make your page uniquely captivating.
+Knowledge Check
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+What is the difference between a block element and an inline element?
+What is the difference between an inline element and an inline-block element?
+Is an h1 block or inline?
+Is button block or inline?
+Is div block or inline?
+Is span block or inline?
+Additional Resources
+This section contains helpful links to related content. It isn’t required, so consider it supplemental.
+
+This tutorial is a little dated at this point, but its examples are clear. The first 6 slides cover the material we’ve seen so far.
+https://learnlayout.com/no-layout.html
+Watch “this” simple short video on What does the term “Normal Flow” Mean In CSS
+https://www.youtube.com/watch?v=nfXRw06FgK8
 
 # 06 Flexbox
 ## Introduction to Flexbox
