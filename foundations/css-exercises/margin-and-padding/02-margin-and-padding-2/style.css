@@ -7,21 +7,46 @@ body {
   width: 400px;
   background: #fff;
   margin: 16px auto;
+  padding: 8px;
 }
 
 .title {
   background: #e3f4ff;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+  padding: 8px;
 }
 
 .content {
   background: #e3f4ff;
+  margin-bottom: 8px;
+  padding: 16px 8px;
 }
 
 .button-container {
   background: #e3f4ff;
+  text-align: center;
+  padding: 8px;
 }
 
 button {
   background: white;
   border: 1px solid #eee;
+  display: block; /* only class with display type block */
+  margin: 0 auto;
+  padding: 8px 24px;  
 }
+
+/* 
+I had it looking mostly as expected but need to review:
+display: inline
+display: block 
+display: inline-block 
+particularly their effects.
+Also, how divs and spans relate to display models
+
+Assignment #1 Normal Flow from MDN was hard to follow.
+Also, complete Assignment #5 to improve Recipe project.
+The rest felt good, although needs more practice.
+*/
