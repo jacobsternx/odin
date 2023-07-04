@@ -117,7 +117,7 @@ The following command will set this configuration. Type (or copy & paste) this c
 
 git config --global core.editor "code --wait"
 
-With that done, you can now choose to use either git commit -m <your message here> or git commit to type your message with Visual Studio Code!
+With that done, you can now choose to use either git commit -m \<your message here> or git commit to type your message with Visual Studio Code!
 
 # 04 HTML Foundations
 ## Introduction to HTML and CSS
@@ -128,17 +128,17 @@ With that done, you can now choose to use either git commit -m <your message her
 
 type ! in blank vs-code html file:
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+\<!DOCTYPE html>
+\<html lang="en">
+\<head>
+    \<meta charset="UTF-8">
+    \<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    \<title>Document</title>
+\</head>
+\<body>
     
-</body>
-</html>
+\</body>
+\</html>
 
 The doctype’s purpose is to tell the browser what version of HTML it should use to render the document.
 The lang attribute specifies the language of the text content in that element and is mainly used for improving accessibility
@@ -148,33 +148,33 @@ If we didn’t include a title element, the webpage’s title would default to i
 
 ## Working with Text
 
-Paragraphs: <p></p>
-Headings: <h#></h#>, 1-6
-Bold text: <strong></strong>
+Paragraphs: \<p></p>
+Headings: \<h#> \</h#> 1-6
+Bold text: \<strong> \</strong>
 Italicized text: <em></em>, emphasis
 Nesting Elements is indent any elements that are within other elements, creating a parent and child relationship between them.
 Elements at the same level of nesting are considered to be siblings.
 Relationship among html elements: Newlines compressed into single space.
 Html comments: <!-- ... -->
 CSS comments: // and /* ... */
-Unordered lists: <ul><li></li></ul>, bullets
-Ordered lists: <ol><li></li></ol>, numbers
+Unordered lists: \<ul> \<li> \</li> \</ul>, bullets
+Ordered lists: \<ol> \<li> \</li> \</ol>, numbers
 
 Create folder odin-links-and-images with index.html to practice (I may've used another file.)
 Relative and absolute links and images
-Anchor to create links: <a> text </a>
-Absolute links: <a href="protocol://domain/path">text</a>
-Relative links: <a href="pages/about.html">text</a>
-Embedded Image links: <img src="images/image.jpg">, see alt text below
-Singleton or void elements are self-closing: <br>, <img>, ...
+Anchor to create links: \<a> text \</a>
+Absolute links: \<a href="protocol://domain/path">text \</a>
+Relative links: \<a href="pages/about.html">text \</a>
+Embedded Image links: \<img src="images/image.jpg">, see alt text below
+Singleton or void elements are self-closing: \<br>, \<img>, ...
 Parent directories: ../
 Every image element must also have an alt (alternative text) attribute, in case it cannot be loaded.
-alt attribute: <img src="image.png" alt="Odin Project">
-css inline: <h1 style="color: red; font-size: 40px;">text</h1>
+alt attribute: \<img src="image.png" alt="Odin Project">
+css inline: \<h1 style="color: red; font-size: 40px;">text\</h1>
 hexadecimal colors: red = #FF0000, blue = #0000FF
-<body style="background-color: #000; color: #FFFF;">
-<html lang='en'>
-<meta charset='UTF-8'>
+\<body style="background-color: #000; color: #FFFF;">
+\<html lang='en'>
+\<meta charset='UTF-8'>
 3 reserved characters in HTML: &lt; &gt; and &amp;
 
 ## Commit Messages
@@ -213,7 +213,7 @@ Iteration 2: Recipe Page
     Create a new directory within the odin-recipes directory and name it recipes.
     Create a new HTML file within the recipes directory and name it after the recipe it will contain. For example lasagna.html. You can use the name of your favorite dish or, if you need some inspiration, you can find a recipe to use here.
     For now, just include an h1 heading with the recipe’s name as its content.
-    Back in the index.html file, add a link to the recipe page you just created. Example: Under the <h1>Odin Recipes</h1> heading, write out the link like so: <a href="recipes/recipename.html">Recipe Title</a>. The text of the link should again be the recipe name.
+    Back in the index.html file, add a link to the recipe page you just created. Example: Under the \<h1>Odin Recipes \</h1> heading, write out the link like so: \<a href="recipes/recipename.html">Recipe Title \</a>. The text of the link should again be the recipe name.
 
 Iteration 3: Recipe Page Content
 Your new recipe page should have the following content:
@@ -237,7 +237,7 @@ Many CSS properties take "length" values, such as width, margin, padding, font-s
 Length is a number followed by a length unit, such as 10px, 2em, etc.
 Note: Whitespace cannot appear between the number and the unit. However, if the value is 0, the unit can be omitted.
 
-div.bold-text  font-weight: 700; }
+div.bold-text  font-weight: 700;
 
 Universal Selector
 * {	color: purple; } //applies to all elems
@@ -247,14 +247,14 @@ Type (element) selector will select all elements of the given element type:
 div { color: white} //applies to all divs
 
 Class selectors select all elements with the given class, HTML element attribute.
-<div class="alert-text"> Text </div>
+\<div class="alert-text"> Text \</div>
 .alert-text { color: red; } //applies to all alert-text class elems
 Note syntax for class selectors: a period followed by value of class attribute. 
 You can also add multiple classes to a single element as a space-separated list, such as class="alert-text severe-alert". 
 
 ID Selectors
 Similar to class selectors, select an element with given ID, another HTML attribute:
-<div id="title">My Awesome 90's Page</div>
+\<div id="title">My Awesome 90's Page\</div>
 /* styles.css */
 #title {  background-color: red; }
 Instead of a period, use a hashtag followed by the value of the ID attribute. 
@@ -288,20 +288,20 @@ Both our .read and .unread selectors share the color: white; and background-colo
 Chaining Selectors
 Can also chain selectors as a list without any separation:
 
-<div>
-  <div class="subsection header">Latest Posts</div>
-  <p class="subsection preview">This is where a preview for a post might go.</p>
-</div>
+\<div>
+  \<div class="subsection header">Latest Posts</div>
+  \<p class="subsection preview">This is where a preview for a post might go.</p>
+\</div>
 
 Two elements with the subsection class that have some sort of unique styles. If we only want to apply a separate rule to the element that also has header as a second class, we could chain both the class selectors together in our CSS like so:
 .subsection.header { color: red; }
 Selects any element that has both the subsection and header classes. Notice how there isn’t any space between the .subsection and .header class selectors. This syntax basically works for chaining any combination of selectors, except for chaining more than one type selector.
 
 This can also be used to chain a class and an ID, as shown below:
-<div>
-  <div class="subsection header">Latest Posts</div>
-  <p class="subsection" id="preview">This is where a preview for a post might go.</p>
-</div>
+\<div>
+  \<div class="subsection header">Latest Posts</div>
+  \<p class="subsection" id="preview">This is where a preview for a post might go.</p>
+\</div>
 
 You can take the two elements above and combine them with the following:
 .subsection.header { color: red; }
@@ -317,14 +317,14 @@ So something like .ancestor .child would select an element with the class child 
 
 .ancestor .contents {  /* some declarations */ }
 
-<div class="ancestor"> <!-- A -->
-  <div class="contents"> <!-- B -->
-    <div class="contents"> <!-- C -->
-    </div>
-  </div>
-</div>
+\<div class="ancestor"> <!-- A -->
+  \<div class="contents"> <!-- B -->
+    \<div class="contents"> <!-- C -->
+    \</div>
+  \</div>
+\</div>
 
-<div class="contents"></div> <!-- D -->
+\<div class="contents"></div> <!-- D -->
 
 In the above example, the first two elements with the contents class (B and C) would be selected, but that last element (D) won’t be. 
 There’s no limit to how many combinators you can add to a rule, so .one .two .three .four would be totally valid. This would just select an element that has a class of four if it has an ancestor with a class of three, and if that ancestor has its own ancestor with a class of two, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
@@ -350,8 +350,8 @@ text-align: center
 By default, an <img> element’s height and width values will be the same as the actual image file’s height and width. If you wanted to adjust the size of the image without causing it to lose its proportions, you would use a value of “auto” for the height property and adjust the width value:
 
 img {
-  height: auto;
-  width: 500px; 
+  \height: auto;
+  \width: 500px; 
 }
 For example, if an image’s original size was 500px height and 1000px width, using the above CSS would result in a height of 250px. It’s best to include both of these properties for <img> elements, even if you don’t plan on adjusting the values from the image file’s original ones. When these values aren’t included, if an image takes longer to load than the rest of the page contents, the image won’t take up any space on the page at first, but will suddenly cause a drastic shift of the other page contents once it does load in. Explicitly stating a height and width prevents this from happening, as space will be “reserved” on the page and will just appear as a blank space until the image loads.
 
@@ -378,17 +378,17 @@ Specificity will only be taken into account when an element has multiple, confli
 Let’s take a look at a few quick examples to visualize how specificity works. Consider the following HTML and CSS code:
 
 <!-- index.html -->
-<div class="main">
-  <div class="list subsection"></div>
-</div>
+\<div class="main">
+  \<div class="list subsection"></div>
+\</div>
 
 /* rule 1 */
-.subsection {
-  color: blue;
+\.subsection {
+  \color: blue;
 }
 /* rule 2 */
-.main .list {
-  color: red;
+\.main .list {
+  \color: red;
 }
 
 In the example above, both rules are using only class selectors, but rule 2 is more specific because it is using more class selectors, so the color: red; declaration would take precedence.
@@ -396,9 +396,9 @@ In the example above, both rules are using only class selectors, but rule 2 is m
 Now, let’s change things a little bit:
 
 <!-- index.html -->
-<div class="main">
-  <div class="list" id="subsection"></div>
-</div>
+\<div class="main">
+  \<div class="list" id="subsection"></div>
+\</div>
 
 /* rule 1 */
 #subsection {
@@ -473,18 +473,18 @@ The exception to this is when directly targeting an element, as this always beat
 
 <!-- index.html -->
 
-<div id="parent">
-  <div class="child"></div>
-</div>
+\<div id="parent">
+  \<div class="child"></div>
+\</div>
 
 /* styles.css */
 
 #parent {
-  color: red;
+  \color: red;
 }
 
 .child {
-  color: blue;
+  \color: blue;
 }
 
 Despite the parent element having a higher specificity with an ID, the child element would have the color: blue style applied since that declaration directly targets it, while color: red from the parent is only inherited.
@@ -506,7 +506,7 @@ Really simply, actually. Whichever rule was the last defined is the winner.
 
 For an element that has both the alert and warning classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the .warning rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
 
-**Assignment
+###Assignment
 
     Go back to our CSS exercises repository and finish the last exercise 06-cascade-fix.
 
@@ -516,7 +516,7 @@ For an element that has both the alert and warning classes, the cascade would ru
 
     We haven’t covered how to use a custom font for the font-family property yet, so for now take a look at CSS Fonts for a list of generic font families to use, and CSS Web Safe Fonts for a list of fonts that are web safe. Web safe means that these are fonts that are installed on basically every computer or device (but be sure to still include a generic font family as a fallback).
 
-**Knowledge Check
+###Knowledge Check
 
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
@@ -539,21 +539,21 @@ External CSS
 External CSS is the most common method you will come across, and it involves creating a separate file for the CSS and linking it inside of an HTML’s opening and closing <head> tags with a self-closing <link> element:
 
 <!-- index.html -->
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
+\<head>
+  \<link rel="stylesheet" href="styles.css">
+\</head>
 
 /* styles.css */
-div {
-  color: white;
-  background-color: black;
+\div {
+  \color: white;
+  \background-color: black;
 }
 
-p {
-  color: red;
+\p {
+  \color: red;
 }
 
-First, we add a self-closing <link> element inside of the opening and closing <head> tags of the HTML file. The href attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. In our example above, we are assuming both files are located in the same directory. The rel attribute is required, and it specifies the relationship between the HTML file and the linked file.
+First, we add a self-closing \<link> element inside of the opening and closing \<head> tags of the HTML file. The href attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. In our example above, we are assuming both files are located in the same directory. The rel attribute is required, and it specifies the relationship between the HTML file and the linked file.
 
 Then inside of the newly created styles.css file, we have the selector (the div and p), followed by a pair of opening and closing curly braces, which create a “declaration block”. Finally, we place any declarations inside of the declaration block. color: white; is one declaration, with color being the property and white being the value, and background-color: black; is another declaration.
 
@@ -566,32 +566,31 @@ A couple of the pros to this method are:
 
 Internal CSS
 
-Internal CSS (or embedded CSS) involves adding the CSS within the HTML file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing <style> tags, which are then placed inside of the opening and closing <head> tags of your HTML file. Since the styles are being placed directly inside of the <head> tags, we no longer need a <link> element that the external method requires.
+Internal CSS (or embedded CSS) involves adding the CSS within the HTML file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing \<style> tags, which are then placed inside of the opening and closing \<head> tags of your HTML file. Since the styles are being placed directly inside of the \<head> tags, we no longer need a \<link> element that the external method requires.
 
 Besides these differences, the syntax is exactly the same as the external method (selector, curly braces, declarations):
 
-<head>
-  <style>
-    div {
-      color: white;
-      background-color: black;
+\<head>
+  \<style>
+    \div {
+      \color: white;
+      \background-color: black;
     }
-
-    p {
-      color: red;
+    \p {
+      \color: red;
     }
-  </style>
-</head>
-<body>...</body>
+  \</style>
+\</head>
+\<body>...</body>
 
 This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the HTML file to get pretty big.
 Inline CSS
 
 Inline CSS makes it possible to add styles directly to HTML elements, though this method isn’t as recommended:
 
-<body>
-  <div style="color: white; background-color: black;">...</div>
-</body>
+\<body>
+  \<div style="color: white; background-color: black;">...</div>
+\</body>
 
 The first thing to note is that we don’t actually use any selectors here, since the styles are being added directly to the opening <div> tag itself. Next, we have the style= attribute, with its value within the pair of quotation marks being the declarations.
 
@@ -601,7 +600,7 @@ If you need to add a unique style for a single element, this method can work jus
     If you want many elements to have the same style, you would have to copy + paste the same style to each individual element, causing lots of unnecessary repetition and more bloat.
     Any inline CSS will override the other two methods, which can cause unexpected results. (While we won’t dive into it here, this can actually be taken advantage of).
 
-###Assignment
+### Assignment
 
     Go to our CSS exercises repository, read the README, and only do the exercises in the foundations directory in the order they’re listed, starting with 01-css-methods and ending with 06-cascade-fix.
 
@@ -611,17 +610,17 @@ If you need to add a unique style for a single element, this method can work jus
 
     We haven’t covered how to use a custom font for the font-family property yet, so for now take a look at CSS Fonts for a list of generic font families to use, and CSS Web Safe Fonts for a list of fonts that are web safe. Web safe means that these are fonts that are installed on basically every computer or device (but be sure to still include a generic font family as a fallback).
 
-###Knowledge Check
+### Knowledge Check
 
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
-**  What are the main differences between external, internal, and inline CSS?
+> What are the main differences between external, internal, and inline CSS?
 
 inline: least maintainable, ugliest, highest selectability precedence.
 internal: css in html header, so does not separate style from content.
 external: most maintainable, separates style from content, best.
 
-**  What is the syntax for class and ID selectors?
+>  What is the syntax for class and ID selectors?
 
 <!-- styles.css -->
 #top {
@@ -631,11 +630,10 @@ external: most maintainable, separates style from content, best.
     color: red;
 }
 /* index.html */
-<div id="top">
-<p class="intro">This is my recipe for chocolate</p>
+\<div id="top">
+\<p class="intro">This is my recipe for chocolate</p>
 
-
-** How would you apply a single rule to two different selectors?
+> How would you apply a single rule to two different selectors?
 
 div, p { color: #f00; }
 
@@ -649,7 +647,7 @@ This style applies to any paragraph with the class attribute of red and any elem
 
 You can group any number of selectors.
 
-**  Given an element with an id of title and a class of primary, how would you use both attributes for a single rule?
+> Given an element with an id of title and a class of primary, how would you use both attributes for a single rule?
 
 #title, .primary { key:value }
 
@@ -906,9 +904,10 @@ rem is relative to the HTML (root) font-size and does not lead to a compounding 
 
 ## Block and Inline
 
+Introduction
 In the previous lesson, we discovered that different display types have unique box models, and we can modify the box calculation by changing the display property. CSS has two box types: block and inline boxes, which determine element behavior and interaction. The display property controls how HTML elements appear on the webpage. We will explore its various options further in this lesson.
 
-Lesson Overview
+#### Lesson Overview
 This section contains a general overview of topics that you will learn in this lesson.
 
 You’ll learn about “Normal flow”.
@@ -917,40 +916,42 @@ You’ll learn which elements default to block and which elements default to inl
 You’ll learn what divs and spans are.
 For a more interactive explanation and example, try the following Scrim (let us know what you think of these):
 
-Block vs Inline
+### Block vs Inline
 Most of the elements that you have learned about so far are block elements. In other words, their default style is display: block. By default, block elements will appear on the page stacked atop each other, each new element starting on a new line.
 
-Inline elements, however, do not start on a new line. They appear in line with whatever elements they are placed beside. A clear example of an inline element is a link, or <a> tag. If you stick one of these in the middle of a paragraph of text, it will behave like a part of the paragraph. (Like this…) The link’s text will sit alongside other words in that paragraph. Additionally, padding and margin behave differently on inline elements. In general, you do not want to try to put extra padding or margin on inline elements.
+Inline elements, however, do not start on a new line. They appear in line with whatever elements they are placed beside. A clear example of an inline element is a link, or \<a> tag. If you stick one of these in the middle of a paragraph of text, it will behave like a part of the paragraph. (Like this…) The link’s text will sit alongside other words in that paragraph. Additionally, padding and margin behave differently on inline elements. In general, you do not want to try to put extra padding or margin on inline elements.
 
-The middle ground inline-block
+### The middle ground inline-block
 Inline-block elements behave like inline elements, but with block-style padding and margin. display: inline-block is a useful tool to know about, but in practice, you’ll probably end up reaching for flexbox more often if you’re trying to line up a bunch of boxes. Flexbox will be covered in-depth in the next lesson.
 
 Another common display value is none. Some specialized elements such as script use this as their default. It is commonly used with JavaScript to hide and show elements without really deleting and recreating them.
 
 Also, display-type: flex will be discussed later, and there are many more.
 
-Divs and Spans
+### Divs and Spans
 We can’t talk about block and inline elements without discussing divs and spans. All the other HTML elements we have encountered so far give meaning to their content. For example, paragraph elements tell the browser to display the text it contains as a paragraph. Strong elements tell the browser which texts within are important and so on. Yet, divs and spans give no particular meaning to their content. They are just generic boxes that can contain anything.
 
 Having elements like this available to us is a lot more useful than it may first appear. We will often need elements that serve no other purpose than to be “hook” elements. We can give an id or class to target them for styling with CSS. Another use case we will face regularly is grouping related elements under one parent element to correctly position them on the page. Divs and spans provide us with the ability to do this.
 
-<div> is a block-level element by default. It is commonly used as a container element to group other elements. Divs allow us to divide the page into different blocks and apply styling to those blocks.
+\<div> is a block-level element by default. It is commonly used as a container element to group other elements. Divs allow us to divide the page into different blocks and apply styling to those blocks.
 
-<span> is an inline-level element by default. It can be used to group text content and inline HTML elements for styling and should only be used when no other semantic HTML element is appropriate.
+\<span> is an inline-level element by default. It can be used to group text content and inline HTML elements for styling and should only be used when no other semantic HTML element is appropriate.
 
-Assignment
+### Assignment
+
 The concept of “Normal flow” is implied in the box-model resources, but isn’t laid out very specifically. Read “Normal Flow” from MDN to make sure you understand how elements lay themselves out by default.
 
 W3 schools’ “HTML Block and Inline Elements” has a description and a list of all the default block and inline elements.
 https://www.w3schools.com/html/html_blocks.asp
 A block-level element always takes up the full width available (stretches out to the left and right as far as it can).
-Some commonly used block elements are: <h1> <p> <header> <footer> and <div>.
+Some commonly used block elements are: \<h1> \<p> \<header> \<footer> and \<div>.
 An inline element does not start on a new line.
 An inline element only takes up as much width as necessary.
-Some commonly used inline elements are: <a> <button> <code> <em> <img> <span> and <script>.
+Some commonly used inline elements are: \<a> \<button> \<code> \<em> \<img> \<span> and \<script>.
+
 Note: An inline element cannot contain a block-level element!
 
->You have left and right margin defined at auto right now so it's currently centered. You can set margin-left: auto; for it to be right-aligned, and do the opposite for it to be left-aligned.
+> You have left and right margin defined at auto right now so it's currently centered. You can set margin-left: auto; for it to be right-aligned, and do the opposite for it to be left-aligned.
 
 The Digital Ocean tutorial “Inline vs Inline-block Display in CSS” has a couple of great examples that clarify the difference between inline and inline-block.
 https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
@@ -962,7 +963,7 @@ https://github.com/TheOdinProject/css-exercises
 
 Apply what you learned about the box model to improve the look of your Recipe page’s index.html homepage. Currently, it’s just a plain list, so get creative with layouts, colors, and styles to make your page uniquely captivating.
 
-Knowledge Check
+### Knowledge Check
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
 What is the difference between a block element and an inline element?
@@ -978,13 +979,12 @@ inline
 Is span block or inline?
 inline
 
-Additional Resources
+### Additional Resources
 This section contains helpful links to related content. It isn’t required, so consider it supplemental.
 
 This tutorial is a little dated at this point, but its examples are clear. The first 6 slides cover the material we’ve seen so far.
 Watch “this” simple short video on What does the term “Normal Flow” Mean In CSS
 https://learnlayout.com/no-layout.html
-
 
 # 06 Flexbox
 ## Introduction to Flexbox
@@ -1030,17 +1030,3 @@ https://learnlayout.com/no-layout.html
 
 # 08 Conclusion
 ## Choose Your Path Forward
-<<<<<<< HEAD:foundations/foundations-course.md
-=======
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 70426037ef7581403bc81cf1b68ca56b1397388f:full-stack/odin-foundations-course.md
