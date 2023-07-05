@@ -37,16 +37,3 @@ button {
   margin: 0 auto;
   padding: 8px 24px;  
 }
-
-/*
-I had this looking mostly as expected but need to review:
-display: inline
-display: block 
-display: inline-block 
-particularly their effects.
-Also, how divs and spans relate to display models
-
-Assignment #1 Normal Flow from MDN was hard to follow.
-Also, complete Assignment #5 to improve Recipe project.
-The rest felt good, although needs more practice.
-*/

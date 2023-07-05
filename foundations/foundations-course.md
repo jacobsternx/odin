@@ -949,9 +949,11 @@ An inline element does not start on a new line.
 An inline element only takes up as much width as necessary.
 Some commonly used inline elements are: \<a> \<button> \<code> \<em> \<img> \<span> and \<script>.
 
-Note: An inline element cannot contain a block-level element!
+> An inline element cannot contain a block-level element!
 
-> You have left and right margin defined at auto right now so it's currently centered. You can set margin-left: auto; for it to be right-aligned, and do the opposite for it to be left-aligned.
+> You have left and right margin defined at auto so it's currently centered. You can set margin-left: auto; for it to be right-aligned, and do the opposite for it to be left-aligned.
+
+> Units do not need to be placed on 0 values.
 
 The Digital Ocean tutorial “Inline vs Inline-block Display in CSS” has a couple of great examples that clarify the difference between inline and inline-block.
 https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
@@ -980,11 +982,13 @@ Is span block or inline?
 inline
 
 ### Additional Resources
-This section contains helpful links to related content. It isn’t required, so consider it supplemental.
-
-This tutorial is a little dated at this point, but its examples are clear. The first 6 slides cover the material we’ve seen so far.
-Watch “this” simple short video on What does the term “Normal Flow” Mean In CSS
-https://learnlayout.com/no-layout.html
+I've learned and practiced enough to move forward but need to review:
+display: inline
+display: block 
+display: inline-block 
+particularly their effects.
+Also, how divs and spans relate to display models
+Also, Assignment #1 MDN Normal Flow was hard to follow
 
 # 06 Flexbox
 ## Introduction to Flexbox
