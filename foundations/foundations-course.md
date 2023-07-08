@@ -993,7 +993,106 @@ Also, Assignment #1 MDN Normal Flow was hard to follow
 # 06 Flexbox
 ## Introduction to Flexbox
 
+As you’ll learn, there are many ways to move elements around on a web page. New methods have been developed over the years and older things have fallen out of style. Flexbox is a relatively new way of manipulating elements in CSS, and its debut was revolutionary.
+
+Many resources put it near the end of their curriculum because it is somewhat new as a technology. But at this point, it has become the default way of positioning elements for many developers. Flexbox will be one of the most used tools in your toolbox, so why not learn it first?
+
+#### Lesson Overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+You will learn how to position elements using flexbox.
+You will learn about flex containers and flex items.
+You will learn how to create useful components and layouts that go beyond just stacking and centering items.
+Before We Get Started
+Flexbox layouts can get a little complicated. In a previous lesson, you learned how to inspect and debug things using your browser’s developer tools. Those tools will be crucial for you in the following lessons. If something isn’t behaving the way you expect, inspecting it in the developer tools should be your first step every time.
+
+Flexbox isn’t necessarily any more difficult than the other concepts that we’ve covered so far, but it does have a few more moving parts. It is going to be somewhat difficult to make use of any of the things you’re learning in these first lessons until you get to the end and can put it all together. As we go, do yourself a favor and play with all of the code examples.
+
+You will almost definitely need to come back and reference these lessons (or a couple of the resources we share with you) when you get to the assignments at the end of the section, but if you take your time and experiment with all the code examples we provide, you’ll know better where to look when that time comes.
+
+### Let’s Flex!
+Flexbox is a way to arrange items into rows or columns. These items will flex (i.e. grow or shrink) based on some simple rules that you can define. To get started, let’s look at a simple demonstration.
+
+We’ve embedded a lot of interactive examples in these lessons. Take your time to experiment with them as you go to cement the concepts in your mind!
+
+
+We’ll get into exactly what’s going on here soon enough. But for now, let’s uncomment the two flex related CSS declarations in the above Codepen by removing the /* and */ tags surrounding them, then check out the result.
+
+Comments prevent the browser from interpreting lines as code, and are wrapped between specific tags. CSS uses /*as an opening comment tag and */ as a closing comment tag, while HTML and JavaScript have their own syntax. Commented out lines of code can be ‘re-enabled’ simply by removing the comment tags surrounding the code.
+
+All 3 divs should now be arranged horizontally. If you resize the results frame with the “1x”, “.5x” and “.25x” buttons you’ll also see that the divs will ‘flex’. They will fill the available area and will each have equal width.
+
+If you add another div to the HTML, inside of .flex-container, it will show up alongside the others, and everything will flex to fit within the available area.
+
+If it’s hard to see what’s going on in the small embedded CodePen, feel free to click the “Edit on CodePen” or “Fork on CodePen” button. This will bring the example into a full-sized environment. Some of the later examples might especially benefit from doing this.
+
+For a more interactive explanation and example, try the following Scrim (let us know what you think of these):
+
+### Flex Containers and Flex Items
+As you’ve seen, flexbox is not just a single CSS property but a whole toolbox of properties that you can use to put things where you need them. Some of these properties belong on the flex container, while some go on the flex items. This is a simple yet important concept.
+
+A flex container is any element that has display: flex on it. A flex item is any element that lives directly inside of a flex container.
+
+==container-vs-child==
+
+Somewhat confusingly, any element can be both a flex container and a flex item. Said another way, you can also put display: flex on a flex item and then use flexbox to arrange its children.
+
+==nesting flex containers==
+
+Creating and nesting multiple flex containers and items is the primary way we will be building up complex layouts. The following image was achieved using only flexbox to arrange, size, and place the various elements. Flexbox is a very powerful tool.
+
+==complex example==
+
+Knowledge Check
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+What’s the difference between a flex container and a flex item?
+A flex container is any element that has display: flex on it. A flex item is any element that lives directly inside of a flex container. Any element can be both a flex container and a flex item.
+
+How do you create a flex item?
+Put element inside of a flex container
+
+flex property is a shorthand for flex-grow, flex-shrink, flex-basis. Its default value is 0 1 auto, which means
+flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+
+flex:1 is equivalent to flex: 1 1 0
+
+flex-basis: It specifies the ideal size for the items. Ideal means "assuming there is neither any extra space, nor any shortages of the space". 0% means we have no ideal size for them, we want them to be sized truely flexibly. We want them to be sized automatically(thus the word "flexible") based on the available space.
+
+flex-grow: After taking the flex-basis into consideration, if there's remaining extra space, it specifies how "that extra space"(notice we're not talking about the whole space) must be divided between the items. The ones with higher flex-grow will eat up more of the extra space. It makes sense to use an equal flex-grow on all items by default so that all items will have the same share of the extra space. When flex-basis is 0%, a flex-grow of 1 on all items makes them divide "the whole space of the container"(since flex-basis used no space, the extra space equals the whole space of the container).
+
+flex-shrink: After taking the flex-basis into consideration, if the available space is not enough, it specifies how "the shortage of space"(and again, not the whole space) must be divided(imposed on) among the items. The ones with higher flex-shrink will have to "endure" more of that shortage.
+
+### Additional Resources
+
+This Flexbox tutorial is a friendly tutorial for modern CSS layouts by Interneting Is Hard.
+https://internetingishard.netlify.app/html-and-css/flexbox/index.html
+
+summary
+Flexbox gave us a ton of amazing new tools for laying out a web page. Compare these techniques to what we were able to do with floats, and it should be pretty clear that flexbox is a cleaner option for laying out modern websites:
+
+Use display: flex; to create a flex container.
+Use justify-content to define the horizontal alignment of items.
+Use align-items to define the vertical alignment of items.
+Use flex-direction if you need columns instead of rows.
+Use the row-reverse or column-reverse values to flip item order.
+Use order to customize the order of individual elements.
+Use align-self to vertically align individual items.
+Use flex to create flexible boxes that can stretch and shrink.
+Remember that these flexbox properties are just a language that lets you tell browsers how to arrange a bunch of HTML elements. The hard part isn’t actually writing the HTML and CSS code, it’s figuring out, conceptually (on a piece of paper), the behavior of all the necessary boxes to create a given layout.
+
+When a designer hands you a mockup to implement, your first task is to draw a bunch of boxes on it and determine how they’re supposed to stack, stretch, and shrink to achieve the desired design. Once you’ve got that done, it should be pretty easy to code it up using these new flexbox techniques.
+
+The flexbox layout mode should be used for most of your web pages, but there are some things it’s not-so-good at, like gently tweaking element positions and preventing them from interacting with the rest of the page. After covering these kinds of advanced positioning techniques in the next chapter, you’ll be an HTML and CSS positioning expert.
+
+Files for this lesson in
+code/odin/flex/flexbox-is-hard
+Chrome dev tools flexbox editor/inspector
+
 ## Growing and Shrinking
+
 
 ## Axes
 
