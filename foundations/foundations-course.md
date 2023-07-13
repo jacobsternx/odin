@@ -1,14 +1,17 @@
-Foundations Course
+# Foundations Course
 
 Overview
 This is where it all begins! A hands-on introduction to all of the essential tools you'll need to build real, working websites. You'll learn what web developers actually do – the foundations you'll need for later courses.
 
-# 01 Introduction
+# 01 Introduction (5 training modules)
 ## How This Course Will Work
+NA
 
 ## Introduction to Web Development
+NA
 
 ## Motivation and Mindset
+NA
 
 ## Asking For Help
 
@@ -63,7 +66,7 @@ When you do ask a question, try to provide as much background detail as possible
 
 ## Join the Odin Community
 
-# 02 Prerequisites
+# 02 Prerequisites (7 modules)
 ## Computer Basics
 
 ## How Does the Web Work?
@@ -106,7 +109,7 @@ cat ~/.ssh/id_ed25519.pub
 
 Highlight and copy the output, which starts with ssh-ed25519 and ends with your email address. Now, go back to GitHub in your browser window and paste the key you copied into the key field. Keep the key type as Authentication Key and then, click Add SSH key.You’ve successfully added your SSH key!
 
-# 03 Git Basics
+# 03 Git Basics (2 modules)
 ## Introduction to Git
 
 ## Git Basics
@@ -119,7 +122,8 @@ git config --global core.editor "code --wait"
 
 With that done, you can now choose to use either git commit -m \<your message here> or git commit to type your message with Visual Studio Code!
 
-# 04 HTML Foundations
+
+# 04 HTML Foundations (7 modules, 1 project)
 ## Introduction to HTML and CSS
 
 ## Elements and Tags
@@ -228,7 +232,7 @@ Iteration 4: Add More Recipes
 
 To see some solutions, visit and scroll to the bottom to see links: https://www.theodinproject.com/lessons/foundations-recipes
 
-# 05 CSS Foundations
+# 05 CSS Foundations (5 modules)
 ## Intro to CSS
 
 The next step is to make that structure look good with some style, which is exactly what CSS is for.
@@ -506,7 +510,7 @@ Really simply, actually. Whichever rule was the last defined is the winner.
 
 For an element that has both the alert and warning classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the .warning rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
 
-###Assignment
+### Assignment
 
     Go back to our CSS exercises repository and finish the last exercise 06-cascade-fix.
 
@@ -990,7 +994,8 @@ particularly their effects.
 Also, how divs and spans relate to display models
 Also, Assignment #1 MDN Normal Flow was hard to follow
 
-# 06 Flexbox
+
+# 06 Flexbox (4 modules, 1 project)
 ## Introduction to Flexbox
 
 As you’ll learn, there are many ways to move elements around on a web page. New methods have been developed over the years and older things have fallen out of style. Flexbox is a relatively new way of manipulating elements in CSS, and its debut was revolutionary.
@@ -1091,6 +1096,7 @@ Files for this lesson in
 code/odin/flex/flexbox-is-hard
 Chrome dev tools flexbox editor/inspector
 
+
 ## Growing and Shrinking
 
 Let’s look a little closer at what actually happened when you put flex: 1 on those flex items in the last lesson.
@@ -1129,7 +1135,6 @@ The default shrink factor is flex-shrink: 1, which means all items will shrink e
 
 Here’s an example. Note that we’ve also changed the flex-basis for reasons that will be explained shortly. If you shrink your browser window you’ll notice that .two never gets smaller than the given width of 250px, even though the flex-grow rule would otherwise specify that each element should be equally sized.
 
-
 An important implication to notice here is that when you specify flex-grow or flex-shrink, flex items do not necessarily respect your given values for width. In the above example, all 3 divs are given a width of 250px, but when their parent is big enough, they grow to fill it. Likewise, when the parent is too small, the default behavior is for them to shrink to fit. This is not a bug, but it could be confusing behavior if you aren’t expecting it.
 
 #### Flex-Basis
@@ -1154,7 +1159,6 @@ This MDN Doc summarizes the entire flex shorthand values as well as introduces s
 https://developer.mozilla.org/en-US/docs/Web/CSS/flex
 
 Watch this interactive Scrim for an alternative explanation and demo of using flex-grow, flex-shrink and flex-basis in a real world scenario:
-
 
 ### Knowledge Check
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
@@ -1252,11 +1256,153 @@ Set the page's background color to red, by using an inline style.
 
 ## Axes
 
+Let’s see how the orientation of items within a flex container can be controlled using the flex-direction property.
+
+Lesson Overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+You’ll learn about the 2 “axes” of a flex container.
+You’ll learn how to change those axes to arrange your content in columns instead of rows.
+The most confusing thing about flexbox is that it can work either horizontally or vertically, and some rules change a bit depending on which direction you are working with.
+
+The default direction for a flex container is horizontal, or row, but you can change the direction to vertical, or column. The direction can be specified in CSS like so:
+
+.flex-container {
+  flex-direction: column;
+}
+
+### Axes
+No matter which direction you’re using, you need to think of your flex-containers as having 2 axes: the main axis and the cross axis. It is the direction of these axes that changes when the flex-direction is changed. In most circumstances, flex-direction: row puts the main axis horizontal (left-to-right), and column puts the main axis vertical (top-to-bottom).
+
+In other words, in our very first example, we put display: flex on a div and it arranged its children horizontally. This is a demonstration of flex-direction: row, the default setting. The following example is very similar. If you uncomment the line that says flex-direction: column, those divs will stack vertically.
+
+One thing to note is that in this example, flex-direction: column would not work as expected if we used the shorthand flex: 1. Try it out now (i.e. go change the flex value on the flex: 1 1 auto; line). Can you figure out why it does not work if flex: 1 is used? The divs collapse, even though they clearly have a height defined there.
+
+The reason for this is that the flex shorthand expands flex-basis to 0, which means that all flex-growing and flex-shrinking would begin their calculations from 0. Empty divs by default have 0 height, so for our flex items to fill up the height of their container, they don’t actually need to have any height at all.
+
+The example above fixed this by specifying flex: 1 1 auto, telling the flex items to default to their given height. We could also have fixed it by putting a height on the parent .flex-container, or by using flex-grow: 1 instead of the shorthand.
+
+Another detail to notice: when we changed the flex-direction to column, flex-basis refers to height instead of width. Given the context this may be obvious, but it’s something to be aware of.
+
+We’ve strayed from the point slightly… We were talking about flex-direction and axes. To bring it back home, the default behavior is flex-direction: row which arranges things horizontally. The reason this often works well without changing other details in the CSS is because block-level elements default to the full width of their parent. Changing things to vertical using flex-direction: column adds complexity because block-level elements default to the height of their content, and in this case there is no content.
+
+There are situations where the behavior of flex-direction could change if you are using a language that is written top-to-bottom or right-to-left, but you should save worrying about that until you are ready to start making a website in Arabic or Hebrew.
+
+For an interactive demo of how axes work with flexbox, check out this Scrim:
+
+### Knowledge Check
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+How do you make flex items arrange themselves vertically instead of horizontally?
+https://www.theodinproject.com/lessons/foundations-axes#flex-vertical
+
+In a column flex-container, what does flex-basis refer to?
+https://www.theodinproject.com/lessons/foundations-axes#column-flex-basis
+flex-direction: column, flex-basis refers to height.
+
+In a row flex-container, what does flex-basis refer to?
+https://www.theodinproject.com/lessons/foundations-axes#row-flex-basis
+flex-direction: row, flex-basis refers to width.
+
+Why do the previous two questions have different answers?
+https://www.theodinproject.com/lessons/foundations-axes#flex-axes
+The main axis shifts from horizontal to vertical between row and column basis.
+
+### Additional Resources
+This section contains helpful links to related content. It isn’t required, so consider it supplemental.
+
+This flexbox visual cheatsheet has some useful references to flex and its properties.
+https://flexbox.malven.co/
+The Chrome Flexbox Inspector also visually provides this.
+
+
 ## Alignment
+
+### Introduction
+So far everything we’ve touched with flexbox has used the rule flex: 1 on all flex items, which makes the items grow or shrink equally to fill all of the available space. Very often, however, this is not the desired effect. Flex is also very useful for arranging items that have a specific size.
+
+### Lesson Overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+You’ll learn how to align items inside a flex container both vertically and horizontally.
+
+### Alignment
+Let’s look at an example.
+
+You should be able to predict what happens if you put flex: 1 on the .item by now. Give it a shot before we move on!
+
+Adding flex: 1 to .item makes each of the items grow to fill the available space, but what if we wanted them to stay the same width, but distribute themselves differently inside the container? We can do this!
+
+Remove flex: 1 from .item and add justify-content: space-between to .container. Doing so should give you something like this:
+
+#### space between
+
+justify-content aligns items across the main axis. There are a few values that you can use here. You’ll learn the rest of them in the reading assignments, but for now try changing it to center, which should center the boxes along the main axis.
+
+To change the placement of items along the cross axis use align-items. Try getting the boxes to the center of the container by adding align-items: center to .container. The desired result looks like this:
+
+#### centered
+
+Because justify-content and align-items are based on the main and cross axis of your container, their behavior changes when you change the flex-direction of a flex-container. For example, when you change flex-direction to column, justify-content aligns vertically and align-items aligns horizontally. The most common behavior, however, is the default, i.e. justify-content aligns items horizontally (because the main axis defaults to horizontal), and align-items aligns them vertically. One of the biggest sticking points that beginners have with flexbox is confusion when this behavior changes.
+
+Check out this Scrim for an interactive demo of how justify-content and its different properties behave:
+
+This next Scrim covers the behavior of align-items, how to perfectly center an element on a page using flexbox and much more:
+
+### Gap
+One very useful feature of flex is the gap property. Setting gap on a flex container simply adds a specified space between flex items, similar to adding a margin to the items themselves. gap is a new property so it doesn’t show up in many resources yet, but it works reliably in all modern browsers, so it is safe to use and very handy! Adding gap: 8px to the centered example above produces the result below.
+
+There’s more for you to learn in the reading below, but at this point you can surely see how immensely useful flexbox is. With just the properties we’ve already covered, you could already put together some impressive layouts!
+
+Take your time going through the reading. There will be some review of the items we’ve already covered here, but it goes into more depth and touches on a few things that haven’t been mentioned yet. Don’t stress too much about trying to memorize every little detail yet; just code along with the examples and do your best to internalize everything that is possible with flexbox. You’ll have to reach for these resources again once you get to the practice exercises, but that’s perfectly acceptable. The more you use this stuff the better it will stick in your mind… and you will be using it constantly. Have fun!
+
+### Assignment
+This beautiful Interactive Guide to Flexbox covers everything you need to know. It will help reinforce concepts we’ve already touched on with some really fun and creative examples. Spend some time here, some of it should be review at this point, but the foundations here are important!
+https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
+
+Typical use cases of Flexbox is an MDN article that covers some more practical tips. Don’t skip the interactive sections! Playing around with this stuff is how you learn it!
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox
+
+The CSS Tricks “Guide to Flexbox” is a classic. There isn’t any new information for you here, but the images and examples are super helpful. This one is a great cheat sheet that you’ll probably return to often. (Keep it handy for the practice exercises!)
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+Go back to our CSS exercises repository (don’t forget that the instructions are in the README). Do the exercises in the ‘flex’ directory in the order that they are listed. It may take you a while to get through all of them, and the difficulty ramps up as you progress. Stick with it! If you can get through all of them, then you will be in really good shape moving forward.
+https://github.com/TheOdinProject/css-exercises
+01-flex-center
+02-flex-header
+03-flex-header-2
+04-flex-information
+05-flex-modal
+06-flex-layout
+07-flex-layout-2
+Knowledge Check
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+What is the difference between justify-content and align-items?
+How do you use flexbox to completely center a div inside a flex container?
+What’s the difference between justify-content: space-between and justify-content: space-around?
+Additional Resources
+This section contains helpful links to related content. It isn’t required, so consider it supplemental.
+
+Flexbox Froggy is a funny little game for practicing moving things around with flexbox.
+https://flexboxfroggy.com/
+
+Flexbox Zombies is another gamified take on flexbox. Free, but requires an account.
+https://mastery.games/flexboxzombies/
+
+The Basic Concepts of Flexbox article on MDN is another good starting point. There are helpful examples and interactive sections.
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+
+Aligning Items in a Flex Container goes into more depth on the topic of axes and align-items vs justify-content.
+This Flexbox Tutorial from freecodecamp is another decent resource.
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+
+Flexbox Crash Course is a nice resource by Traversy Media.
+https://www.youtube.com/watch?v=3YW65K6LcIA
 
 ## Project: Landing Page
 
-# 07 JavaScript Basics
+# 07 JavaScript Basics (12 modules, 3 projects)
 ## Fundamentals Part 1
 
 ## Fundamentals Part 2
