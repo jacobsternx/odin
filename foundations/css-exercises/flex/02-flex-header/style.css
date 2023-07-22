@@ -23,3 +23,21 @@ a {
   /* this removes the line under the links */
   text-decoration: none;
 }
+
+/* SOLUTION */
+
+.header  {
+  padding: 8px;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+ul {
+  display:flex;
+  /* why margin-padding add space? */
+  /* Hint: `ul`s have some default margin/padding to deal with. */
+  margin: 0;
+  padding: 0;
+  gap:8px;
+}

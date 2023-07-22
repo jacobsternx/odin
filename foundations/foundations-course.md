@@ -1315,6 +1315,16 @@ This flexbox visual cheatsheet has some useful references to flex and its proper
 https://flexbox.malven.co/
 The Chrome Flexbox Inspector also visually provides this.
 
+### Notes:
+flex:1 is equivalent to flex: 1 1 0.
+flex: auto; This is equivalent to flex: 1 1 auto.
+flex: none; This is equivalent to flex: 0 0 auto.
+flex-grow: 0 - the item will not expand to fill free space. 
+flex-shrink: 1 - it will shrink just as all other items. 
+flex-basis: auto - it will take up space defined by its own content.
+flex: 1. Can you figure out why it does not work if flex: 1 is used? The divs collapse, even though they clearly have a height defined there.
+
+One thing to note is that in this example, flex-direction: column would not work as expected if we used the shorthand flex: 1. Try it out now (i.e. go change the flex value on the flex: 1 1 auto; line). Can you figure out why it does not work if flex: 1 is used? The divs collapse, even though they clearly have a height defined there. The reason for this is that the flex shorthand expands flex-basis to 0, which means that all flex-growing and flex-shrinking would begin their calculations from 0. Empty divs by default have 0 height, so for our flex items to fill up the height of their container, they don’t actually need to have any height at all. The example above fixed this by specifying flex: 1 1 auto
 
 ## Alignment
 
@@ -1357,14 +1367,74 @@ There’s more for you to learn in the reading below, but at this point you can 
 Take your time going through the reading. There will be some review of the items we’ve already covered here, but it goes into more depth and touches on a few things that haven’t been mentioned yet. Don’t stress too much about trying to memorize every little detail yet; just code along with the examples and do your best to internalize everything that is possible with flexbox. You’ll have to reach for these resources again once you get to the practice exercises, but that’s perfectly acceptable. The more you use this stuff the better it will stick in your mind… and you will be using it constantly. Have fun!
 
 ### Assignment
-This beautiful Interactive Guide to Flexbox covers everything you need to know. It will help reinforce concepts we’ve already touched on with some really fun and creative examples. Spend some time here, some of it should be review at this point, but the foundations here are important!
+#### This beautiful Interactive Guide to Flexbox covers everything you need to know. It will help reinforce concepts we’ve already touched on with some really fun and creative examples. Spend some time here, some of it should be review at this point, but the foundations here are important!
 https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
 
-Typical use cases of Flexbox is an MDN article that covers some more practical tips. Don’t skip the interactive sections! Playing around with this stuff is how you learn it!
+We can change how children are distributed along the primary axis using the justify-content property:
+When it comes to the primary axis, we don't generally think in terms of aligning a single child. Instead, it's all about the distribution of the group.
+We can bunch all the items up in a particular spot (with flex-start, center, and flex-end), or we can spread them apart (with space-between, space-around, and space-evenly).
+For the cross axis, things are a bit different. We use the align-items property:
+It's interesting… With align-items, we have some of the same options as justify-content, but there isn't a perfect overlap.
+
+justify-content (main axis)
+space-between
+space-around
+space-evenly
+
+align-items (cross-axis)
+stretch
+baseline
+
+both (main and cross axis)
+flex-start
+center
+flex-end
+
+Unlike justify-content and align-items, align-self is applied to the child element, not the container. It allows us to change the alignment of a specific child along the cross axis:
+
+align-self has all the same values as align-items. In fact, they change the exact same thing. align-items is syntactic sugar, a convenient shorthand that automatically sets the alignment on all the children at once.
+
+When we're talking about alignment in the cross axis, each item can do whatever it wants. In the primary axis, though, we can only think about how to distribute the group.
+justify — to position something along the primary axis.
+align — to position something along the cross axis.
+content — a group of “stuff” that can be distributed.
+items — single items that can be positioned individually.
+
+We have justify-content to control the distribution of the group along the primary axis, and we have align-items to position each item individually along the cross axis. These are the two main properties we use to manage layout with Flexbox.
+
+flex-basis
+To put it simply: In a Flex row, flex-basis does the same thing as width. In a Flex column, flex-basis does the same thing as height.
+flex-basis is more of a suggestion than a hard constraint.
+
+Wrapping
+So far, all of our items have sat side-by-side, in a single row/column. The flex-wrap property allows us to change that.
+
+When we set flex-wrap: wrap, items won't shrink below their hypothetical size. At least, not when wrapping onto the next row/column is an option!df
+
+With flex-wrap: wrap, we no longer have a single primary axis line that can skewer each item. Effectively, each row acts as its own mini flex container.
+
+#### Typical use cases of Flexbox is an MDN article that covers some more practical tips. Don’t skip the interactive sections! Playing around with this stuff is how you learn it!
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox
 
-The CSS Tricks “Guide to Flexbox” is a classic. There isn’t any new information for you here, but the images and examples are super helpful. This one is a great cheat sheet that you’ll probably return to often. (Keep it handy for the practice exercises!)
+ Flex-basis of 0 allowing all of the space to be distributed evenly.
+
+#### The CSS Tricks “Guide to Flexbox” is a classic. There isn’t any new information for you here, but the images and examples are super helpful. This one is a great cheat sheet that you’ll probably return to often. (Keep it handy for the practice exercises!)
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+defines a flex container; inline or block depending on the given value, and enables flex context for all its direct children.
+  display: flex; /* or inline-flex */
+
+the order property controls the order in which they appear in the flex container.
+.item {
+  order: 5; /* default is 0 */
+
+Think of flex items as primarily laying out in horizontal rows or vertical columns.
+.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+
+
 
 Go back to our CSS exercises repository (don’t forget that the instructions are in the README). Do the exercises in the ‘flex’ directory in the order that they are listed. It may take you a while to get through all of them, and the difficulty ramps up as you progress. Stick with it! If you can get through all of them, then you will be in really good shape moving forward.
 https://github.com/TheOdinProject/css-exercises
