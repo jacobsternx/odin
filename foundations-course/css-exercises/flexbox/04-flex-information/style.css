@@ -24,3 +24,19 @@ img {
   justify-content: center;
   background: #eee;
 }
+
+/* SOLUTION */
+
+.plant {
+  display: flex;
+  direction: ltr;
+  inline-size: 200px;
+  padding: 10px;
+  border: 5px solid salmon;
+  justify-content: space-between;
+  gap: 52px;
+}
+.plant div {
+  padding: 10px;
+  border: 1px solid black;
+}
