@@ -38,9 +38,11 @@ body {
 .container {
   display: flex;
   justify-content: center;
+  border: 1px solid salmon;
   gap: 52px;
 }
 
 .info {
   max-width: 200px;
+  border: 1px solid dodgerblue;
 }

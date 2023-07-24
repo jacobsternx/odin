@@ -36,6 +36,8 @@ body {
 }
 
 .close-button {
+  display: flex;
+  flex-direction: row-reverse;
   background: #eee;
   border-radius: 50%;
   color: #888;
@@ -63,4 +65,27 @@ button.cancel {
   background: white;
   border: 1px solid #ddd;
   color: royalblue;
+}
+
+/* SOLUTION */
+
+.modal {
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+}
+
+
+.header {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.text {
+  margin-bottom: 16px;
+}
+
+.icon {
+  /* this keeps the icon from getting smashed by the text */
+  flex-shrink: 0;
 }

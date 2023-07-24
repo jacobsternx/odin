@@ -27,16 +27,22 @@ img {
 
 /* SOLUTION */
 
-.plant {
+body {
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 32px;
+}
+
+.container {
   display: flex;
-  direction: ltr;
-  inline-size: 200px;
-  padding: 10px;
-  border: 5px solid salmon;
-  justify-content: space-between;
+  border: 1px solid salmon;
+  justify-content: center;
   gap: 52px;
 }
-.plant div {
-  padding: 10px;
-  border: 1px solid black;
+
+.info {
+  max-width: 200px;
+  border: 1px solid dodgerblue;
 }
