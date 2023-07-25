@@ -30,7 +30,7 @@ input {
 /* SOLUTION */
 
 a {
-  /* this removes the line under our links */
+  /* removes line under links */
   text-decoration: none;
   color: #3c4142;
 }
@@ -42,7 +42,7 @@ a {
 ul {
   margin-top: 0;
   padding-left: 0;
-  /* this removes the dots on the list items*/
+  /* remove dots on list items*/
   list-style-type: none;
 }
 
@@ -50,9 +50,12 @@ input {
   flex-direction: column;
 }
 
-.header {
+.header, .footer {
   justify-content:space-between;
+  width:100%;
   padding: 8px;
+  margin-top: 0;
+  padding-left: 0;
 }
 
 .content {
@@ -64,18 +67,18 @@ input {
 .footer {
   justify-content:space-between;
   background-color: #eeeeee;
-  padding: 8px;
-  margin-top: auto;
+  position:fixed;
+  bottom: 0;
 }
 
 .left-links, .right-links {
   gap: 16px;
   color: #888;
+  margin: 10px;
 }
 
 .buttons {
-  align-items: center;
+  align-items: stretch;
   color: #888;
   gap: 32px;
-  border: 1px solid royalblue;
 }
