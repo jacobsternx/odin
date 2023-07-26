@@ -29,56 +29,61 @@ input {
 
 /* SOLUTION */
 
-a {
-  /* removes line under links */
-  text-decoration: none;
-  color: #3c4142;
-}
-
-.header, .content, .footer, ul {
+body {
   display: flex;
-}
-
-ul {
-  margin-top: 0;
-  padding-left: 0;
-  /* remove dots on list items*/
-  list-style-type: none;
-}
-
-input {
   flex-direction: column;
 }
 
-.header, .footer {
-  justify-content:space-between;
-  width:100%;
-  padding: 8px;
-  margin-top: 0;
-  padding-left: 0;
+button {
+  padding: 8px 16px;
 }
 
 .content {
+  display: flex;
   flex-direction: column;
+  flex: 1;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none; /* removes underline */
+  color: #666;
+}
+
+.header, .footer {
+  display: flex;
+  justify-content:space-between;
+  padding: 8px;
 }
 
 .footer {
-  justify-content:space-between;
-  background-color: #eeeeee;
-  position:fixed;
-  bottom: 0;
+  background: #eeee;
+}
+
+ul {
+  display: flex;
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none; /* remove dots */
+  gap: 16px
+}
+
+/* SOLUTION DOES NOT USE */
+/*
+.header, .footer {
+  width: 100%; 
+  position: fixed; 
+  margin-top: 0; 
+  padding-left: 0; 
+}
+
+.footer {
+  bottom: 0; 
 }
 
 .left-links, .right-links {
   gap: 16px;
-  color: #888;
   margin: 10px;
-}
-
-.buttons {
-  align-items: stretch;
-  color: #888;
-  gap: 32px;
-}
+} 
+*/
