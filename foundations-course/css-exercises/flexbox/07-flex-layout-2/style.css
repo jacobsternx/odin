@@ -27,3 +27,74 @@ body {
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
 }
+
+/* SOLUTION */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  display:flex;
+  flex-direction: column;
+  border: 3px solid #73AD21;
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  font-size: 32px;
+  font-weight: 900;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.middle-row {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+}
+
+.card-box {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 32px;
+  height:500px;
+  min-width: 664px;
+  border: hotpink 2px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: #eeee;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height:100%;
+  width: 300px;
+  color: white;
+  font-size: 24px;
+  text-decoration: none; /* remove underline */
+  padding: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  height: 180px;
+  width: 300px;
+}
