@@ -17,7 +17,6 @@ body {
 }
 
 .sidebar {
-  width: 300px;
   background: royalblue;
   box-sizing: border-box;
 }
@@ -38,12 +37,13 @@ body {
 ul {
   display:flex;
   flex-direction: column;
-  border: 3px solid #73AD21;
 }
 
 .parent {
   display: flex;
   flex-direction: column;
+  min-width: 996px;
+  max-width: 1296px;
 }
 
 .header {
@@ -58,18 +58,14 @@ ul {
 .middle-row {
   display: flex;
   flex-direction: row;
-  width: 1200px;
 }
 
 .card-box {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row;
   flex-wrap: wrap;
+  flex-flow: row wrap;
   margin: 32px;
-  height:500px;
-  min-width: 664px;
-  border: hotpink 2px;
 }
 
 .footer {
@@ -84,8 +80,8 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  height:100%;
-  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
   color: white;
   font-size: 24px;
   text-decoration: none; /* remove underline */
