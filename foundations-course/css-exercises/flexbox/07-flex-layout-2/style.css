@@ -17,6 +17,7 @@ body {
 }
 
 .sidebar {
+  width: 300px;
   background: royalblue;
   box-sizing: border-box;
 }
@@ -29,74 +30,59 @@ body {
 
 /* SOLUTION */
 
-a {
-  color: white;
-  text-decoration: none; /* remove underline */
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-}
-
-ul {
-  display:flex;
-  flex-direction: column;
-  list-style-type: none;
-}
-
-.parent {
   display: flex;
   flex-direction: column;
 }
 
 .header {
   display: flex;
-  flex-direction: row;
-  font-size: 32px;
-  font-weight: 900;
   align-items: center;
   padding-left: 16px;
+  font-size: 32px;
+  font-weight: 900;
 }
 
-.middle-row {
+.main-body {
   display: flex;
-  flex-direction: row;
+  flex: 1;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  padding: 16px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 16px;
+}
+
+a {
+  color: white;
+  text-decoration: none; /* remove underline */
+  font-size: 24px;
 }
 
 .card-box {
+  padding: 32px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  flex-flow: row wrap;
-  min-width: 1028px;
-  max-width: 1392px;
+}
+
+.card {
+  padding: 16px;
+  margin: 16px;
+  width: 300px;
 }
 
 .footer {
   display: flex;
-  flex-direction: column;
-  background: #eeee;
-  justify-content: center;
   align-items: center;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  min-width: 300px;
-  max-width: 300px;
-  color: white;
-  font-size: 24px;
-  padding: 16px;
-}
-
-.card {
-  display: flex;
-  flex-direction: row;
-  height: 180px;
-  width: 300px;
-  margin: 32px;
-  padding: 16px;
+  justify-content: center;
 }
