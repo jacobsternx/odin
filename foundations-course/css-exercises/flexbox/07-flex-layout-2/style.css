@@ -29,6 +29,11 @@ body {
 
 /* SOLUTION */
 
+a {
+  color: white;
+  text-decoration: none; /* remove underline */
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -37,13 +42,12 @@ body {
 ul {
   display:flex;
   flex-direction: column;
+  list-style-type: none;
 }
 
 .parent {
   display: flex;
   flex-direction: column;
-  min-width: 996px;
-  max-width: 1296px;
 }
 
 .header {
@@ -65,7 +69,8 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   flex-flow: row wrap;
-  margin: 32px;
+  min-width: 1028px;
+  max-width: 1392px;
 }
 
 .footer {
@@ -84,7 +89,6 @@ ul {
   max-width: 300px;
   color: white;
   font-size: 24px;
-  text-decoration: none; /* remove underline */
   padding: 16px;
 }
 
@@ -93,4 +97,6 @@ ul {
   flex-direction: row;
   height: 180px;
   width: 300px;
+  margin: 32px;
+  padding: 16px;
 }
