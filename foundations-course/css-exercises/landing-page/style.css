@@ -1,0 +1,135 @@
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  /*font-family: Roboto, sans-serif, monospace;*/
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  text-align: left;
+}
+
+img {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 16px;
+}
+
+a {
+  text-decoration: none; /* removes underline */
+  flex-direction: row;
+    color: orange;
+    font-size: 24px;
+  }
+  
+ul {
+  display: flex;
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none; /* remove dots */
+  gap: 16px
+}
+
+.row_1, .row_2, .row_3, .row_4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.row_2 {
+  padding: 32px;
+  flex-wrap: wrap;
+}
+
+.showcase {
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.showcase_1, .showcase_2, .showcase_3, .showcase_4 {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #eee;
+  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px;
+  width: 300px;
+}
+
+.header, .footer {
+  display:flex;
+  flex-direction: row;
+  font-size: 1.25em;
+  font-weight: 700;
+  padding: 8px;
+}
+
+.header {
+  justify-content: space-between;
+}
+
+.footer {
+  justify-content: center;
+}
+
+.dark {
+  background-color: #1F2937;
+  color: whitesmoke;
+}
+
+.quote {
+  font-size: 36px;
+  font-weight: light;
+  background-color: #E5E7EB;
+  color: #1F2937; 
+}
+
+.margin {
+  gap: 256px;
+}
+
+/*
+colors and font styles
+*/
+
+/*
+dark background color (header and footer)
+#1F2937
+
+Hero Main text ("this website is awesome")
+48px extra-bold #f9faf8
+
+Hero Secondary text, Header Link Text
+18px #E5E7EB
+
+Header Logo Text
+24px #F9FAF8
+*/
+
+/*
+Button color, call to action background color
+#3882F6
+
+information header text
+36px extra-bold #1F2937
+*/
+
+/*
+Quote section background color
+#E5E7EB
+
+Quote text
+36px light Italic #1F2937
+*/
