@@ -1,23 +1,15 @@
-.title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 32px;
-}
-
 body {
-  height: 100vh;
-  margin: 0;
+  display: flex;
   overflow: hidden;
-  /*font-family: Roboto, sans-serif, monospace;*/
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin: 0;
-  text-align: left;
+  /*https://github.com/necolas/normalize.css/issues/665 */
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  text-align: center;
+  min-width: 1280px;
 }
 
 img {
-  display: flex;
-  flex-direction: row;
-  width: 600px;
+  width: 100px;
+  height: 100px;
 }
 
 button {
@@ -28,9 +20,7 @@ button {
 
 a {
   text-decoration: none; /* removes underline */
-  flex-direction: row;
-    color: orange;
-    font-size: 24px;
+  color: inherit; /* inherit color from parent */
   }
   
 ul {
@@ -38,41 +28,40 @@ ul {
   margin-top: 0;
   padding-left: 0;
   list-style: none; /* remove dots */
-  gap: 16px
+  gap: 32px;
 }
 
-.row_1, .row_2, .row_3, .row_4 {
+.row-1 .row-2 .row-3 .row-4 {
   display: flex;
   flex-direction: column;
 }
 
-.row_2 {
-  padding: 32px;
+.row-2 {
   flex-wrap: wrap;
 }
 
-.showcase {
+.info-box-container {
+  display: flex;
   justify-items: center;
   justify-content: center;
   align-items: center;
+  padding: 48px;
 }
 
-.showcase_1, .showcase_2, .showcase_3, .showcase_4 {
+.info-box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
   padding: 16px;
   margin: 16px;
-  width: 300px;
+  width: 150px;
 }
 
 .header, .footer {
-  display:flex;
+  display: flex;
   flex-direction: row;
-  font-size: 1.25em;
-  font-weight: 700;
   padding: 8px;
 }
 
@@ -89,33 +78,79 @@ ul {
   color: whitesmoke;
 }
 
+.extended-header {
+
+}
+
+.extended-header-left {
+
+}
+
+.extended-header-right {
+
+}
+
 .quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 36px;
   font-weight: light;
   background-color: #E5E7EB;
-  color: #1F2937; 
+  color: #1F2937;
+  font-style: italic;
+  padding: 32 300;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.call-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  padding: 32 300;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.call-action-left {
+  color: inherit;
+  min-height: 200px;
+  max-height: 200px;
+  background-color: #3882F6;
+}
+
+.call-action-right {
+  color: inherit;
+  min-height: 200px;
+  max-height: 200px;
+  background-color: #3882F6;
 }
 
 .margin {
-  gap: 256px;
+  padding: 8px 200px;
 }
-
-/*
-colors and font styles
-*/
 
 /*
 dark background color (header and footer)
 #1F2937
 
+Header Logo Text
+24px #F9FAF8
+
+Quote section background color
+#E5E7EB
+Quote text
+36px light Italic #1F2937
+*/
+
+/*
 Hero Main text ("this website is awesome")
 48px extra-bold #f9faf8
 
 Hero Secondary text, Header Link Text
 18px #E5E7EB
-
-Header Logo Text
-24px #F9FAF8
 */
 
 /*
@@ -124,12 +159,4 @@ Button color, call to action background color
 
 information header text
 36px extra-bold #1F2937
-*/
-
-/*
-Quote section background color
-#E5E7EB
-
-Quote text
-36px light Italic #1F2937
 */
