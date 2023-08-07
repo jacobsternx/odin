@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap');
 
 html, body {
   height: 100%;
@@ -37,7 +37,6 @@ body {
 
 .close-button {
   display: flex;
-  flex-direction: row-reverse;
   background: #eee;
   border-radius: 50%;
   color: #888;
@@ -45,7 +44,6 @@ body {
   font-size: 16px;
   height: 24px;
   width: 24px;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -76,6 +74,10 @@ button.cancel {
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
   font-size: 1.25em;
   font-weight: 700;
 }
@@ -88,3 +90,9 @@ button.cancel {
   /* this keeps the icon from getting smashed by the text */
   flex-shrink: 0;
 }
+
+/*
+* {
+  border: 1px solid dodgerblue;
+}
+*/

@@ -5,24 +5,21 @@ body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   text-align: center;
   min-width: 1280px;
+  height: 100%;
 }
 
 img {
+  display: flex;
   width: 100px;
   height: 100px;
-}
-
-button {
-  display: flex;
-  flex-direction: row;
-  padding: 8px 16px;
+  margin: auto;
 }
 
 a {
   text-decoration: none; /* removes underline */
   color: inherit; /* inherit color from parent */
   }
-  
+
 ul {
   display: flex;
   margin-top: 0;
@@ -51,12 +48,13 @@ ul {
 .info-box {
   display: flex;
   flex-direction: column;
-  border: 1px solid #eee;
+  border: 4px solid #3882F6;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
-  border-radius: 4px;
+  border-radius: 16px;
   padding: 16px;
   margin: 16px;
-  width: 150px;
+  width: 160px;
+  height: 160px;
 }
 
 .header, .footer {
@@ -71,23 +69,12 @@ ul {
 
 .footer {
   justify-content: center;
+  padding: 24px;
 }
 
 .dark {
   background-color: #1F2937;
   color: whitesmoke;
-}
-
-.extended-header {
-
-}
-
-.extended-header-left {
-
-}
-
-.extended-header-right {
-
 }
 
 .quote {
@@ -109,6 +96,7 @@ ul {
   justify-content: center;
   align-items: center;
   color: whitesmoke;
+  border-radius: 25px;
   padding: 32 300;
   min-height: 300px;
   max-height: 300px;
@@ -128,10 +116,64 @@ ul {
   background-color: #3882F6;
 }
 
-.margin {
+/* improve this */
+.margin { 
   padding: 8px 200px;
 }
 
+.subheader {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+  color: inherit; /* inherit color from parent */ 
+  width: 480px;
+}
+
+.subheader-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 48px;
+  font-weight: bolder;
+}
+
+.subheader-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  color: #E5E7EB;
+}
+
+.subheader-image {
+  background: lavender;
+  width: 480x;
+  height: 310px;
+  /* flex-shrink: 0;  /* keeps icon from getting smashed by text */
+}
+
+button {
+  display: flex;
+  padding: 16px 16px;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+button.sign-up {
+  background: royalblue;
+  border: 1px solid royalblue;
+  color: white;
+  width: 100px;
+}
+
+/* TEST */
+* {
+  border: 4px solid #3882F6;
+}
 /*
 dark background color (header and footer)
 #1F2937
@@ -139,21 +181,17 @@ dark background color (header and footer)
 Header Logo Text
 24px #F9FAF8
 
-Quote section background color
-#E5E7EB
-Quote text
-36px light Italic #1F2937
-*/
-
-/*
 Hero Main text ("this website is awesome")
 48px extra-bold #f9faf8
 
 Hero Secondary text, Header Link Text
 18px #E5E7EB
-*/
 
-/*
+Quote section background color
+#E5E7EB
+Quote text
+36px light Italic #1F2937
+
 Button color, call to action background color
 #3882F6
 
