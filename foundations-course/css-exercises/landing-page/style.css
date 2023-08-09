@@ -1,6 +1,5 @@
 body {
   display: flex;
-  overflow: hidden;
   /*https://github.com/necolas/normalize.css/issues/665 */
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   text-align: center;
@@ -8,9 +7,7 @@ body {
 
 .landingpage {
   display: flex;
-  overflow: hidden;
-  min-width: 1280px;
-  max-height: 100%;
+  overflow: auto;
 }
 
 img {
@@ -38,7 +35,7 @@ ul {
   flex-direction: column;
 }
 
-.row-2 {
+.row-2 .row-4 {
   flex-wrap: wrap;
 }
 
@@ -96,30 +93,6 @@ ul {
   max-height: 300px;
 }
 
-.call-action {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: whitesmoke;
-  border-radius: 25px;
-  padding: 32 300;
-  min-height: 300px;
-  max-height: 300px;
-}
-
-.call-action-left {
-  color: inherit;
-  min-height: 200px;
-  max-height: 200px;
-  background-color: #3882F6;
-}
-
-.call-action-right {
-  color: inherit;
-  min-height: 200px;
-  max-height: 200px;
-  background-color: #3882F6;
-}
 
 /* improve this */
 .margin { 
@@ -137,16 +110,10 @@ button {
   justify-content: center;
 }
 
-button.sign-up {
-  background: royalblue;
-  border: 1px solid royalblue;
-  color: white;
-  width: 100px;
-}
 
 /* TEST */
 * {
-  border: 4px solid #3882F6;
+  border: 4px solid green;
 }
 
 .subhead {
@@ -174,7 +141,7 @@ button.sign-up {
   display: flex;
   flex-direction: column;
   display: flex;
-  align-items: center;
+  align-items: start;
   margin-bottom: 8px;
   font-size: 18px;
   font-weight: normal;
@@ -183,6 +150,7 @@ button.sign-up {
 .subsubsubleft {
   display: flex;
   align-items: center;
+  margin-right: auto;
   margin-bottom: 18px;
   color: #E5E7EB;
   font-size: 18px;
@@ -194,6 +162,56 @@ button.sign-up {
   width: 480px;
   height: 310px;
   /* flex-shrink: 0;  /* keeps icon from getting smashed by text */
+}
+
+.call-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  padding: 32 300;
+  min-height: 100px;
+  max-height: 100px;
+  background-color: #3882F6;
+}
+
+.call-action-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+}
+
+.call-action-text {
+  display: flex;
+  min-height: 50px;
+  max-height: 50px;
+  background-color: inherit;
+  color: inherit;
+  font-size: 16px;
+}
+
+.call-action-button {
+  display: flex;
+  min-height: 5px;
+  max-height: 50px;
+  background-color: inherit;
+  color: inherit;
+}
+
+button.sign-up {
+  display: flex;
+  border: 1px solid white;
+  padding: 16px 16px;
+  width: 100px;
+  height: 100px;
+  align-items:center
+  margin-bottom: 18px;
+  color: #E5E7EB;
+  font-size: 18px;
+  font-weight: normal;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 /*

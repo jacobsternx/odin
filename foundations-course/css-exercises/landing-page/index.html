@@ -7,31 +7,39 @@
     <title>Landing Page</title>
 </head>
 <body>
-    <!--parent container, row based-->
+    <!-- Master container -->
     <div class="landing_page">
+        <!-- Header container -->
         <div class="header dark margin">
-            <!--header-logo-->
+            <!-- header-logo -->
             <div class="header-logo dark"> Header Logo </div>
-                <!--right-links-->      
+                <!-- right-links -->      
                 <ul class="header-links dark">
                     <li><a href="google.com">header link one</a></li>
                     <li><a href="google.com">header link two</a></li>
                     <li><a href="google.com">header link three</a></li>
                 </ul>
-            </div>
+        </div>
+        <!-- Row 1, aka Subhead -->    
         <div class="row-1 dark margin">
+            <!-- Subhead, 2-column container -->
             <div class="subhead">
+                <!-- subhead left column, title -->
                 <div class="subleft"> This website is awesome! 
-                    <div class="subsubleft"> This website has some subtext that goes here under the main title.</div>
-                        <div class="subsubsubleft">Button</div>
+                    <!-- subhead left column, text -->
+                    <div class="subsubleft"> This website has some subtext that goes here under the main title. It's a smaller fontn and the color is lower contrast.</div>
+                        <!-- subhead left column, button -->
+                        <div class="subsubsubleft"> <button> Button</button></div>
                 </div>
+                <!--subhead right column, image placeholder-->
                 <div class="subright"> Image Placeholder </div>
             </div>
-            
-            
         </div>
-        <div class="row-2  margin"> <!--row of images-->
+        <!-- Row 2, row of images -->
+        <div class="row-2  margin">
+            <!-- row of images -->
             <div class="info-box-container">
+                <!-- image boxes, each with text below -->
                 <div class="info-box">
                     <img src="./images/barberry.png" alt="barberry"/>
                     <div class="text">This is a type of plant. We love this one.</div>
@@ -50,19 +58,25 @@
                 </div>
             </div>
         </div>
+        <!-- Row 3, inspiring quote (no container needed) -->
         <div class="row-3 quote margin"> 
             Happiness held is the seed. <br>Happiness shared is the flower. <br>--John Harrigan
         </div>
+        <!-- Row 4, call to action -->
         <div class="row-4 margin"> 
+            <!-- 2 column container -->
             <div class="call-action">
-                <div class="call-action-left">
+                <!-- left column, title -->
+                <div class="call-action-title">
                     Call to action. It's time!
+                    <!-- left column, text -->
+                    <div class="call-action-text">Sign up for our product by clicking that button right over there!</div>
                 </div>
-                <div class="call-action-right">
-                    Sign up for our product by clicking that button right over there.
-                </div>
+                <!-- right column, button -->
+                    <div class="button.sign-up">Sign Up</div>
             </div>
         </div>
+        <!-- Footer -->
         <div class="footer dark"> Copyright © The Odin Project 2023 </div>
     </div>
   </body>
