@@ -5,13 +5,7 @@ body {
   text-align: center;
 }
 
-.landingpage {
-  display: flex;
-  overflow: auto;
-}
-
 img {
-  display: flex;
   width: 100px;
   height: 100px;
   margin: auto;
@@ -41,8 +35,6 @@ ul {
 
 .row-4 {
   margin: 32px 0px;
-  column-gap: space-between;
-  align-content: flex-start
 }
 
 .info-box-container {
@@ -128,7 +120,6 @@ button {
 }
 
 .subleft {
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
@@ -140,7 +131,6 @@ button {
 }
 
 .subsubleft {
-  display: flex;
   flex-direction: column;
   align-items: start;
   margin-bottom: 8px;
@@ -149,7 +139,6 @@ button {
 }
 
 .subsubsubleft {
-  display: flex;
   align-items: center;
   margin-right: auto;
   margin-bottom: 18px;
@@ -196,29 +185,4 @@ button {
   column-width: 300px;
   text-align: right;
   padding: 32px 128px;
-}
-
-.call-action-button {
-  display: flex;
-  padding: 16px 48px;
-  border-radius: 8px;
-  font-weight: 400;
-  font-size: 16px;
-  height: 24px;
-  color: whitesmoke;
-  background-color: #3882F6;
-  border-color: whitesmoke;
-}
-
-.sign-up {
-  display: flex;
-  padding: 36px;
-  width: 200px;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-  color: #E5E7EB;
-  font-size: 18px;
-  font-weight: normal;
-  border-radius: 8px;
 }
