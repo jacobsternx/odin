@@ -39,6 +39,12 @@ ul {
   flex-wrap: wrap;
 }
 
+.row-4 {
+  margin: 32px 0px;
+  column-gap: space-between;
+  align-content: flex-start
+}
+
 .info-box-container {
   display: flex;
   justify-items: center;
@@ -95,7 +101,7 @@ ul {
 
 /* improve this */
 .margin { 
-  padding: 8px 200px;
+  padding: 8px 128px;
 }
 
 button {
@@ -107,6 +113,7 @@ button {
   height: 24px;
   align-items: center;
   justify-content: center;
+  border-color: whitesmoke;
   color: whitesmoke;
   background-color: #3882F6;
 }
@@ -123,10 +130,10 @@ button {
 .subleft {
   display: flex;
   flex-direction: column;
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
   margin-bottom: 8px;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: bolder;
   width: 480px;
   height: 310px;
@@ -135,7 +142,6 @@ button {
 .subsubleft {
   display: flex;
   flex-direction: column;
-  display: flex;
   align-items: start;
   margin-bottom: 8px;
   font-size: 18px;
@@ -161,10 +167,9 @@ button {
 
 .call-action {
   display: flex;
-  justify-content: center;
   align-items: center;
   color: whitesmoke;
-  padding: 32 300;
+  padding: 32px 128px;
   min-height: 100px;
   max-height: 100px;
   background-color: #3882F6;
@@ -173,6 +178,7 @@ button {
 .call-action-title {
   display: flex;
   flex-direction: column;
+  text-align: left;
   column-width: 600px;
   font-size: 24px;
   font-weight: bold;
@@ -180,8 +186,7 @@ button {
 
 .call-action-text {
   display: flex;
-  background-color: inherit;
-  color: inherit;
+  text-align: left;
   font-size: 16px;
   font-weight: normal;
 }
@@ -189,20 +194,25 @@ button {
 .call-action-right {
   display: flex;
   column-width: 300px;
+  text-align: right;
+  padding: 32px 128px;
 }
 
 .call-action-button {
   display: flex;
-  background-color: inherit;
-  border-color: whitesmoke;
-  border-width: 6px;
+  padding: 16px 48px;
   border-radius: 8px;
-  column-gap: 32px;
+  font-weight: 400;
+  font-size: 16px;
+  height: 24px;
+  color: whitesmoke;
+  background-color: #3882F6;
+  border-color: whitesmoke;
 }
 
 .sign-up {
   display: flex;
-  padding: 32px;
+  padding: 36px;
   width: 200px;
   height: 100px;
   justify-content: center;
@@ -212,28 +222,3 @@ button {
   font-weight: normal;
   border-radius: 8px;
 }
-
-/*
-dark background color (header and footer)
-#1F2937
-
-Header Logo Text
-24px #F9FAF8
-
-Hero Main text ("this website is awesome")
-48px extra-bold #f9faf8
-
-Hero Secondary text, Header Link Text
-18px #E5E7EB
-
-Quote section background color
-#E5E7EB
-Quote text
-36px light Italic #1F2937
-
-Button color, call to action background color
-#3882F6
-
-information header text
-36px extra-bold #1F2937
-*/
