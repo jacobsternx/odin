@@ -520,7 +520,7 @@ For an element that has both the alert and warning classes, the cascade would ru
 
     We haven’t covered how to use a custom font for the font-family property yet, so for now take a look at CSS Fonts for a list of generic font families to use, and CSS Web Safe Fonts for a list of fonts that are web safe. Web safe means that these are fonts that are installed on basically every computer or device (but be sure to still include a generic font family as a fallback).
 
-###Knowledge Check
+### Knowledge Check
 
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
@@ -707,7 +707,7 @@ Overwritten style
 Testing Styles in the Inspector
 The Styles pane also allows you to edit styles directly in the browser. You can click inside of any individual selector to add a new rule or click on an existing attribute or value to alter it. When doing so, the webpage responds with the changes in real-time. This won’t affect the source code in your text editor, but it is extremely useful for quickly testing out various attributes and values without needing to reload the page over and over again.
 
-Assignment
+### Assignment
 Go through the following sections of the official Chrome DevTools docs:
 https://developers.google.com/web/tools/chrome-devtools
 
@@ -721,7 +721,7 @@ https://developer.chrome.com/docs/devtools/dom/
 
 View and change CSS: be sure to follow along with any interactive instructions!
 
-Knowledge Check
+### Knowledge Check
 This section contains questions for you to check your understanding of this lesson on your own.
 
 How do you select a specific element on your page with your browser’s developer tools?
@@ -788,14 +788,15 @@ Be sure to study the diagrams carefully.
 
 the box model
 
-Assignment
+### Assignment
 This video is a straightforward overview of the box model, padding and margin. Go ahead and watch this now; it informs everything else.
 https://www.youtube.com/watch?v=rIO5326FgPE
 Because the box model concept is so incredibly fundamental, let’s dig a bit deeper with this lesson from MDN. It covers the same material as the video above and will introduce you to inline boxes that we will explore in the next lesson. Pay close attention to the examples and take the time to experiment with their in-browser editor!
 https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
 This CSS Tricks page has some further information about the margin property that you’ll find useful. Specifically, the sections about auto and margin collapsing contain things you’ll want to know.
 https://css-tricks.com/almanac/properties/m/margin/
-Knowledge Check
+
+### Knowledge Check
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
 From inside to outside, what is the order of box-model properties?
@@ -994,7 +995,6 @@ particularly their effects.
 Also, how divs and spans relate to display models
 Also, Assignment #1 MDN Normal Flow was hard to follow
 
-
 # 06 Flexbox (4 modules, 1 project)
 ## Introduction to Flexbox
 
@@ -1048,7 +1048,7 @@ Creating and nesting multiple flex containers and items is the primary way we wi
 
 ==complex example==
 
-Knowledge Check
+### Knowledge Check
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
 What’s the difference between a flex container and a flex item?
@@ -1434,8 +1434,6 @@ Think of flex items as primarily laying out in horizontal rows or vertical colum
   flex-direction: row | row-reverse | column | column-reverse;
 }
 
-
-
 Go back to our CSS exercises repository (don’t forget that the instructions are in the README). Do the exercises in the ‘flex’ directory in the order that they are listed. It may take you a while to get through all of them, and the difficulty ramps up as you progress. Stick with it! If you can get through all of them, then you will be in really good shape moving forward.
 https://github.com/TheOdinProject/css-exercises
 01-flex-center
@@ -1445,7 +1443,8 @@ https://github.com/TheOdinProject/css-exercises
 05-flex-modal
 06-flex-layout
 07-flex-layout-2
-Knowledge Check
+
+### Knowledge Check
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
 What is the difference between justify-content and align-items?
@@ -1469,6 +1468,20 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Alignin
 
 Flexbox Crash Course is a nice resource by Traversy Media.
 https://www.youtube.com/watch?v=3YW65K6LcIA
+
+a {
+  text-decoration: none; /* removes underline */
+  color: inherit; /* inherit color from parent */
+}
+
+ul {
+  display: flex;
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none; /* remove dots */
+}
+
+Background properties do not inherit, but the parent element's background will shine through by default because of the initial 'transparent' value on 'background-color'.
 
 ## Project: Landing Page
 
