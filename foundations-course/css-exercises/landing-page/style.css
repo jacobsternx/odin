@@ -11,8 +11,8 @@ body {
 
 img {
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 115px;
         
 }
 
@@ -105,6 +105,7 @@ button {
 .desc-left {
     text-align: left;
     width: 500px;
+    padding-top: 10px;
 }
 
 .desc-title {
@@ -125,6 +126,13 @@ button {
     margin-left: 50px;
 }
 
+.info > .col-row {
+    min-height: 240px;
+    max-height: 240px;
+    justify-items: center;
+    align-items: center;
+}
+
 .infospot-box {
     display: flex;
     flex-direction: column;
@@ -136,6 +144,12 @@ button {
     border-radius: 8px;
     Justify-items: center;
     align-items: center;
+}
+
+.infospot-title {
+    font-size: 24px;
+    font-weight: bold;
+    
 }
 
 .infospot-text {
@@ -161,6 +175,8 @@ button {
     color: #E5E7EB;
 }
 
+
+
 .action-call {
     align-items: center; /*center text vertically in column*/
     font-size: 16px;
@@ -176,21 +192,12 @@ button {
     font-weight: bold;
 }
 
-.info .col-row {
-    min-height: 240px;
-    max-height: 240px;
-    Justify-items: center;
-    align-items: center;
-}
-
-.infospot-title {
-    font-size: 24px;
-    font-weight: bold;
-    padding: 36px 0px 36px 0px;
-}
-
 .acti-left {
     text-align: left;
+}
+
+.acti-right {
+    padding-top: 20px;
 }
 
 .head,
