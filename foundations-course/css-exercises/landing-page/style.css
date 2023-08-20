@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    border: solid dodgerblue 2px;
+    /*border: red 1px solid;*/
 }
 
 body {
@@ -10,9 +10,10 @@ body {
 }
 
 img {
+    display: flex;
     width: 100px;
     height: 100px;
-    margin: auto; /* center infospot images */
+        
 }
 
 a {
@@ -37,7 +38,7 @@ button {
 }
 
 .header,
-.subhead,
+.description,
 .infobox,
 .quote,
 .action,
@@ -46,19 +47,28 @@ button {
     margin: 0px;
 }
 
-.head-l,
-.subh-l,
+
+.desc-l,
 .info-l,
 .quot-l,
-.acti-l,
-.foot-l {
+.acti-l {
     flex: 1;
     min-width: 200px;
     max-width: 200px;
+    min-height: 220px;
+    max-height: 220px;
+}
+
+.head-l,
+.foot-l {
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 150px;
+    max-height: 150px;
 }
 
 .head,
-.subh,
+.desc,
 .info,
 .quot,
 .acti,
@@ -66,10 +76,12 @@ button {
     flex: 0 0 1;
     min-width: 800px;
     max-width: 800px;
+    /*min-height: 220px;
+    max-height: 220px;*/
 }
 
 .head-r,
-.subh-r,
+.desc-r,
 .info-r,
 .quot-r,
 .acti-r,
@@ -77,51 +89,108 @@ button {
     flex: 1;
     width: auto;
 }
-.subhead {
+
+.header,
+.footer {
+    height: 4rem;
     align-items: center;
-    min-height: 200px;
-    max-height: 200px;
+}
+
+.description {
+    align-items: center;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+.desc-left {
+    text-align: left;
+    width: 500px;
+}
+
+.desc-title {
+    display: flex;
+    font-size:36px;
+    font-weight: bolder;
+    color: #F9FAF8;
 }
 
 .image-placeholder {
-    color:#F9FAF8;
-    width:256px;
-    height:196px;
+    display: flex;
+    color: #F9FAF8;
     background-color: gray;
+    width: 350px;
+    height: 200px;
+    align-items: center; /*center text vertically*/
+    justify-content: center; /*center text hoizontally*/
+    margin-left: 50px;
 }
 
-.infobox {
-    min-height: 200px;
-    max-height: 200px;
+.infospot-box {
+    display: flex;
+    flex-direction: column;
+    min-height: 125px;
+    max-height: 125px;
+    min-width: 125px;
+    max-width: 125px;
+    border: dodgerblue 4px solid;
+    border-radius: 8px;
+    Justify-items: center;
+    align-items: center;
+}
+
+.infospot-text {
+    margin: 32px 0px;
 }
 
 .quote {
-    align-items: center;
-    font-size: 36px;
+    align-items: center; /*center text vertically in column*/
+    font-size: 32px;
     font-weight: light;
     font-style: italic;
     background-color: #E5E7EB;
     color: #1F2937;
-    min-height: 200px;
-    max-height: 200px;
+    min-height: 240px;
+    max-height: 240px;
+    height: 100%;
 }
 
-
 .header,
-.subhead,
+.description,
 .footer {
     background-color: #1F2937;
     color: #E5E7EB;
 }
 
 .action-call {
-    text-align: center;
+    align-items: center; /*center text vertically in column*/
     font-size: 16px;
-    font-weight: normal;
-    color:#F9FAF8;
+    color: #F9FAF8;
     background-color: #3882F6;
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 240px;
+    max-height: 240px;
+    align-items: center;
+}
+
+.acti-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.info .col-row {
+    min-height: 240px;
+    max-height: 240px;
+    Justify-items: center;
+    align-items: center;
+}
+
+.infospot-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 36px 0px 36px 0px;
+}
+
+.acti-left {
+    text-align: left;
 }
 
 .head,
@@ -138,17 +207,22 @@ button {
     display: flex;
     flex-direction: row;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.col-row-dark {
+.head .col-row {
+    justify-content: space-between;
+}
+.col-row-blue {
     display: flex;
     flex-direction: row;
-    height: 100%;
-    justify-content: space-between;
-    color:#F9FAF8;
+    height: 100px;
+    justify-content: space-around;
+    color: #F9FAF8;
     background-color: #3882F6;
     border-radius: 4px;
+    padding: 20px 40px;
+    margin-top: 50px;
 }
 
 .header-logo {
@@ -159,5 +233,3 @@ button {
     font-size: 1/px;
     padding: 4px;
 }
-
-/* I could stylize the signup button to only have a border on the call to action and tweak the css on a few rows (cols), but this is my second version of this and it's good enough to move on. */

@@ -1469,6 +1469,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Alignin
 Flexbox Crash Course is a nice resource by Traversy Media.
 https://www.youtube.com/watch?v=3YW65K6LcIA
 
+```
 a {
   text-decoration: none; /* removes underline */
   color: inherit; /* inherit color from parent */
@@ -1480,8 +1481,47 @@ ul {
   padding-left: 0;
   list-style: none; /* remove dots */
 }
+```
 
 Background properties do not inherit, but the parent element's background will shine through by default because of the initial 'transparent' value on 'background-color'.
+
+```
+ul {
+  height: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  /* align-self: center;    <---- REMOVE */
+  align-items: center;   /* <---- NEW    */
+}
+```
+
+The align-self property applies to flex items. Except your li is not a flex item because its parent – the ul – does not have display: flex or display: inline-flex applied.
+
+Therefore, the ul is not a flex container, the li is not a flex item, and align-self has no effect.
+
+The align-items property is similar to align-self, except it applies to flex containers.
+
+Since the li is a flex container, align-items can be used to vertically center the child elements.
+
+```
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+}
+ ```
+
+justify-content aligns flex items along the main axis.
+
+align-items aligns flex items along the cross axis, which is always perpendicular to the main axis.
+
+Depending on the flex-direction, the main axis may be horizontal or vertical.
+
+Since flex-direction:column means the main axis is vertical, you need to use justify-content not align-items to center the flex items.
 
 ## Project: Landing Page
 
