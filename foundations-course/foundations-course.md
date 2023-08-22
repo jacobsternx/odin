@@ -131,7 +131,7 @@ With that done, you can now choose to use either git commit -m \<your message he
 ## HTML Boilerplate
 
 type ! in blank vs-code html file:
-
+```
 \<!DOCTYPE html>
 \<html lang="en">
 \<head>
@@ -143,6 +143,7 @@ type ! in blank vs-code html file:
     
 \</body>
 \</html>
+```
 
 The doctype’s purpose is to tell the browser what version of HTML it should use to render the document.
 The lang attribute specifies the language of the text content in that element and is mainly used for improving accessibility
@@ -266,6 +267,7 @@ The main difference between classes and IDs is that an element can only have one
 
 Grouping Selector
 Two groups of elements share some of their style declarations.
+```
 .read {
   color: white;
   background-color: black;
@@ -277,9 +279,9 @@ Two groups of elements share some of their style declarations.
   background-color: black;
   /* several unique declarations */
 }
-
+```
 Both our .read and .unread selectors share the color: white; and background-color: black; declarations, but otherwise have several of their own unique declarations. To reduce repetition, can group these two selectors together as a comma-separated list:
-
+```
 .read,
 .unread {
   color: white;
@@ -288,25 +290,26 @@ Both our .read and .unread selectors share the color: white; and background-colo
 .read {  /* several unique declarations */}
 
 .unread {  /* several unique declarations */}
-
+```
 Chaining Selectors
 Can also chain selectors as a list without any separation:
-
+```
 \<div>
   \<div class="subsection header">Latest Posts</div>
   \<p class="subsection preview">This is where a preview for a post might go.</p>
 \</div>
-
+```
 Two elements with the subsection class that have some sort of unique styles. If we only want to apply a separate rule to the element that also has header as a second class, we could chain both the class selectors together in our CSS like so:
 .subsection.header { color: red; }
 Selects any element that has both the subsection and header classes. Notice how there isn’t any space between the .subsection and .header class selectors. This syntax basically works for chaining any combination of selectors, except for chaining more than one type selector.
 
 This can also be used to chain a class and an ID, as shown below:
+```
 \<div>
   \<div class="subsection header">Latest Posts</div>
   \<p class="subsection" id="preview">This is where a preview for a post might go.</p>
 \</div>
-
+```
 You can take the two elements above and combine them with the following:
 .subsection.header { color: red; }
 .subsection#preview { color: blue; }
@@ -320,7 +323,7 @@ Combinators allow us to combine multiple selectors differently than either group
 So something like .ancestor .child would select an element with the class child if it has an ancestor with the class ancestor. Another way to think of it is child will only be selected if it is nested inside of ancestor, no matter how deep. Take a quick look at the example below and see if you can tell which elements would be selected based on the CSS rule provided:
 
 .ancestor .contents {  /* some declarations */ }
-
+```
 \<div class="ancestor"> <!-- A -->
   \<div class="contents"> <!-- B -->
     \<div class="contents"> <!-- C -->
@@ -329,7 +332,7 @@ So something like .ancestor .child would select an element with the class child 
 \</div>
 
 \<div class="contents"></div> <!-- D -->
-
+```
 In the above example, the first two elements with the contents class (B and C) would be selected, but that last element (D) won’t be. 
 There’s no limit to how many combinators you can add to a rule, so .one .two .three .four would be totally valid. This would just select an element that has a class of four if it has an ancestor with a class of three, and if that ancestor has its own ancestor with a class of two, and so on. You generally want to avoid trying to select elements that need this level of nesting, though, as it can get pretty confusing and long, and it can cause issues when it comes to specificity.
 
@@ -352,11 +355,12 @@ text-align: center
 
 <!-- Image Height and Width -->
 By default, an <img> element’s height and width values will be the same as the actual image file’s height and width. If you wanted to adjust the size of the image without causing it to lose its proportions, you would use a value of “auto” for the height property and adjust the width value:
-
+```
 img {
   \height: auto;
   \width: 500px; 
 }
+```
 For example, if an image’s original size was 500px height and 1000px width, using the above CSS would result in a height of 250px. It’s best to include both of these properties for <img> elements, even if you don’t plan on adjusting the values from the image file’s original ones. When these values aren’t included, if an image takes longer to load than the rest of the page contents, the image won’t take up any space on the page at first, but will suddenly cause a drastic shift of the other page contents once it does load in. Explicitly stating a height and width prevents this from happening, as space will be “reserved” on the page and will just appear as a blank space until the image loads.
 
 https://www.w3schools.com/cssref/css_selectors.php
@@ -393,7 +397,7 @@ type (lease specific)
 Specificity will only be taken into account when an element has multiple, conflicting declarations targeting it. When no declaration has a selector with a higher specificity, a larger amount of a single selector will beat a smaller amount of that same selector.
 
 Let’s take a look at a few quick examples to visualize how specificity works. Consider the following HTML and CSS code:
-
+```
 <!-- index.html -->
 \<div class="main">
   \<div class="list subsection"></div>
@@ -407,11 +411,11 @@ Let’s take a look at a few quick examples to visualize how specificity works. 
 \.main .list {
   \color: red;
 }
-
+```
 In the example above, both rules are using only class selectors, but rule 2 is more specific because it is using more class selectors, so the color: red; declaration would take precedence.
 
 Now, let’s change things a little bit:
-
+```
 <!-- index.html -->
 \<div class="main">
   \<div class="list" id="subsection"></div>
@@ -426,9 +430,9 @@ Now, let’s change things a little bit:
 .main .list {
   color: red;
 }
-
+```
 In the example above, despite rule 2 having more class selectors than ID selectors, rule 1 is more specific because ID beats class. In this case, the color: blue; declaration would take precedence.
-
+```
 /* rule 1 */
 #subsection .list {
   background-color: yellow;
@@ -439,14 +443,14 @@ In the example above, despite rule 2 having more class selectors than ID selecto
 #subsection .main .list {
   color: red;
 }
-
+```
 In this final example, both rules are using ID and class selectors, so neither rule is using a more specific selector than the other. The cascade then checks the amounts of each selector type. Both rules only have one ID selector, but rule 2 has more class selectors, so rule 2 has a higher specificity!
 
 While the color: red declaration would take precedence, the background-color: yellow declaration would still be applied since there’s no conflicting declaration for it.
 Not everything adds to specificity
 
 When comparing selectors, you may come across special symbols for the universal selector (*) as well as combinators (+, ~, >, and an empty space). These symbols do not add any specificity in and of themselves.
-
+```
 /* rule 1 */
 .class.second-class {
   font-size: 12px;
@@ -456,9 +460,9 @@ When comparing selectors, you may come across special symbols for the universal 
 .class .second-class {
   font-size: 24px;
 }
-
+```
 Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining selector (no space) and rule 2 uses a descendant combinator (the empty space). But both rules have two classes and the combinator symbol itself does not add to the specificity.
-
+```
 /* rule 1 */
 .class.second-class {
   font-size: 12px;
@@ -468,9 +472,9 @@ Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining se
 .class > .second-class {
   font-size: 24px;
 }
-
+```
 This example shows the same thing. Even though rule 2 is using a child combinator (>), this does not change the specificity value. Both rules still have two classes so they have the same specificity values.
-
+```
 /* rule 1 */
 * {
   color: black;
@@ -480,14 +484,14 @@ This example shows the same thing. Even though rule 2 is using a child combinato
 h1 {
   color: orange;
 }
-
+```
 In this example, rule 2 would have higher specificity and the orange value would take precedence for this element. Rule 2 uses a type selector, which has the lowest specificity value. But rule 1 uses the universal selector (*) which has no specificity value.
 Inheritance
 
 Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants. Typography based properties (color, font-size, font-family, etc.) are usually inherited, while most other properties aren’t.
 
 The exception to this is when directly targeting an element, as this always beats inheritance:
-
+```
 <!-- index.html -->
 
 \<div id="parent">
@@ -503,14 +507,14 @@ The exception to this is when directly targeting an element, as this always beat
 .child {
   \color: blue;
 }
-
+```
 Despite the parent element having a higher specificity with an ID, the child element would have the color: blue style applied since that declaration directly targets it, while color: red from the parent is only inherited.
 Rule Order
 
 The final factor, the end of the line, the tie-breaker of the tie-breaker. Let’s say that after every other factor has been taken into account, there are still multiple conflicting rules targeting an element. How does the cascade determine which rule to apply?
 
 Really simply, actually. Whichever rule was the last defined is the winner.
-
+```
 /* styles.css */
 
 .alert {
@@ -520,7 +524,7 @@ Really simply, actually. Whichever rule was the last defined is the winner.
 .warning {
   color: yellow;
 }
-
+```
 For an element that has both the alert and warning classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the .warning rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
 
 ### Assignment
@@ -554,7 +558,7 @@ Okay, we went over quite a bit so far. The only thing left for now is to go over
 External CSS
 
 External CSS is the most common method you will come across, and it involves creating a separate file for the CSS and linking it inside of an HTML’s opening and closing <head> tags with a self-closing <link> element:
-
+```
 <!-- index.html -->
 \<head>
   \<link rel="stylesheet" href="styles.css">
@@ -569,7 +573,7 @@ External CSS is the most common method you will come across, and it involves cre
 \p {
   \color: red;
 }
-
+```
 First, we add a self-closing \<link> element inside of the opening and closing \<head> tags of the HTML file. The href attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. In our example above, we are assuming both files are located in the same directory. The rel attribute is required, and it specifies the relationship between the HTML file and the linked file.
 
 Then inside of the newly created styles.css file, we have the selector (the div and p), followed by a pair of opening and closing curly braces, which create a “declaration block”. Finally, we place any declarations inside of the declaration block. color: white; is one declaration, with color being the property and white being the value, and background-color: black; is another declaration.
@@ -586,7 +590,7 @@ Internal CSS
 Internal CSS (or embedded CSS) involves adding the CSS within the HTML file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing \<style> tags, which are then placed inside of the opening and closing \<head> tags of your HTML file. Since the styles are being placed directly inside of the \<head> tags, we no longer need a \<link> element that the external method requires.
 
 Besides these differences, the syntax is exactly the same as the external method (selector, curly braces, declarations):
-
+```
 \<head>
   \<style>
     \div {
@@ -599,15 +603,17 @@ Besides these differences, the syntax is exactly the same as the external method
   \</style>
 \</head>
 \<body>...</body>
+```
 
 This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the HTML file to get pretty big.
 Inline CSS
 
 Inline CSS makes it possible to add styles directly to HTML elements, though this method isn’t as recommended:
-
+```
 \<body>
   \<div style="color: white; background-color: black;">...</div>
 \</body>
+```
 
 The first thing to note is that we don’t actually use any selectors here, since the styles are being added directly to the opening <div> tag itself. Next, we have the style= attribute, with its value within the pair of quotation marks being the declarations.
 
@@ -752,7 +758,7 @@ This section contains helpful links to related content. It isn’t required, so 
 This article about how we can utilize css overview in the developer tools to check the colors, font styles, media-queries, etc. used on a particular webpage.
 https://www.freecodecamp.org/news/how-to-use-css-overview-in-chrome-developer-tools/
 
-Notes:
+#### Notes:
 Open Chrome Dev Tools: Ctrl-Shift-I or F12 or Right click > Inspect
 Open Drawer: Esc
 Open More tools: click 3 dots
@@ -781,9 +787,11 @@ The first important concept that you need to understand to be successful in CSS 
 
 Every single thing on a webpage is a rectangular box. These boxes can have other boxes in them and can sit alongside one another. You can get a rough idea of how this works by sticking a border on every item on the page like this:
 Notice how on border there are 3 different key-values.
+```
 * {
   border: 2px solid red;
 }
+```
 boxes
 
 You can use the browser’s inspector to add the CSS above to this web page if you want. Boxes in boxes!
@@ -823,7 +831,7 @@ Standard box model, default, the size of the border and padding is added to the 
 But it is inconvenient to calculate the box size after adding the border and padding to the content box. 
 That’s why the alternative box model, the height and width are applied to the box, including the border and padding. 
 Note that the margin is outside the box.
-
+```
 .box { <!-- standard box model, content-box -->
     height: 500px;
     width: 800px;
@@ -831,6 +839,7 @@ Note that the margin is outside the box.
     padding: 15px;
     margin: 25px;
 }
+```
 The height and width of the above box as calculated by the standard model is:
 Height = 500 + 15 + 15 + 1 + 1 = 532px
 Width  = 800 + 15 + 15 + 1 + 1 = 832px
@@ -854,12 +863,14 @@ If three values are declared, it is: [top] [left-and-right] [bottom];.
 If four values are declared, it is [top]] [right] [bottom] [left];.
 
 Any of the individual margins can be declared using longhand, in which case you would define only one value per property:
+```
 .box {
   margin-top: 20px;
   margin-right: 10px;
   margin-bottom: 20px;
   margin-left: 10px;
 }
+```
 
 Would you use margin or padding to create more space between 2 elements?
 Margin
@@ -871,6 +882,7 @@ Would you use margin or padding if you wanted two elements to overlap each other
 Margin
 
 How do you set the alternative box model for all of your elements?
+```
 * {
     box-sizing: border-box;
 }
@@ -879,6 +891,7 @@ How do you center an element horizontally?
 p { 
   text-align: center;
 }
+```
 
 Margin Collapse
 In the box model margins between two different elements will collapse. This means that if two elements that are siblings in the HTML both have a margin they will collapse so that only the largest of the two margins is used between the elements. 
@@ -1099,6 +1112,7 @@ Use the row-reverse or column-reverse values to flip item order.
 Use order to customize the order of individual elements.
 Use align-self to vertically align individual items.
 Use flex to create flexible boxes that can stretch and shrink.
+
 Remember that these flexbox properties are just a language that lets you tell browsers how to arrange a bunch of HTML elements. The hard part isn’t actually writing the HTML and CSS code, it’s figuring out, conceptually (on a piece of paper), the behavior of all the necessary boxes to create a given layout.
 
 When a designer hands you a mockup to implement, your first task is to draw a bunch of boxes on it and determine how they’re supposed to stack, stretch, and shrink to achieve the desired design. Once you’ve got that done, it should be pretty easy to code it up using these new flexbox techniques.
@@ -1253,6 +1267,7 @@ background-position: top right;
 }
 
 Add an external style sheet with the URL: "mystyle.css".
+```
 <head>
 <link rel="stylesheet" href="mystyle.css">
 </head>
@@ -1262,16 +1277,16 @@ body {
 background-color:
  red;
 }
+```
 
 Set the page's background color to red, by using an inline style.
 <body style="background-color: red">
 
 
 ## Axes
-
 Let’s see how the orientation of items within a flex container can be controlled using the flex-direction property.
 
-Lesson Overview
+### Lesson Overview
 This section contains a general overview of topics that you will learn in this lesson.
 
 You’ll learn about the 2 “axes” of a flex container.
@@ -1546,7 +1561,7 @@ C:\Code\odin\foundations-course\css-exercises\landing-page\style.css
 # 07 JavaScript Basics (12 modules, 3 projects)
 ## Fundamentals Part 1
 
-Introduction
+### Introduction
 Let’s dive right into JavaScript!
 
 ### Lesson overview
@@ -1592,25 +1607,31 @@ Save and open this file up in a web browser (you can use “Live Server” on Vi
 console.log() is the command to print something to the developer console in your browser. You can use this to print the results from any of the following articles and exercises to the console. We encourage you to code along with all of the examples in this and future lessons.
 
 Another way to include JavaScript in a webpage is through an external script. This is very similar to linking external CSS docs to your website.
+
 ```
   <script src="javascript.js"></script>
 JavaScript files have the extension .js similar to .css for stylesheets. External JavaScript files are used for more complex scripts.
 ```
+> Externanl js files, more complex.
 
 ### Variables
 You can think of variables as simply “storage containers” for data in your code.
 (Variable Box Illustration)
 
 Until recently there was only one way to create a variable in JavaScript — the var statement. But in the newest JavaScript versions we have two more ways — let and const.
+> Declare a variable using var, let, or const.
 
-This variable tutorial will explain everything you need to know! Be sure to do the Tasks at the end. Information won’t stick without practice!
+[This variable tutorial](http://javascript.info/variables) will explain everything you need to know! Be sure to do the Tasks at the end. Information won’t stick without practice!
+
 The above tutorial mentioned this, but it’s important enough to note again: let and const are both relatively new ways to declare variables in JavaScript. In many tutorials (and code) across the internet you’re likely to encounter var statements. Don’t let it bother you! There’s nothing inherently wrong with var, and in most cases var and let behave the same way. But sometimes the behavior of var is not what you would expect. Just stick to let (and const) for now.
 
 ### Numbers
 Numbers are the building blocks of programming logic! In fact, it’s hard to think of any useful programming task that doesn’t involve at least a little basic math… so knowing how numbers work is obviously quite important. Luckily, it’s also fairly straightforward.
 
-This W3Schools lesson followed by this one, are good introductions to what you can accomplish with numbers in JavaScript.
-This MDN article covers the same info from a slightly different point of view, while also teaching you how to apply some basic math in JavaScript. There’s much more that you can do with numbers, but this is all you need at the moment.
+This [W3Schools lesson](https://www.w3schools.com/js/js_arithmetic.asp) followed by [this one](https://www.w3schools.com/js/js_numbers.asp), are good introductions to what you can accomplish with numbers in JavaScript.
+
+]This MDN article](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math) covers the same info from a slightly different point of view, while also teaching you how to apply some basic math in JavaScript. There’s much more that you can do with numbers, but this is all you need at the moment.
+
 Read through (and code along with!) this article about operators in Javascript. Don’t forget to do the “Tasks” at the bottom of the page! It will give you a pretty good idea of what you can accomplish with numbers (among other things!) in JavaScript.
 
 ### Assignment
