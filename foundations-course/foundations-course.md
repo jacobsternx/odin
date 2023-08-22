@@ -359,6 +359,19 @@ img {
 }
 For example, if an image’s original size was 500px height and 1000px width, using the above CSS would result in a height of 250px. It’s best to include both of these properties for <img> elements, even if you don’t plan on adjusting the values from the image file’s original ones. When these values aren’t included, if an image takes longer to load than the rest of the page contents, the image won’t take up any space on the page at first, but will suddenly cause a drastic shift of the other page contents once it does load in. Explicitly stating a height and width prevents this from happening, as space will be “reserved” on the page and will just appear as a blank space until the image loads.
 
+https://www.w3schools.com/cssref/css_selectors.php
+
+```
+element	p	Selects all <p> elements
+element.class  p.intro  Selects all <p> elements with class="intro"
+element,element  div, p  Selects all <div> elements and all <p> elements
+element element  div p  Selects all <p> elements inside <div> elements
+element>element  div > p  Selects all <p> elements where the parent is a <div> element
+element+element	 div + p  Selects first <p> element following <div> elements
+element1~element2  p ~ ul  Selects every <ul> element that is preceded by a <p> element
+```
+
+
 ## The Cascade of CSS
 Sometimes we may have rules that conflict with one another, and we end up with some unexpected results.
 
