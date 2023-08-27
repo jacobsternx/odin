@@ -1,5 +1,11 @@
-# Foundations Course
+Things learned in formatting this document:
+1. outside of code snippets, \<h1> must be escaped with a backslash
+2. outside of code snippets, lines beginning with \# must be escaped with backslash
+3. highlighted text with ==double equals== on both sides
+3. quote text by preceeding paragraph with right arrow
+4. to insert an article, highlight article begin and end. ==Begin== ==End==
 
+# Foundations Course
 Overview
 This is where it all begins! A hands-on introduction to all of the essential tools you'll need to build real, working websites. You'll learn what web developers actually do – the foundations you'll need for later courses.
 
@@ -34,7 +40,7 @@ If your question is not on-topic for Stack Overflow, it may be on topic for anot
     Database administrators and professionals, ask on Database Administrators Stack Exchange
     Statisticians, data analysts, and data miners, ask on Cross Validated 
 	
-	Identifying Help Vampires
+## Identifying Help Vampires
 
 Identifying Help Vampires can be tricky, because they look like any ordinary person. But by closely observing an individual’s behavior using this handy checklist, you too can identify Help Vampires in the field:
 
@@ -64,9 +70,11 @@ When you do ask a question, try to provide as much background detail as possible
     What don’t you “get”?
     Can you provide sample code, ideally with error line #s?
 
+
 ## Join the Odin Community
 
 # 02 Prerequisites (7 modules)
+
 ## Computer Basics
 
 ## How Does the Web Work?
@@ -80,6 +88,7 @@ When you do ask a question, try to provide as much background detail as possible
 ## Command Line Basics
 
 ## Setting up Git
+
 
 To enable colorful output with git, type
 git config --global color.ui auto
@@ -121,7 +130,6 @@ The following command will set this configuration. Type (or copy & paste) this c
 git config --global core.editor "code --wait"
 
 With that done, you can now choose to use either git commit -m \<your message here> or git commit to type your message with Visual Studio Code!
-
 
 # 04 HTML Foundations (7 modules, 1 project)
 ## Introduction to HTML and CSS
@@ -233,6 +241,7 @@ Iteration 4: Add More Recipes
 
 To see some solutions, visit and scroll to the bottom to see links: https://www.theodinproject.com/lessons/foundations-recipes
 
+
 # 05 CSS Foundations (5 modules)
 ## Intro to CSS
 
@@ -245,7 +254,9 @@ Note: Whitespace cannot appear between the number and the unit. However, if the 
 div.bold-text  font-weight: 700;
 
 Universal Selector
+```
 * {	color: purple; } //applies to all elems
+```
 
 Type Selectors
 Type (element) selector will select all elements of the given element type:
@@ -257,15 +268,19 @@ Class selectors select all elements with the given class, HTML element attribute
 Note syntax for class selectors: a period followed by value of class attribute. 
 You can also add multiple classes to a single element as a space-separated list, such as class="alert-text severe-alert". 
 
-ID Selectors
+## ID Selectors
 Similar to class selectors, select an element with given ID, another HTML attribute:
-\<div id="title">My Awesome 90's Page\</div>
+```
+<div id="title">My Awesome 90's Page</div>
+```
 /* styles.css */
+```
 #title {  background-color: red; }
+```
 Instead of a period, use a hashtag followed by the value of the ID attribute. 
 The main difference between classes and IDs is that an element can only have one ID
 
-Grouping Selector
+### Grouping Selector
 Two groups of elements share some of their style declarations.
 ```
 .read {
@@ -291,7 +306,7 @@ Both our .read and .unread selectors share the color: white; and background-colo
 
 .unread {  /* several unique declarations */}
 ```
-Chaining Selectors
+### Chaining Selectors
 Can also chain selectors as a list without any separation:
 ```
 \<div>
@@ -300,7 +315,9 @@ Can also chain selectors as a list without any separation:
 \</div>
 ```
 Two elements with the subsection class that have some sort of unique styles. If we only want to apply a separate rule to the element that also has header as a second class, we could chain both the class selectors together in our CSS like so:
+```
 .subsection.header { color: red; }
+```
 Selects any element that has both the subsection and header classes. Notice how there isn’t any space between the .subsection and .header class selectors. This syntax basically works for chaining any combination of selectors, except for chaining more than one type selector.
 
 This can also be used to chain a class and an ID, as shown below:
@@ -311,8 +328,10 @@ This can also be used to chain a class and an ID, as shown below:
 \</div>
 ```
 You can take the two elements above and combine them with the following:
+```
 .subsection.header { color: red; }
 .subsection#preview { color: blue; }
+```
 
 In general, you can’t chain more than one type selector since an element can’t be two different types at once. For example, chaining two type selectors like div and p would give us the selector divp, which wouldn’t work since the selector would try to find a literal <divp> element, which doesn’t exist.
 
@@ -340,13 +359,14 @@ Color and Background-Color
 The color property sets an element’s text color, while background-color sets, well, the background color of an element. Both of these properties can accept one of several kinds of values. A common one is a keyword, such as an actual color name like red or the transparent keyword. They also accept HEX, RGB, and HSL values, which you may be familiar with if you’ve ever used a photoshop program or a site where you could customize your profile colors.
 
 Following shows using colors and transparency, or alpha channel, or opacity.
+```
 #p1 {background-color: #ff0000;}   /* HEX red */
 #p1a {background-color: #ff000080;}   /* HEX red transparency */
 #p2 {background-color: rgb(0, 255, 0);}   /* RGB green */
 #p2a {background-color: rgba(0, 255, 0, 0.3);}   /* RGB green with opacity */
 #p3 {background-color: hsl(120, 100%, 50%);}   /* HSL green */
 #p3a {background-color: hsla(120, 100%, 50%, 0.3);}   /*HSL green with opacity */
-
+```
 Typography Basics and Text-Align
 font-family: "DejaVu Sans", sans-serif;
 font-size: 22px
@@ -375,7 +395,6 @@ element+element	 div + p  Selects first <p> element following <div> elements
 element1~element2  p ~ ul  Selects every <ul> element that is preceded by a <p> element
 ```
 
-
 ## The Cascade of CSS
 Sometimes we may have rules that conflict with one another, and we end up with some unexpected results.
 
@@ -397,21 +416,27 @@ type (lease specific)
 Specificity will only be taken into account when an element has multiple, conflicting declarations targeting it. When no declaration has a selector with a higher specificity, a larger amount of a single selector will beat a smaller amount of that same selector.
 
 Let’s take a look at a few quick examples to visualize how specificity works. Consider the following HTML and CSS code:
-```
+
 <!-- index.html -->
-\<div class="main">
-  \<div class="list subsection"></div>
-\</div>
+```
+<div class="main">
+  <div class="list subsection"></div>
+</div>
+```
 
 /* rule 1 */
-\.subsection {
-  \color: blue;
-}
-/* rule 2 */
-\.main .list {
-  \color: red;
+```
+.subsection {
+  color: blue;
 }
 ```
+* rule 2 */
+```
+.main .list {
+  color: red;
+}
+```
+
 In the example above, both rules are using only class selectors, but rule 2 is more specific because it is using more class selectors, so the color: red; declaration would take precedence.
 
 Now, let’s change things a little bit:
@@ -420,13 +445,15 @@ Now, let’s change things a little bit:
 \<div class="main">
   \<div class="list" id="subsection"></div>
 \</div>
-
+```
 /* rule 1 */
+```
 #subsection {
   color: blue;
 }
-
+```
 /* rule 2 */
+```
 .main .list {
   color: red;
 }
@@ -438,8 +465,9 @@ In the example above, despite rule 2 having more class selectors than ID selecto
   background-color: yellow;
   color: blue;
 }
-
+```
 /* rule 2 */
+```
 #subsection .main .list {
   color: red;
 }
@@ -452,55 +480,62 @@ Not everything adds to specificity
 When comparing selectors, you may come across special symbols for the universal selector (*) as well as combinators (+, ~, >, and an empty space). These symbols do not add any specificity in and of themselves.
 ```
 /* rule 1 */
+```
 .class.second-class {
   font-size: 12px;
 }
-
+```
 /* rule 2 */
+```
 .class .second-class {
   font-size: 24px;
 }
 ```
 Here both rule 1 and rule 2 have the same specificity. Rule 1 uses a chaining selector (no space) and rule 2 uses a descendant combinator (the empty space). But both rules have two classes and the combinator symbol itself does not add to the specificity.
-```
+
 /* rule 1 */
+```
 .class.second-class {
   font-size: 12px;
 }
-
+```
 /* rule 2 */
+```
 .class > .second-class {
   font-size: 24px;
 }
 ```
 This example shows the same thing. Even though rule 2 is using a child combinator (>), this does not change the specificity value. Both rules still have two classes so they have the same specificity values.
-```
+
 /* rule 1 */
+```
 * {
   color: black;
 }
-
+```
 /* rule 2 */
+```
 h1 {
   color: orange;
 }
 ```
 In this example, rule 2 would have higher specificity and the orange value would take precedence for this element. Rule 2 uses a type selector, which has the lowest specificity value. But rule 1 uses the universal selector (*) which has no specificity value.
-Inheritance
+
+#### Inheritance
 
 Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants. Typography based properties (color, font-size, font-family, etc.) are usually inherited, while most other properties aren’t.
 
 The exception to this is when directly targeting an element, as this always beats inheritance:
-```
+
 <!-- index.html -->
-
-\<div id="parent">
-  \<div class="child"></div>
-\</div>
-
+```
+<div id="parent">
+  <div class="child"></div>
+</div>
+```
 /* styles.css */
-
-#parent {
+```
+\#parent {
   \color: red;
 }
 
@@ -509,14 +544,15 @@ The exception to this is when directly targeting an element, as this always beat
 }
 ```
 Despite the parent element having a higher specificity with an ID, the child element would have the color: blue style applied since that declaration directly targets it, while color: red from the parent is only inherited.
-Rule Order
+
+#### Rule Order
 
 The final factor, the end of the line, the tie-breaker of the tie-breaker. Let’s say that after every other factor has been taken into account, there are still multiple conflicting rules targeting an element. How does the cascade determine which rule to apply?
 
 Really simply, actually. Whichever rule was the last defined is the winner.
 ```
 /* styles.css */
-
+```
 .alert {
   color: red;
 }
@@ -543,7 +579,7 @@ This section contains questions for you to check your understanding of this less
 
     Between a rule that uses one class selector and a rule that uses three type selectors, which rule has the higher specificity?
 
-Additional Resources
+### Additional Resources
 
 This section contains helpful links to related content. It isn’t required, so consider it supplemental.
 
@@ -552,26 +588,28 @@ This section contains helpful links to related content. It isn’t required, so 
     CSS Specificity from W3Schools goes over how you can calculate the specificity of rules. This page mentions some selectors that we will go over in a later lesson, so don’t worry about what they are or how to use them right now.
     Mozilla CSS Properties Reference can be used to learn if a particular CSS property is inherited or not; simply look for the Inherited field inside the Formal Definition section. Here’s an example for the CSS color property.
 
-Adding CSS to HTML
+#### Adding CSS to HTML
 
 Okay, we went over quite a bit so far. The only thing left for now is to go over how to add all this CSS to our HTML. There are three methods to do so.
 External CSS
 
 External CSS is the most common method you will come across, and it involves creating a separate file for the CSS and linking it inside of an HTML’s opening and closing <head> tags with a self-closing <link> element:
-```
+
 <!-- index.html -->
+```
 \<head>
   \<link rel="stylesheet" href="styles.css">
 \</head>
-
+```
 /* styles.css */
-\div {
-  \color: white;
-  \background-color: black;
+```
+div {
+  color: white;
+  background-color: black;
 }
 
-\p {
-  \color: red;
+p {
+  color: red;
 }
 ```
 First, we add a self-closing \<link> element inside of the opening and closing \<head> tags of the HTML file. The href attribute is the location of the CSS file, either an absolute URL or, what you’ll be utilizing, a URL relative to the location of the HTML file. In our example above, we are assuming both files are located in the same directory. The rel attribute is required, and it specifies the relationship between the HTML file and the linked file.
@@ -585,24 +623,24 @@ A couple of the pros to this method are:
     It keeps our HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
     We only need to edit the CSS in one place, which is especially handy for websites with many pages that all share similar styles.
 
-Internal CSS
+### Internal CSS
 
 Internal CSS (or embedded CSS) involves adding the CSS within the HTML file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing \<style> tags, which are then placed inside of the opening and closing \<head> tags of your HTML file. Since the styles are being placed directly inside of the \<head> tags, we no longer need a \<link> element that the external method requires.
 
 Besides these differences, the syntax is exactly the same as the external method (selector, curly braces, declarations):
 ```
-\<head>
-  \<style>
-    \div {
-      \color: white;
-      \background-color: black;
+<head>
+  <style>
+    div {
+      color: white;
+      background-color: black;
     }
-    \p {
+    p {
       \color: red;
     }
-  \</style>
-\</head>
-\<body>...</body>
+  </style>
+</head>
+<body>...</body>
 ```
 
 This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the HTML file to get pretty big.
@@ -646,34 +684,38 @@ external: most maintainable, separates style from content, best.
 >  What is the syntax for class and ID selectors?
 
 <!-- styles.css -->
+```
 #top {
     background-color: #ccc;
 }
 .intro {
     color: red;
 }
+```
 /* index.html */
-\<div id="top">
-\<p class="intro">This is my recipe for chocolate</p>
+```
+<div id="top">
+<p class="intro">This is my recipe for chocolate</p>
+```
 
 > How would you apply a single rule to two different selectors?
-
+```
 div, p { color: #f00; }
-
+```
 In this context, a comma means "and," so this selector applies to all paragraph elements and all division elements. If the comma were missing, the selector would instead apply to all paragraph elements that are a child of a division. That is a different kind of selector, so the comma is important.
 
 You can group any form of selector with any other selector. This example groups a class selector with an ID selector:
-
+```
 p.red, #sub { color: #f00; }
-
+```
 This style applies to any paragraph with the class attribute of red and any element (because the kind is not specified) with an ID attribute of sub.
 
 You can group any number of selectors.
 
 > Given an element with an id of title and a class of primary, how would you use both attributes for a single rule?
-
+```
 #title, .primary { key:value }
-
+```
 
 Additional Resources
 
@@ -1199,89 +1241,108 @@ Check out this video explaining how flexbox works and why.
 https://www.youtube.com/watch?v=u044iM9xsWU&t=1s&pp=ugMICgJhchABGAE%3D
 
 ### Notes
-Hide the <h1> element. It should still take up the same space as before.
+Hide the \<h1> element. It should still take up the same space as before.
+```
 h1 {
 visibility: hidden;
 }
-
-Hide the <h1> element. It should NOT take up any space.
+```
+Hide the \<h1> element. It should NOT take up any space.
+```
 h1 { 
 display: none;
 }
+```
 
-Position the <h1> element 50px from the top, relative to the HTML page.
+Position the \<h1> element 50px from the top, relative to the HTML page.
+```
 <style>
 h1 {  
 position: absolute;
 top: 50px;
 }
+```
 
-Position the <h1> element 50px from the top, relative to its normal position.
+Position the \<h1> element 50px from the top, relative to its normal position.
+```
 h1 {  
 position: relative;
 top: 50px;}
 </style>
-
-Position the <h1> element 50px from the top, relative to the HTML page.
+```
+Position the \<h1> element 50px from the top, relative to the HTML page.
+```
 <style>
 h1 {  
 position: absolute;
 top: 50px;
 }
-Position the <h1> element 50px from the top, relative to its normal position.
+```
+
+Position the \<h1> element 50px from the top, relative to its normal position.
+```
 h1 {  
 position: relative;
 top: 50px;}
 </style>
-Position the <h1> element to always be 50px from the top, and 10px from the right, relative to the window/frame edges.
+```
+Position the \<h1> element to always be 50px from the top, and 10px from the right, relative to the window/frame edges.
+```
 h1 {
 position: fixed;
 top: 50px;
 right: 10px;
 }
-Position the <h1> element 50px from the top, relative to its normal position.
+```
+Position the \<h1> element 50px from the top, relative to its normal position.
+```
 h1 {
 position: relative;
 top: 50px;
 }
-Position the <h1> element 50px from the top, by referring to its class name.
+```
+Position the \<h1> element 50px from the top, by referring to its class name.
+```
 .myheader {
   position: relative;
   top: 50px;
 }
-
+```
 Use inline styles to set the width of the table to "100%".
+```
 <table style="width:100%">
-
+```
 Display the list items as inline elements.
-
+```
 li {  
 display: inline;
 }
-
+```
 Specify that the background image should be shown once, in the top right corner.
+```
 body {
 background-image: url("img_tree.png");
 background-repeat: no-repeat;  
 background-position: top right;
 }
-
+```
 Add an external style sheet with the URL: "mystyle.css".
 ```
 <head>
 <link rel="stylesheet" href="mystyle.css">
 </head>
-
+```
 Set the page's background color to red.
+```
 body {  
 background-color:
  red;
 }
 ```
-
 Set the page's background color to red, by using an inline style.
+```
 <body style="background-color: red">
-
+```
 
 ## Axes
 Let’s see how the orientation of items within a flex container can be controlled using the flex-direction property.
@@ -1298,7 +1359,6 @@ The default direction for a flex container is horizontal, or row, but you can ch
 .flex-container {
   flex-direction: column;
 }
-
 ### Axes
 No matter which direction you’re using, you need to think of your flex-containers as having 2 axes: the main axis and the cross axis. It is the direction of these axes that changes when the flex-direction is changed. In most circumstances, flex-direction: row puts the main axis horizontal (left-to-right), and column puts the main axis vertical (top-to-bottom).
 
@@ -1632,9 +1692,21 @@ This [W3Schools lesson](https://www.w3schools.com/js/js_arithmetic.asp) followed
 
 > js stores numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63:
 
-]This MDN article](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math) covers the same info from a slightly different point of view, while also teaching you how to apply some basic math in JavaScript. There’s much more that you can do with numbers, but this is all you need at the moment.
+> “Logical not or !” is meant for boolean values and “bitwise not or ~” is for integers.
+
+> recommended to use the strict equality operator === instead of the loose equality operator ==, as js type coercion can lead to unexpected results.
+
+> So, here are the rules for type coercion in JavaScript:
+
+If either operand is a string, the other operand will be converted to a string.
+If either operand is a number, the other operand will be converted to a number.
+If either operand is a boolean, it will be converted to a number (true becomes 1 and false becomes 0).
+If one operand is an object and the other is a primitive value, the object will be converted to a primitive value before the comparison is made.
+If one of the operands is null or undefined, the other must also be null or undefined to return true. Otherwise it will return false.
 
 > Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
+
+==BEGIN W3 JS NUMBERS==
 
 Example
 let x = 999999999999999;   // x will be 999999999999999
@@ -1849,7 +1921,9 @@ Complete JavaScript Number Reference.
 
 The reference contains descriptions and examples of all Number properties and methods.
 
-(end of article)
+==END W3 JS NUMBERS==
+
+]This MDN article](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math) covers the same info from a slightly different point of view, while also teaching you how to apply some basic math in JavaScript. There’s much more that you can do with numbers, but this is all you need at the moment.
 
 Read through (and code along with!) this article about operators in Javascript. Don’t forget to do the “Tasks” at the bottom of the page! It will give you a pretty good idea of what you can accomplish with numbers (among other things!) in JavaScript.
 
