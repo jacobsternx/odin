@@ -4,6 +4,7 @@ Things learned in formatting this document:
 3. highlighted text with ==double equals== on both sides
 3. quote text by preceeding paragraph with right arrow
 4. to insert an article, highlight article begin and end. ==Begin== ==End==
+5. to insert a hyperlink, [The Modern JavaScript Tutorial](http://javascript.info)
 
 # Foundations Course
 Overview
@@ -1775,7 +1776,6 @@ Numeric Strings
 JavaScript strings can have numeric content:
 
 let x = 100;         // x is a number
-
 let y = "100";       // y is a string
 JavaScript will try to convert strings to numbers in all numeric operations:
 
@@ -1972,6 +1972,105 @@ This section contains helpful links to other content. It isn’t required, so co
 The differences between var and let are explained in this javascript.info article titled the old “var”.
 
 ## Fundamentals Part 2
+
+Introduction
+There are a few extremely common types of data that you will encounter in JavaScript, and these lessons on the fundamentals will give you a really strong foundation in all of them. However, before we start digging deep, this article will provide you with a quick overview of the most common ones.
+http://javascript.info/types
+See javascript-info-data-types.md
+
+Lesson overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+Name the eight data types in JavaScript.
+> JavaScript has 8 Datatypes
+String.
+Number.
+Bigint.
+Boolean.
+Undefined.
+Null.
+Symbol.
+Object.
+
+> JavaScript can "display" data in different ways:
+Writing into an HTML element, using innerHTML .
+Writing into the HTML output using document.write() .
+Writing into an alert box, using window.alert() .
+Writing into the browser console, using console.log() .
+
+>JavaScript can "display" data in different ways:
+Writing into an HTML element, using innerHTML .
+  document.getElementById("demo").innerHTML = myFunction();
+Writing into the HTML output using document.write() .
+Writing into an alert box, using window.alert() .
+  alert(objectName.propertyName)
+
+Writing into the browser console, using console.log() .
+Understand the difference between single, double, and backtick quotes.
+Embed a variable/expression in a string.
+Understand what a method is.
+Name the three logical operators.
+Understand what the comparison operators are.
+Understand what conditionals are.
+Understand what nesting is.
+Understand what truthy and falsy values are.
+Strings
+Depending on what kind of work you’re doing, you might end up working more with pieces of text rather than numbers. A string is simply a piece of text… and is a fundamental building block of the language.
+
+Read and code along with yet another MDN tutorial on the topic.
+Go through this lesson to learn a bit more about what you can do with strings… be sure to take a peek at the String Reference page near the bottom, and do the exercises at the end!
+Vocabulary time: a method is a bit of functionality built into the language or specific data types. In the previous W3Schools exercise, you’ve learned about a few methods that can be used on strings, such as replace and slice. An exhaustive list of methods usable on strings can be found here.
+Conditionals
+Now it’s time for the fun stuff… So far, we haven’t done much with our programming that you couldn’t do with simple math skills. Sure, we’ve told our computer how to do the math, which makes it quicker, but the essence of programming is teaching the computer how to make decisions to do more involved things. Conditionals are how we do that.
+
+Step one in learning about conditionals is making sure you have a good grasp on comparisons.
+This tutorial is a great first glance at conditionals in JavaScript.
+This tutorial will teach you about logical operators. A little heads up regarding this reading’s tasks: there will be questions where you see alert() with a number or string inside the parenthesis. What’s happening here will be discussed later in the curriculum. Some of the answers may not make sense now, but they are accurate, and you will understand them as you progress in the curriculum. Don’t worry too much about it now!
+This article reinforces the concept and provides several interesting examples of how you could use it building websites.
+This article covers the same basic concept (read through it as a review!) and - more importantly - offers the usual ‘tasks’ at the bottom of the page!
+This article teaches you about the switch statement, which is handy when you have multiple conditions.
+Assignment
+To give you a good bit of practice, we have created replit.com exercises for you to play with. We believe it’s best to practice programming on your own computer rather than in an online environment, but we’ll get to that soon enough.
+
+Be sure to do the lessons in the order presented here. Pressing “run” at the top will run the code. Read all directions, watch the terminal, and read all the errors. Don’t forget to use ‘console.log’ extensively.
+
+To get started, create a free replit account and click “Fork” or “Remix” to access the exercises. Note: Feel free to browse the files on the left column to gain familiarity with it.
+
+Exercise 1
+In this exercise, you will be working out of the file called troubleshooting.js
+Exercise 2
+You will be working out of script.js, and you will use the console in the ‘webview’ pane to check your work. To access the console, click the wrench icon, which is located on the right side of the address bar within the ‘webview’ pane.
+Exercise 3
+You will be working out of math.js
+Exercise 4
+You will be working out of follow.js
+Knowledge check
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+What are the eight data types in JavaScript?
+Which data type is NOT primitive?
+What is the relationship between null and undefined?
+What is the difference between single, double, and backtick quotes for strings?
+What is the term for joining strings together?
+Which type of quote lets you embed variables/expressions in a string?
+How do you embed variables/expressions in a string?
+How do you use escape characters in a string?
+What is the difference between the slice/substring/substr string methods?
+What are the three logical operators, and what do they stand for?
+What are the comparison operators?
+What are truthy and falsy values?
+What are the falsy values in JavaScript?
+What are conditionals?
+What is the syntax for an if/else conditional?
+What is the syntax for a switch statement?
+What is the syntax for a ternary operator?
+What is nesting?
+Additional resources
+This section contains helpful links to other content. It isn’t required, so consider it supplemental.
+
+Regular expressions, commonly known as regex, are a tool that matches or locates patterns in strings for string validation. Although it shouldn’t be your immediate solution this early on, you can still use this resource to understand how websites know that myemail@com isn’t a valid email address. On top of that, other solutions to filter out strings exist, and regex is considered a slow operation.
+The Net Ninja’s Regular Expressions Tutorial.
+When to avoid regular expressions.
 
 ## JavaScript Developer Tools
 
