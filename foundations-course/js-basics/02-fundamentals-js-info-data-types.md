@@ -1,3 +1,5 @@
+== BEGIN JavaScript Fundamentals; Data types == 
+```
 The JavaScript language, JavaScript Fundamentals; Data types
 https://javascript.info/types
 
@@ -92,3 +94,5 @@ Seven primitive data types:
 symbol for unique identifiers.
 And one non-primitive data type:
 * object for more complex data structures.
+```
+== END JavaScript Fundamentals; Data types == 
