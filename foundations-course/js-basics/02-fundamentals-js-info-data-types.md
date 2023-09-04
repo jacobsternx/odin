@@ -1,8 +1,6 @@
 == BEGIN JavaScript Fundamentals; Data types == 
 ```
-The JavaScript language, JavaScript Fundamentals; Data types
-https://javascript.info/types
-
+[The JavaScript language, JavaScript Fundamentals; Data types] (https://javascript.info/types)
 ### Number
 The number type represents both integer and floating point numbers.
 

@@ -53,7 +53,7 @@ What is the Unary Plus Operator?
 ### How to run JavaScript code
 All JavaScript we will be writing in the majority of the Foundations course will be run via the browser. Later lessons in Foundations and the NodeJS path will show you how to run JavaScript outside of the browser environment. Outside of these lessons, for now you should always default to running your JavaScript in the browser unless otherwise specified, otherwise you may run into unexpected errors.
 
-The simplest way to get started is to simply create an HTML file with the JavaScript code inside of it. Type the basic HTML skeleton into a file on your computer somewhere:
+The simplest way to get started is to simply create an HTML file with the JavaScript code inside of it. Type the basic HTML skeleton into a file:
 
 ```
 <!DOCTYPE html>
@@ -99,6 +99,7 @@ let my-name; // hyphens '-' aren't allowed in the name
 let $ = 1; // declared a variable with the name "$"
 let _ = 2; // and now a variable with the name "_"
 ```
+> We generally use upper case for constants that are “hard-coded”. Or, in other words, when the value is known prior to execution and directly written into the code.
 == END This variable tutorial ==
 
 The above tutorial mentioned this, but it’s important enough to note again: let and const are both relatively new ways to declare variables in JavaScript. In many tutorials (and code) across the internet you’re likely to encounter var statements. Don’t let it bother you! There’s nothing inherently wrong with var, and in most cases var and let behave the same way. But sometimes the behavior of var is not what you would expect. Just stick to let (and const) for now.
@@ -107,6 +108,8 @@ The above tutorial mentioned this, but it’s important enough to note again: le
 Numbers are the building blocks of programming logic! In fact, it’s hard to think of any useful programming task that doesn’t involve at least a little basic math… so knowing how numbers work is obviously quite important. Luckily, it’s also fairly straightforward.
 
 [This W3Schools JS Arithmetic lesson](https://www.w3schools.com/js/js_arithmetic.asp) followed by [this W3Schools JS Numbers one](https://www.w3schools.com/js/js_numbers.asp), are good introductions to what you can accomplish with numbers in JavaScript.
+
+> When many operations have the same precedence (like addition and subtraction or multiplication and division), they are computed from left to right:
 
 > js stores numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63:
 
@@ -175,12 +178,12 @@ Explain the difference between prefixing and postfixing increment/decrement oper
 What is operator precedence and how is it handled in JS?
   parens, mult/div, add/sub
 How do you access developer tools and the console?
-  action overflow menu > More Tools > Developer Tools
+  vscode > live server > right click > inspect > select console
 How do you log information to the console?
   console.log()
 What does unary plus operator do to string representations of integers? eg. +”10”
   +x Unary Plus Convert a value into a number
-  -x Unary Minus Convert a value into a number and negate it
+  -x Unary Minus Convert a value into a number and negates it
 
 ### Additional resources
 This section contains helpful links to other content. It isn’t required, so consider it supplemental.
@@ -197,10 +200,13 @@ Comparing two JavaScript objects always returns false.
 
 Introduction
 There are a few extremely common types of data that you will encounter in JavaScript, and these lessons on the fundamentals will give you a really strong foundation in all of them. However, before we start digging deep, this article will provide you with a quick overview of the most common ones.
-http://javascript.info/types
+[Javascript Info - Data Types] (http://javascript.info/types)
 See javascript-info-data-types.md
 
-Lesson overview
+Lesson overview// Converts non-numbers
+alert( +true ); // 1
+alert( +"" );   // 0
+It actually does the same thing as Number(...), but is shorter.
 This section contains a general overview of topics that you will learn in this lesson.
 
 Name the eight data types in JavaScript.

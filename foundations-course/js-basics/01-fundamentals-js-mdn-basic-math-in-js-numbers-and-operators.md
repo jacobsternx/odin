@@ -169,7 +169,6 @@ Note: There are lots of other assignment operators available, but these are the 
 Active learning: sizing a canvas box
 In this exercise, you will manipulate some numbers and operators to change the size of a box. The box is drawn using a browser API called the Canvas API. There is no need to worry about how this works — just concentrate on the math for now. The width and height of the box (in pixels) are defined by the variables x and y, which are initially both given a value of 50.
 
-
 Open in new window
 In the editable code box above, there are two lines marked with a comment that we'd like you to update to make the box grow/shrink to certain sizes, using certain operators and/or values in each case. Let's try the following:
 
@@ -202,13 +201,13 @@ Zoom a map in or out depending on what zoom level is selected
 We'll look at how to code such logic when we look at conditional statements in a future article. For now, let's look at a quick example:
 
 HTML
-Copy to Clipboard
-
+```
 <button>Start machine</button>
 <p>The machine is stopped.</p>
-JS
-Copy to Clipboard
+```
 
+JS
+```
 const btn = document.querySelector("button");
 const txt = document.querySelector("p");
 
@@ -223,8 +222,7 @@ function updateBtn() {
     txt.textContent = "The machine is stopped.";
   }
 }
-
-Open in new window
+```
 
 You can see the equality operator being used just inside the updateBtn() function. In this case, we are not testing if two mathematical expressions have the same value — we are testing whether the text content of a button contains a certain string — but it is still the same principle at work. If the button is currently saying "Start machine" when it is pressed, we change its label to "Stop machine", and update the label as appropriate. If the button is currently saying "Stop machine" when it is pressed, we swap the display back again.
 
