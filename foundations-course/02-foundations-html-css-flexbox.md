@@ -5,9 +5,9 @@ Markdown Quick Guide
 ### H3 Heading 3
 **bold text** Bold
 *italicized text* Italic
-> blockquote Blockquote (> must be first character of line)
+> blockquote Blockquote (> must be first character of line, to end of line)
 ``` code block ``` Code Block
-==highlighted text== Highlighted text
+==highlighted text== Highlighted text (one line)
 : definition list Definition List
 H~2~O subscript Subscript
 X^2^ superscript Superscript
@@ -22,9 +22,9 @@ Unordered List
 - Second item
 - Third item
 notes:
-1. outside of code snippets, \<h1> must be escaped with a backslash
-2. outside of code snippets, lines beginning with \# must be escaped with backslash
-Horizontal Rule
+1. outside of code block, \<h1> must be escaped with a backslash
+2. outside of code block, lines beginning with \# must be escaped with backslash
+Horizontal Rule (section separator, 3 dashes at line beginning)
 ---
 
 # Foundations Course

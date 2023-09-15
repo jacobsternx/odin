@@ -1,23 +1,25 @@
-== BEGIN JavaScript String Reference ==
-```
+[JavaScript String Reference](https://www.w3schools.com/jsref/jsref_obj_string.asp)
+
+## JavaScript Strings
 A JavaScript string stores a series of characters like "John Doe".
 
 A string can be any text inside double or single quotes:
 
-let carName1 = "Volvo XC60";
+```let carName1 = "Volvo XC60";
 let carName2 = 'Volvo XC60';
+```
 String indexes are zero-based:
 
 The first character is in position 0, the second in 1, and so on.
 
 For a tutorial about Strings, read our JavaScript String Tutorial.
 
-String Properties and Methods
+### String Properties and Methods
 Normally, strings like "John Doe", cannot have methods or properties because they are not objects.
 
 But with JavaScript, methods and properties are also available to strings, because JavaScript treats strings as objects when executing methods and properties.
 
-JavaScript String Methods
+### JavaScript String Methods
 Name	Description
 charAt()	Returns the character at a specified index (position)
 charCodeAt()	Returns the Unicode of the character at a specified index
@@ -51,14 +53,12 @@ trimEnd()	Returns a string with removed whitespaces from the end
 trimStart()	Returns a string with removed whitespaces from the start
 valueOf()	Returns the primitive value of a string or a string object
 Note
-All string methods return a new value.
+> All string methods return a new value.
+> They do not change the original variable.
 
-They do not change the original variable.
-
-String HTML Wrapper Methods
-HTML wrapper methods return a string wrapped inside an HTML tag.
-
-These are not standard methods, and may not work as expected.
+### String HTML Wrapper Methods
+> HTML wrapper methods return a string wrapped inside an HTML tag.
+> These are not standard methods, and may not work as expected.
 
 Method	Description
 anchor()	Displays a string as an anchor
@@ -74,5 +74,3 @@ small()	Displays a string using a small font
 strike()	Displays a string with a strikethrough
 sub()	Displays a string as subscript text
 sup()	Displays a string as superscript text
-```
-== END JavaScript String Reference ==

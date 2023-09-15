@@ -1,6 +1,6 @@
-== BEGIN W3SCHOOLS JS ARITHMETIC ==
-```
-JavaScript Arithmetic Operators
+# [W3Schools JavaScriplt arithmetic](https://www.w3schools.com/js/js_arithmetic.asp)
+
+## JavaScript Arithmetic Operators
 Arithmetic operators perform arithmetic on numbers (literals or variables).
 
 Operator	Description
@@ -12,93 +12,64 @@ Operator	Description
 %	Modulus (Remainder)
 ++	Increment
 --	Decrement
-Arithmetic Operations
+
+### Arithmetic Operations
 A typical arithmetic operation operates on two numbers.
 
 The two numbers can be literals:
-
 Example
 let x = 100 + 50;
-or variables:
 
+or variables:
 Example
 let x = a + b;
-or expressions:
 
+or expressions:
 Example
 let x = (100 + 50) * a;
-Operators and Operands
+
+### Operators and Operands
 The numbers (in an arithmetic operation) are called operands.
 
 The operation (to be performed between the two operands) is defined by an operator.
 
-Operand	Operator	Operand
-100 + 	50
+Operand	Operator Operand
+100     +        50
 
-Adding
-The addition operator (+) adds numbers:
-Example
-let x = 5;
-let y = 2;
+### Adding
 let z = x + y;
 
-Subtracting
-The subtraction operator (-) subtracts numbers.
-Example
-let x = 5;
-let y = 2;
+### Subtracting
 let z = x - y;
 
-Multiplying
-The multiplication operator (*) multiplies numbers.
-Example
-let x = 5;
-let y = 2;
+### Multiplying
 let z = x * y;
 
-Dividing
-The division operator (/) divides numbers.
-Example
-let x = 5;
-let y = 2;
+### Dividing
 let z = x / y;
 
-Remainder
-The modulus operator (%) returns the division remainder.
-Example
-let x = 5;
-let y = 2;
+### Remainder
 let z = x % y;
 
 In arithmetic, the division of two integers produces a quotient and a remainder.
 In mathematics, the result of a modulo operation is the remainder of an arithmetic division.
+Arithmetic is a branch of mathematics that deals with the study of numbers and their basic operations.
+Mathematics is a broad field that encompasses algebra, geometry, calculus, statistics--theory, and variables.
 
-Incrementing
-The increment operator (++) increments numbers.
-Example
-let x = 5;
+### Incrementing
 x++;
-let z = x;
 
-Decrementing
-The decrement operator (--) decrements numbers.
-Example
-let x = 5;
+### Decrementing
 x--;
 let z = x;
 
-Exponentiation
-The exponentiation operator (**) raises the first operand to the power of the second operand.
-Example
-let x = 5;
+### Exponentiation
 let z = x ** 2;
 
-x ** y produces the same result as Math.pow(x,y):
-Example
-let x = 5;
+### x ** y produces the same result as Math.pow(x,y):
 let z = Math.pow(x,2);
 
-Operator Precedence
+### Operator Precedence
 Operator precedence describes the order in which operations are performed in an arithmetic expression.
 Example
 let x = 100 + 50 * 3;
@@ -117,5 +88,3 @@ When many operations have the same precedence (like addition and subtraction or 
 Examples
 let x = 100 + 50 - 3;
 let x = 100 / 50 * 3;
-```
-== END W3SCHOOLS JS ARITHMETIC ==

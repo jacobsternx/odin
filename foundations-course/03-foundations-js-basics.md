@@ -5,9 +5,9 @@ Markdown Quick Guide
 ### H3 Heading 3
 **bold text** Bold
 *italicized text* Italic
-> blockquote Blockquote (> must be first character of line)
+> blockquote Blockquote (> must be first character of line, to end of line)
 ``` code block ``` Code Block
-==highlighted text== Highlighted text
+==highlighted text== Highlighted text (one line)
 : definition list Definition List
 H~2~O subscript Subscript
 X^2^ superscript Superscript
@@ -22,9 +22,9 @@ Unordered List
 - Second item
 - Third item
 notes:
-1. outside of code snippets, \<h1> must be escaped with a backslash
-2. outside of code snippets, lines beginning with \# must be escaped with backslash
-Horizontal Rule
+1. outside of code block, \<h1> must be escaped with a backslash
+2. outside of code block, lines beginning with \# must be escaped with backslash
+Horizontal Rule (section separator, 3 dashes at line beginning)
 ---
 
 # 07 JavaScript Basics (12 modules, 3 projects)
@@ -276,31 +276,158 @@ Knowledge check
 This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
 
 What are the eight data types in JavaScript?
+1. number
+2. bigint
+3. string
+4. boolean
+5. null
+6. undefined
+7. symbol
+8. object
+
 Which data type is NOT primitive?
+- object
 What is the relationship between null and undefined?
+> null is special value which represents “nothing”, “empty” or “value unknown”.
+> undefined is “value is not assigned”--or assigned as unassigned.
+
 What is the difference between single, double, and backtick quotes for strings?
+> single or double quotes may be used for strings, and the other for substrings.
+> backticks are “extended functionality” quotes that allow embedding variables and expressions into a string by wrapping them in ${…}.
+
 What is the term for joining strings together?
+- concatenation
 Which type of quote lets you embed variables/expressions in a string?
+- backtick
 How do you embed variables/expressions in a string?
+- by wrapping them in ${…}.
 How do you use escape characters in a string?
+> backslash indicates that the next character should be treated as a literal character rather than as a special character or string delimiter.
+
 What is the difference between the slice/substring/substr string methods?
+1. slice() extracts parts of a string and returns the extracted parts in a new string. 
+2. substr() extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters. 
+3. substring() extracts parts of a string and returns the extracted parts in a new string.
+
 What are the three logical operators, and what do they stand for?
+- and
+- or
+- not
+
 What are the comparison operators?
+- ==, equality, value
+- ===, equality, value and type
+- != not equal, value
+- !== not equal, value and type
+- \> greater than, >= greater than or equal
+- < less than, <= less than or equal
+
 What are truthy and falsy values?
+- values that evaluate to true or false, note that all non-falsey values are true.
+
 What are the falsy values in JavaScript?
+- 6 falsey values in JavaScript: undefined , null , NaN , 0 , "" (empty string), and false
+
 What are conditionals?
+- if, else if, else
+
 What is the syntax for an if/else conditional?
+if (false) {
+      var outcome = "if block";
+} else if (true) {
+      var outcome = "else if block";
+} else {
+      var outcome = "else block";
+}
+
 What is the syntax for a switch statement?
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+  default:
+    ...
+    [break]
+}
+
 What is the syntax for a ternary operator?
+let grades = prompt('Enter your grades :');
+// check the condition
+let result = (marks >= 40) ? 'pass' : 'fail';
+console.log(`You ${result} the exam.`);
+
 What is nesting?
-Additional resources
+- Nesting is putting a function or condition inside another function or condition.
+
+### Additional resources
 This section contains helpful links to other content. It isn’t required, so consider it supplemental.
 
 Regular expressions, commonly known as regex, are a tool that matches or locates patterns in strings for string validation. Although it shouldn’t be your immediate solution this early on, you can still use this resource to understand how websites know that myemail@com isn’t a valid email address. On top of that, other solutions to filter out strings exist, and regex is considered a slow operation.
-The Net Ninja’s Regular Expressions Tutorial.
-When to avoid regular expressions.
+[The Net Ninja’s Regular Expressions Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9g6m_6Sld9Q4jzqdqHd2HiD)
+[When to avoid regular expressions](https://softwareengineering.stackexchange.com/questions/113237/when-you-should-not-use-regular-expressions)
+
+Will return to regex later, want to learn more js.
 
 ## JavaScript Developer Tools
+
+### Introduction
+Knowing how to use the Developer Tools inside your browser is an important skill for any web developer. The Developer Tools are useful for running JavaScript code, editing HTML and CSS styles without having to refresh the page, and viewing performance data. They also save you lots of time. Getting started couldn’t be any easier. You should already be familiar with using them for debugging and working on HTML and CSS, so let’s take a look at how they can benefit us when writing JavaScript.
+
+### Lesson overview
+This section contains a general overview of topics that you will learn in this lesson.
+
+- Change screen size of a website with developer tools
+- View and change the DOM
+- Debug JavaScript
+- Use breakpoints
+- View and edit HTML in the Elements tab
+- View the Resources Panel to check the scripts running on a website
+- Add CSS Pseudostate to a Class
+- View CSS Properties in Alphabetical Order
+- View and edit the Box Model of any Element in Chrome DevTools
+- View a page in print mode
+- Enable or Disable CSS Classes
+- Simulate media queries in Device Mode
+
+### Opening DevTools
+There are three ways to open the Chrome DevTools menu:
+
+1. From the Chrome Menu > More Tools > Developer Tools
+2. Right-click anywhere on a webpage and select Inspect
+3. Use the keyboard shortcut F12 or Ctrl + Shift + C (Mac: Opt + Cmd + C)
+
+### Assignment
+Google has updated some of the required sections in the below tutorials and some elements have changed or no longer exist, but you can still follow along using the same functionality and tools that they cover. For example, you may be asked to inspect a button that is no longer on the page- you can still follow along and inspect existing elements without issue.
+
+1. Head to the [Chrome DevTools Documentation](https://developer.chrome.com/docs/devtools/) by Google. The following subsections cover what you’ll be using the Developer Tools for 95% of the time. Feel free to skip the elements you are already familiar with, and only read these:
+- CSS
+- 1. [View and change CSS](https://developer.chrome.com/docs/devtools/css/)
+- 2. [CSS features reference](https://developer.chrome.com/docs/devtools/css/reference/)
+- [Get Started With Viewing And Changing The DOM](https://developer.chrome.com/docs/devtools/dom/)
+
+- Mobile Simulation
+- 1. [Simulate mobile devices with Device Mode](https://developer.chrome.com/docs/devtools/device-mode/)
+- JavaScript
+- 1. [Debug JavaScript](https://developer.chrome.com/docs/devtools/javascript/)
+- 2. [Pause your code with breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/)
+2. Then, watch the [console overview video and read through the page](https://developer.chrome.com/docs/devtools/console/) to familiarize yourself with the console and its usage.
+
+..............
+### Knowledge check
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+[How do you open developer tools?](https://www.theodinproject.com/lessons/foundations-javascript-developer-tools#opening-dev-tools)
+[How do you change screen size of a website using developer tools?](https://developer.chrome.com/docs/devtools/device-mode/)
+[What is a breakpoint?](https://developer.chrome.com/docs/devtools/javascript/breakpoints/)
+[How do you set a breakpoint?](https://developer.chrome.com/docs/devtools/javascript/breakpoints/#loc)
+
+### Additional resources
+This section contains helpful links to other content. It isn’t required, so consider it supplemental.
+
+Learn 14 tips and tricks in this [JavaScript 30](https://www.youtube.com/watch?v=xkzDaKwinA8) Video by Wes Bos
 
 ## Fundamentals Part 3
 
