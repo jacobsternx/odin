@@ -98,3 +98,25 @@ Seven primitive data types:
 * symbol for unique identifiers.
 And one non-primitive data type:
 * object for more complex data structures.
+
+## Tasks
+String quotes
+
+What is the output of the script?
+
+> Backticks embed the expression inside ${...} into the string.
+```
+let name = "Ilya";
+
+alert( `hello ${1}` ); // ?
+// the expression is a number 1
+alert( `hello ${1}` ); // hello 1
+
+alert( `hello ${"name"}` ); // ?
+// the expression is a string "name"
+alert( `hello ${"name"}` ); // hello name
+
+alert( `hello ${name}` ); // ?
+// the expression is a variable, embed it
+alert( `hello ${name}` ); // hello Ilya
+```

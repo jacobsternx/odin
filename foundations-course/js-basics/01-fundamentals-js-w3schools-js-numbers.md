@@ -82,22 +82,12 @@ let y = "10";
 let z = x / y;
 ```
 
-This will also work:
-```let x = "100";
-let y = "10";
-let z = x * y;
-```
-And this will work:
-```let x = "100";
-let y = "10";
-let z = x - y;
-```
 But this will not work:
 ```let x = "100";
 let y = "10";
 let z = x + y;
 ```
-In the last example JavaScript uses the + operator to concatenate the strings.
+JavaScript uses the + operator to concatenate the strings.
 
 ## NaN - Not a Number
 NaN is a JavaScript reserved word indicating that a number is not a legal number.
