@@ -28,10 +28,10 @@ Horizontal Rule (section separator, 3 dashes at line beginning)
 ---
 
 # 07 JavaScript Basics (12 modules, 3 projects)
-## Fundamentals Part 1
+## Variables and Operators
 
 ### Introduction
-Let’s dive right into JavaScript!
+In the previous sections you learnt how to structure webpages with HTML and style them with CSS. The next step is to make the webpage interactive, which is exactly what JavaScript is for. In this section, we will focus on the fundamentals of JavaScript and how you can use it to manipulate all the various interactions between the web page and user.
 
 ### Lesson overview
 This section contains a general overview of topics that you will learn in this lesson.
@@ -102,7 +102,7 @@ let _ = 2; // and now a variable with the name "_"
 > We generally use upper case for constants that are “hard-coded”. Or, in other words, when the value is known prior to execution and directly written into the code.
 == END This variable tutorial ==
 
-The above tutorial mentioned this, but it’s important enough to note again: let and const are both relatively new ways to declare variables in JavaScript. In many tutorials (and code) across the internet you’re likely to encounter var statements. Don’t let it bother you! There’s nothing inherently wrong with var, and in most cases var and let behave the same way. But sometimes the behavior of var is not what you would expect. Just stick to let (and const) for now.
+Let and const are both relatively new ways to declare variables in JavaScript. In many tutorials (and code) you’re likely to encounter var statements. There’s nothing inherently wrong with var, and in most cases var and let behave the same. But sometimes the behavior of var is not what you would expect. Stick to let (and const.)
 
 ### Numbers
 Numbers are the building blocks of programming logic! In fact, it’s hard to think of any useful programming task that doesn’t involve at least a little basic math… so knowing how numbers work is obviously quite important. Luckily, it’s also fairly straightforward.
@@ -196,7 +196,9 @@ new keyword creates objects.
 never compare strings with objects.
 Comparing two JavaScript objects always returns false.
 
-## Fundamentals Part 2
+## Foundations
+## JavaScript Basics
+## Data Types and Conditionals
 
 Introduction
 There are a few extremely common types of data that you will encounter in JavaScript, and these lessons on the fundamentals will give you a really strong foundation in all of them. However, before we start digging deep, this article will provide you with a quick overview of the most common ones.
@@ -367,10 +369,12 @@ This section contains helpful links to other content. It isn’t required, so co
 
 Regular expressions, commonly known as regex, are a tool that matches or locates patterns in strings for string validation. Although it shouldn’t be your immediate solution this early on, you can still use this resource to understand how websites know that myemail@com isn’t a valid email address. On top of that, other solutions to filter out strings exist, and regex is considered a slow operation.
 [The Net Ninja’s Regular Expressions Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9g6m_6Sld9Q4jzqdqHd2HiD)
-(do regex later)
 [When to avoid regular expressions](https://softwareengineering.stackexchange.com/questions/113237/when-you-should-not-use-regular-expressions)
-(Will return to regex later, want to learn more js.)
 
+Will return to regex later, want to learn more js.
+
+## Foundations
+## JavaScript Basics
 ## JavaScript Developer Tools
 
 ### Introduction
@@ -380,9 +384,7 @@ Knowing how to use the Developer Tools inside your browser is an important skill
 This section contains a general overview of topics that you will learn in this lesson.
 
 - Change screen size of a website with developer tools
-(dropdown menu of preview)
 - View and change the DOM
-(Inspect element, Elements tab, )
 - Debug JavaScript
 - Use breakpoints
 - View and edit HTML in the Elements tab
@@ -400,19 +402,21 @@ There are three ways to open the Chrome DevTools menu:
 1. From the Chrome Menu > More Tools > Developer Tools
 2. Right-click anywhere on a webpage and select Inspect
 3. Use the keyboard shortcut F12 or Ctrl + Shift + C (Mac: Opt + Cmd + C)
+> Cmd-Alt-C on Mac: DevTools Elements 
+> Cmd-Alt-I on Mac: DevTools Sources
+> Cmd-Alt-J on Mac: DevTools Console
 
 ### Assignment
 Google has updated some of the required sections in the below tutorials and some elements have changed or no longer exist, but you can still follow along using the same functionality and tools that they cover. For example, you may be asked to inspect a button that is no longer on the page- you can still follow along and inspect existing elements without issue.
 
 1. Head to the [Chrome DevTools Documentation](https://developer.chrome.com/docs/devtools/) by Google. The following subsections cover what you’ll be using the Developer Tools for 95% of the time. Feel free to skip the elements you are already familiar with, and only read these:
-- CSS
+CSS
 - 1. [View and change CSS](https://developer.chrome.com/docs/devtools/css/)
 - 2. [CSS features reference](https://developer.chrome.com/docs/devtools/css/reference/)
-- [Get Started With Viewing And Changing The DOM](https://developer.chrome.com/docs/devtools/dom/)
-
-- Mobile Simulation
+- 3. [Get Started With Viewing And Changing The DOM](https://developer.chrome.com/docs/devtools/dom/)
+Mobile Simulation
 - 1. [Simulate mobile devices with Device Mode](https://developer.chrome.com/docs/devtools/device-mode/)
-- JavaScript
+JavaScript
 - 1. [Debug JavaScript](https://developer.chrome.com/docs/devtools/javascript/)
 - 2. [Pause your code with breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/)
 2. Then, watch the [console overview video and read through the page](https://developer.chrome.com/docs/devtools/console/) to familiarize yourself with the console and its usage.
