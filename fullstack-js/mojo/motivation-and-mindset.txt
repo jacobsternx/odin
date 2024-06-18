@@ -1,0 +1,89 @@
+
+Motivation
+
+Growth Mindset
+intelligence is not fixed but can instead be developed. Someone with the growth mindset believes they can get better at anything with effort and persistence.
+
+What does this mean for you? It means you can learn new skills and develop new talents with persistence and grit.
+
+You will have more success with Odin by putting consistent time into it rather than working on it once a week. Building a habit of studying every day at a specific time and with a specific goal will ensure that you make consistent progress.
+
+There are no due-dates on things in The Odin Project so you can spend the time to do it right and discuss the topics.
+
+Long story short: Don’t worry, just go learn!
+
+Pitfalls to Avoid
+
+Procrastination will be your biggest enemy when trying to make progress.
+
+Not Taking Breaks
+Pomodoro Technique to time how often and how long to take your breaks. Experiment with different frequencies and durations of breaks. What to do during your break:
+listen to music
+journal
+doodle
+meditate
+play a quick game
+go for a short walk outside
+
+Digital Distractions
+Turn off notifications and add a blocker to your internet to limit your time on distracting sites.
+
+Physical Distractions
+Find a quiet place to study where you can go to focus in your home. If that’s not an option, you can use noise cancelling headphones to block out noisy distractions in your environment.
+
+Rabbit Holes
+Stick to the path laid out as much as possible. Try to limit time spent going down rabbit holes as these sidetracks can really ruin your momentum.
+Comparing Yourself to Others
+
+Only compare yourself to your past self. Have your abilities and knowledge improved from where you were last week, last month, or last year? Be proud of the progress that you’ve made!
+
+Every day you code is the day you’ve won.
+You need a goal to work towards. Once you have that goal, it will be harder to stop, as opposed to a situation where you are dabbling with code, or learning without a specific, well-defined goal.
+
+Define a specific, realistic goal to work towards. A well-defined goal would be: “I want to find a job as a Front-End Web Developer within the next 12 months.” Or: “I will create 3 simple iOS apps within the next 8 months.”
+
+Use all the time you can find and focus all your effort on learning to code. Why? Because it is not easy, and because the longer you spread your learning period (unless you have a specific time-bound goal), the more likely you will become discouraged by the feeling of “slow progress”.
+
+By deliberate practice, I mean:
+examining the bugs and problems in the code
+going back to certain problems and trying to solve them in a better way
+reading other people’s code to see how they solved these problems
+refactoring your old code
+To put it simply: doing rework rather than trying new things and switching topics all the time.
+
+How to practice this:
+First, remind yourself of your goal. Next, my advice gets contrary to what you might have thought it would be. I say — go have that short honeymoon with that new exciting subject!
+
+I recommend spending the next couple of days out to explore the new shiny subject that caught your interest. It’s okay.
+
+I’ve done that with Ruby. I’ve done that with Python. Then, after that breather, I would remind myself of my goal — finding a coding job. I would think: it would be nice to explore this and that, but I really want to get better at this one thing, so I’d better focus on it once again! And I would jump back into learning JavaScript with newly found energy and enthusiasm.
+
+What would happen if you didn’t allow yourself such breathers? Studying one subject for a long period of time is like being on a diet. You will do really well and be fine and happy, until that one day when you break and just can’t take it anymore. Say, you go nuts into this 6-month learning journey of a completely different topic, only to find that you haven’t mastered any of the many topics you’ve tried learning.
+
+Also, food for thought: you never hear the stories of “I dabbled with coding in Ruby, JS, Python, C++, and Java, and then started my successful coding career.”
+
+In order to get your start, you should have at least one thing that you are amazing (or at least good) at. Choose it, pursue it, and only allow yourself brief diversions in order to keep your sanity.
+
+Make a clear-cut, “bright-line” rule that you will code for at least 30 minutes a day. If you can do more, do it. But once you’ve done your 30 minutes, give yourself the permission to feel accomplished for the day.
+
+Thus, your efforts will become more consistent and you will get to your goal faster.
+
+Go to coding events, such as Free Code Camp’s coffee-and-code events, where the focus is not only on coding, but on the sense of community.
+
+I don’t know which events are held where you live, but I am pretty sure you will find a local coffee-and-code event at the Free Code Camp campsite for your city.
+
+If there isn’t one yet, you know what to do. ;)
+
+Read other people’s Coding Origin Stories
+Reading how other people learned to code is both informative and motivational. You quickly learn their circumstances and which resources they used.
+
+“Study hard what interests you the most in the most undisciplined, irreverent and original manner possible.”
+― Richard Feynmann
+
+People who are consistently disciplined keep their eyes off the prize and on the process.
+
+It’s counterintuitive, but if you’ve struggled to achieve a goal or stay disciplined on something, it might be because you’re focusing too much on the goal, which is sabotaging your progress.
+
+Remember: When it comes to goals, set it and forget it.
+
+Keep your focus on the small routines and little wins which, if accomplished consistently, will lead you to your final goal.

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: Roboto, sans-serif;
+  flex-direction: column;
+}
+
+img {
+  width: 600px;
+}
+
+buttons {
+  font-family: Roboto, sans-serif;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+}
+
+input {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 8px 24px;
+  width: 400px;
+  margin-bottom: 16px;
+}
+
+/* SOLUTION */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 8px 16px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none; /* removes underline */
+  color: #666;
+}
+
+.header, .footer {
+  display: flex;
+  justify-content:space-between;
+  padding: 8px;
+}
+
+.footer {
+  background: #eeee;
+}
+
+ul {
+  display: flex;
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none; /* remove dots */
+  gap: 16px
+}
+
+/* SOLUTION DOES NOT USE */
+/* I meant to go back and see why unneeded. */
+/*
+.header, .footer {
+  width: 100%; 
+  position: fixed; 
+  margin-top: 0; 
+  padding-left: 0; 
+}
+
+.footer {
+  bottom: 0; 
+}
+
+.left-links, .right-links {
+  gap: 16px;
+  margin: 10px;
+} 
+*/
